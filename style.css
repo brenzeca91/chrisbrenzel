@@ -52,14 +52,6 @@ a {
   text-decoration: none;
   font-size: 1.1rem;
 }
-.hero-image {
-  width: 100%;
-  min-height: 360px;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 22px;
-  display: block;
-}
 .site-nav {
   display: flex;
   gap: 20px;
