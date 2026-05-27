@@ -1,31 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-serif: var(--font-playfair), Georgia, serif;
-
-  --color-navy-900: #0a0f1e;
-  --color-navy-800: #0d1530;
-  --color-navy-700: #111b3d;
-  --color-navy-600: #1a2550;
-  --color-accent-blue: #3b82f6;
-  --color-photo-dark: #0c0c0c;
-  --color-photo-surface: #141414;
-  --color-photo-warm: #f5f0eb;
-
-  --animate-fade-in: fadeIn 0.6s ease-out forwards;
-  --animate-slide-up: slideUp 0.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* Consulting tokens */
