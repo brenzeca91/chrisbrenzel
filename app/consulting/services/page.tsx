@@ -118,7 +118,7 @@ export default function ServicesPage() {
             support would be most useful.
           </p>
           <Link
-            href="/contact?type=consulting"
+            href="/consulting/contact"
             className="inline-flex items-center gap-2 border border-[#1e2d4a] hover:border-blue-500
                        text-[#8fa3bb] hover:text-white font-sans font-medium text-sm px-6 py-3 rounded
                        transition-colors whitespace-nowrap"

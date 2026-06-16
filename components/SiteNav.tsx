@@ -10,7 +10,7 @@ const consultingLinks = [
   { label: 'Services', href: '/consulting/services' },
   { label: 'Experience', href: '/consulting/experience' },
   { label: 'About', href: '/consulting/about' },
-  { label: 'Contact', href: '/contact?type=consulting' },
+  { label: 'Contact', href: '/consulting/contact' },
 ]
 
 const photographyLinks = [
@@ -18,7 +18,7 @@ const photographyLinks = [
   { label: 'Gallery', href: '/photography/gallery' },
   { label: 'Field Notes', href: '/photography/field-notes' },
   { label: 'Prints', href: '/photography/prints' },
-  { label: 'Contact', href: '/contact?type=photography' },
+  { label: 'Contact', href: '/photography/contact' },
 ]
 
 type NavMode = 'consulting' | 'photography'

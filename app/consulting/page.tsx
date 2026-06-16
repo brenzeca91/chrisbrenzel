@@ -44,7 +44,7 @@ export default function ConsultingPage() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/contact?type=consulting"
+              href="/consulting/contact"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500
                          text-white font-sans font-medium text-sm px-6 py-3 rounded
                          transition-colors"
@@ -162,7 +162,7 @@ export default function ConsultingPage() {
             </p>
           </div>
           <Link
-            href="/contact?type=consulting"
+            href="/consulting/contact"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500
                        text-white font-sans font-medium text-sm px-8 py-4 rounded
                        transition-colors whitespace-nowrap"
