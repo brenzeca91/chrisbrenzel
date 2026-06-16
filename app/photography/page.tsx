@@ -47,24 +47,40 @@ export default function PhotographyPage() {
   return (
     <main className="pt-14">
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
-        <p className="text-white/30 text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
-          Nature Photography
-        </p>
-        <h1 className="text-[#f5f0eb] font-serif italic text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-6 text-balance">
-          Slowing down.
-          <br />
-          Paying attention.
-        </h1>
-        <p className="text-white/50 font-sans text-base md:text-lg leading-relaxed max-w-xl mb-4">
-          Wildlife, macro details, landscapes, weather, eclipses, and field notes
-          from Kentucky and beyond.
-        </p>
-        <p className="text-white/35 font-sans text-sm leading-relaxed max-w-lg">
-          Photography gives Christopher a way to slow down, pay attention, and
-          document the natural world. This section collects visual work, learning
-          experiments, and field observations.
-        </p>
+      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/photography-hero.jpg')" }}
+          aria-hidden="true"
+        />
+        {/* Overlays for legibility */}
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/40 to-[#0c0c0c]/20"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 md:pb-20 w-full">
+          <p className="text-white/50 text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
+            Nature Photography
+          </p>
+          <h1 className="text-[#f5f0eb] font-serif italic text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-6 text-balance">
+            Slowing down.
+            <br />
+            Paying attention.
+          </h1>
+          <p className="text-white/70 font-sans text-base md:text-lg leading-relaxed max-w-xl mb-4">
+            Wildlife, macro details, landscapes, weather, eclipses, and field notes
+            from Kentucky and beyond.
+          </p>
+          <p className="text-white/55 font-sans text-sm leading-relaxed max-w-lg">
+            Photography gives Christopher a way to slow down, pay attention, and
+            document the natural world. This section collects visual work, learning
+            experiments, and field observations.
+          </p>
+        </div>
       </section>
 
       {/* Divider */}
