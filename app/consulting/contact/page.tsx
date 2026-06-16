@@ -3,8 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Mail, Linkedin } from 'lucide-react'
-import SiteNav from '@/components/SiteNav'
-import SiteFooter from '@/components/SiteFooter'
 
 export default function ConsultingContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -22,9 +20,7 @@ export default function ConsultingContactPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0f1e]">
-      <SiteNav mode="consulting" />
-      <main className="flex-1 pt-14">
+    <main className="flex-1 pt-14">
         {/* Header */}
         <section className="max-w-7xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
           <p className="text-blue-400 text-xs font-medium tracking-[0.2em] uppercase mb-5 font-sans">
@@ -73,6 +69,14 @@ export default function ConsultingContactPage() {
                 <br />
                 Available for remote and project-based work.
               </p>
+
+              <div className="mt-10 rounded-lg overflow-hidden border border-[#1e2d4a]">
+                <img
+                  src="/images/chris-lab-contact.jpg"
+                  alt="Christopher Brenzel in a research laboratory"
+                  className="w-full h-full object-cover aspect-[4/5]"
+                />
+              </div>
             </div>
 
             {/* Right: form */}
@@ -192,7 +196,5 @@ export default function ConsultingContactPage() {
           </div>
         </section>
       </main>
-      <SiteFooter mode="consulting" />
-    </div>
   )
 }

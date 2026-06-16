@@ -21,45 +21,68 @@ export default function ConsultingPage() {
     <main className="pt-14">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-        <div className="max-w-3xl">
-          <p className="text-blue-400 text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
-            Consulting
-          </p>
-          <h1 className="text-white font-sans font-semibold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-balance">
-            Strategic Biotech
-            <br />
-            <span className="font-light text-[#8fa3bb]">Consulting</span>
-          </h1>
-          <p className="text-[#8fa3bb] font-sans text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-            Practical business development, preclinical strategy, and scientific
-            partnership support for biotech companies, CROs, and research service
-            providers.
-          </p>
-          <p className="text-[#6b8aaa] font-sans text-base md:text-lg leading-relaxed mb-12 max-w-xl">
-            I help life science organizations clarify their market position,
-            communicate complex scientific capabilities, build strategic
-            partnerships, and grow preclinical research opportunities.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
+          <div>
+            <p className="text-blue-400 text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
+              Consulting
+            </p>
+            <h1 className="text-white font-sans font-semibold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-balance">
+              Strategic Biotech
+              <br />
+              <span className="font-light text-[#8fa3bb]">Consulting</span>
+            </h1>
+            <p className="text-[#8fa3bb] font-sans text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+              Practical business development, preclinical strategy, and scientific
+              partnership support for biotech companies, CROs, and research service
+              providers.
+            </p>
+            <p className="text-[#6b8aaa] font-sans text-base md:text-lg leading-relaxed mb-12 max-w-xl">
+              I help life science organizations clarify their market position,
+              communicate complex scientific capabilities, build strategic
+              partnerships, and grow preclinical research opportunities.
+            </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/consulting/contact"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500
-                         text-white font-sans font-medium text-sm px-6 py-3 rounded
-                         transition-colors"
-            >
-              Start a Consulting Conversation
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/consulting/experience"
-              className="inline-flex items-center gap-2 border border-[#1e2d4a] hover:border-[#3b82f6]
-                         text-[#8fa3bb] hover:text-white font-sans font-medium text-sm px-6 py-3 rounded
-                         transition-colors"
-            >
-              View Experience
-            </Link>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/consulting/contact"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500
+                           text-white font-sans font-medium text-sm px-6 py-3 rounded
+                           transition-colors"
+              >
+                Start a Consulting Conversation
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/consulting/experience"
+                className="inline-flex items-center gap-2 border border-[#1e2d4a] hover:border-[#3b82f6]
+                           text-[#8fa3bb] hover:text-white font-sans font-medium text-sm px-6 py-3 rounded
+                           transition-colors"
+              >
+                View Experience
+              </Link>
+            </div>
+          </div>
+
+          {/* Portrait */}
+          <div className="relative">
+            <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a]">
+              <img
+                src="/images/chris-lab-portrait.jpg"
+                alt="Christopher Brenzel standing in a research laboratory"
+                className="w-full h-full object-cover aspect-[4/5]"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent"
+                aria-hidden="true"
+              />
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-[#0d1530] border border-[#1e2d4a] rounded px-5 py-3">
+              <p className="text-white font-sans text-sm font-medium">Christopher Brenzel</p>
+              <p className="text-[#6b8aaa] font-sans text-xs mt-0.5">
+                Biotech Business Development
+              </p>
+            </div>
           </div>
         </div>
       </section>
