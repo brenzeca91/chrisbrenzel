@@ -70,6 +70,14 @@ export default function AboutPage() {
               wildlife, macro subjects, landscapes, weather, eclipses, and
               travel-based field observations.
             </p>
+
+            <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a] mt-4">
+              <img
+                src="/images/consulting-flask.jpg"
+                alt="Christopher working at a biosafety cabinet, drawing solution into a serological pipette"
+                className="w-full object-cover aspect-[3/2]"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -173,6 +173,21 @@ export default function ExperiencePage() {
         </p>
       </section>
 
+      {/* Lab image */}
+      <section className="max-w-7xl mx-auto px-6 pb-4">
+        <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a]">
+          <img
+            src="/images/consulting-instruments.jpg"
+            alt="A row of preclinical research instruments lined up along a laboratory bench"
+            className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/60 to-transparent"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px bg-[#1e2d4a]" />
