@@ -48,6 +48,21 @@ const allPhotos = [
   { src: '/images/collections/wildlife/wl-12.jpg', title: 'Slug on Oak Leaf', category: 'Wildlife', location: 'Kentucky', caption: 'A slug crossing a fallen red oak leaf in autumn.' },
   { src: '/images/collections/wildlife/wl-13.jpg', title: 'Historic Stone Dam', category: 'Landscapes', location: 'Kentucky', caption: 'A stone weir wall with its reflection in calm water.' },
   { src: '/images/collections/wildlife/wl-14.jpg', title: 'Red Fire Hydrant', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A sun-faded red fire hydrant on a quiet street.' },
+
+  // --- iCloud Photos (5) — ic5 batch ---
+  { src: '/images/ic5/moon-crescent.jpg',      title: 'Waning Crescent Moon', category: 'Eclipses', location: 'Kentucky', caption: 'A crescent moon fading on the left edge, crater detail crisp against a pure black sky.' },
+  { src: '/images/ic5/eiffel-tower-night.jpg', title: 'Eiffel Tower at Night', category: 'Travel', location: 'Paris, France', caption: 'The Eiffel Tower lit in warm gold, shot from directly below looking straight up its iron lattice.' },
+  { src: '/images/ic5/two-babies-bw.jpg',      title: 'Morning Light', category: 'People', location: 'Kentucky', caption: 'Two young children tucked under a fleece blanket, soft window light, black and white.' },
+  { src: '/images/ic5/paris-scene.jpg',        title: 'Twin Falls', category: 'Landscapes', location: 'Red River Gorge, KY', caption: 'A long-exposure waterfall splitting over a sandstone ledge into a tannin-pooled basin, bare winter trees above.' },
+  { src: '/images/ic5/macro-oct2021.jpg',      title: 'Green Orb-Weaver', category: 'Wildlife', location: 'Kentucky', caption: 'A vivid green orb-weaver spider centered in its web, with a captured moth blurred behind.' },
+  { src: '/images/ic5/macro-sony-a.jpg',       title: 'Ladybug on Lichen', category: 'Wildlife', location: 'Kentucky', caption: 'An orange ladybug with black spots crawling across lichen-crusted bark, viewed face-on.' },
+  { src: '/images/ic5/macro-sony-b.jpg',       title: 'Bumblebee on Redbud', category: 'Wildlife', location: 'Kentucky', caption: 'A bumblebee hanging from a cluster of vivid pink redbud blossoms in early spring.' },
+  { src: '/images/ic5/kite-day-2.jpg',         title: 'Double-Crested Cormorants', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'Two cormorants perched on bare branches against a grey sky, framed by sweetgum leaves.' },
+  { src: '/images/ic5/kite-day-3.jpg',         title: 'Black Vulture Portrait', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'A juvenile black vulture staring directly at the camera, its pale beak sharp against dark feathers.' },
+  { src: '/images/ic5/kite-day-4.jpg',         title: 'Barn Swallow', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'A barn swallow perched on a ledge, rust-red throat and deeply forked tail, crisp detail.' },
+  { src: '/images/ic5/kite-day-5.jpg',         title: 'Eastern Kingbird', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'An eastern kingbird on a slender branch, black cap and white belly against soft green bokeh.' },
+  { src: '/images/ic5/kite-day-6.jpg',         title: 'Mallard Hen with Ducklings', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'A mallard hen surrounded by a huddle of downy ducklings on a grassy bank above still water.' },
+  { src: '/images/ic5/kite-day-1.jpg',         title: 'Kite Day — Afternoon', category: 'People', location: 'Kentucky', caption: 'A red dragon kite high in a blue sky above golden meadow grass.' },
 ]
 
 const categories = ['All', 'Wildlife', 'Landscapes', 'Macro', 'Eclipses', 'Rust & Ruin', 'Travel', 'People']
@@ -74,7 +89,7 @@ export default function GalleryPage() {
           All photographs
         </h1>
         <p className="text-white/35 font-sans text-sm mt-3">
-          {allPhotos.length} photographs across {categories.length - 1} subjects
+          {allPhotos.length} photographs &middot; {categories.length - 1} subjects
         </p>
       </section>
 
