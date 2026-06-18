@@ -13,6 +13,7 @@ const allPhotos = [
   { src: '/images/gallery/photo-7.jpg', title: 'White Coneflower', category: 'Macro', location: 'Lexington, KY', caption: 'A late-season coneflower against a dark background.' },
   { src: '/images/gallery/photo-8.jpg', title: 'Backlit Forest Moss', category: 'Macro', location: 'Red River Gorge, KY', caption: 'Moss-covered bark lit from behind by afternoon sun.' },
   { src: '/images/gallery/photo-9.jpg', title: 'Alhambra', category: 'Travel', location: 'Granada, Spain', caption: 'Courtyard details at the Alhambra palace complex.' },
+  { src: '/images/prints-hero.jpg', title: 'Kite Day — Father and Son', category: 'People', location: 'Kentucky', caption: 'A red kite soaring above a golden hillside, two silhouetted figures on the ridge.' },
 
   // --- Rust & Ruin (16) ---
   { src: '/images/collections/rust-and-ruin/rr-1.jpg',  title: 'Ivy on Dry-Stone Wall', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Dense ivy pressing into the gaps of an old fieldstone wall.' },
@@ -49,7 +50,7 @@ const allPhotos = [
   { src: '/images/collections/wildlife/wl-14.jpg', title: 'Red Fire Hydrant', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A sun-faded red fire hydrant on a quiet street.' },
 ]
 
-const categories = ['All', 'Wildlife', 'Landscapes', 'Macro', 'Eclipses', 'Rust & Ruin', 'Travel']
+const categories = ['All', 'Wildlife', 'Landscapes', 'Macro', 'Eclipses', 'Rust & Ruin', 'Travel', 'People']
 
 export default function GalleryPage() {
   const [active, setActive] = useState('All')

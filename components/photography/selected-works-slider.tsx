@@ -19,6 +19,7 @@ const works: Work[] = [
   { src: '/images/gallery/photo-6.jpg', title: 'White Coneflower', category: 'Macro' },
   { src: '/images/gallery/photo-7.jpg', title: 'Backlit Forest Moss', category: 'Macro' },
   { src: '/images/gallery/photo-4.jpg', title: 'The Alhambra, Granada', category: 'Travel' },
+  { src: '/images/prints-hero.jpg', title: 'Kite Day — Father and Son', category: 'People' },
 ]
 
 export function SelectedWorksSlider() {
