@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'chrisbrenzel.com' },
+      { protocol: 'https', hostname: 'i0.wp.com' },
+      { protocol: 'https', hostname: 'eatingendeavors.files.wordpress.com' },
+    ],
   },
 }
 

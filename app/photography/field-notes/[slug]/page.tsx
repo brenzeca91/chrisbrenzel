@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 interface Post {
@@ -6,9 +7,32 @@ interface Post {
   date: string
   location: string
   category: string
+  cover: string
   body: React.ReactNode
   prev?: { slug: string; title: string }
   next?: { slug: string; title: string }
+}
+
+function PostImage({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <figure className="my-8 -mx-0">
+      <div className="relative w-full overflow-hidden rounded bg-[#111]">
+        <Image
+          src={src}
+          alt={alt}
+          width={1200}
+          height={800}
+          className="w-full h-auto"
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-white/30 font-sans text-xs text-center italic">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  )
 }
 
 const postData: Record<string, Post> = {
@@ -17,6 +41,7 @@ const postData: Record<string, Post> = {
     date: 'January 21, 2025',
     location: 'Cincinnati, OH',
     category: 'Wildlife',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc02188.jpeg',
     prev: { slug: 'capturing-backyard-birds', title: 'Capturing Backyard Birds' },
     body: (
       <div className="flex flex-col gap-5">
@@ -31,6 +56,10 @@ const postData: Record<string, Post> = {
           making every shot feel vibrant and alive. With bare branches and fewer leaves on the trees,
           it was also much easier to spot and track the birds as they moved through the preserve.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc02136-1.jpg"
+          alt="Bird at Bettman Nature Preserve feeder"
+        />
         <p>
           However, winter photography comes with its own set of challenges. The overcast sky that day
           provided beautiful soft light, but it also meant I had to adjust my camera settings to
@@ -38,11 +67,28 @@ const postData: Record<string, Post> = {
           essential for capturing sharp images. Despite compensating for the low light, the long
           focal length of the lens I was using made far-away shots a bit blurrier than I was hoping.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc02158.jpeg"
+          alt="Bird in winter at Bettman Nature Preserve"
+        />
         <p>
           In order to avoid the freezing cold temperatures, I was lucky enough to be able to
           photograph from inside the nature center building. It required patience to wait for birds
           to settle on the feeder — but it was worth it.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc02188.jpeg"
+          alt="Bird perched at feeder, Bettman Nature Preserve"
+          caption="Photographed through the nature center window"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/bird-2.jpg"
+          alt="Bird at Bettman Nature Preserve"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/img_3966-1-edited.jpeg"
+          alt="Bird portrait at Bettman Nature Preserve"
+        />
         <p>
           All in all, Bettman Nature Preserve proved to be a fantastic winter birding spot. The
           serene, snowy landscape and the added pop of color from the local birdlife created an ideal
@@ -50,6 +96,14 @@ const postData: Record<string, Post> = {
           vibrant feathers against a snowy backdrop, I highly recommend paying a visit — just
           remember to bundle up and be ready to adjust your camera settings on the fly.
         </p>
+        <PostImage
+          src="https://eatingendeavors.files.wordpress.com/2024/04/ella-newborn-186-1-edited-1.jpg"
+          alt="Baby portrait photography"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/9d862dcb-fb19-4409-b43d-e430df0ab5e6.jpeg"
+          alt="Bird at Bettman Nature Preserve"
+        />
       </div>
     ),
   },
@@ -59,6 +113,7 @@ const postData: Record<string, Post> = {
     date: 'January 20, 2025',
     location: 'Lexington, KY',
     category: 'Wildlife',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01896.jpg',
     next: { slug: 'birding-at-bettman', title: 'Birding at Bettman Nature Preserve' },
     body: (
       <div className="flex flex-col gap-5">
@@ -71,15 +126,38 @@ const postData: Record<string, Post> = {
           share some of the birds that appeared in my backyard that I captured with the Sony FE
           200-600mm f/5.6-6.3 G OSS and provide a brief review of the lens itself.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01870.jpg"
+          alt="White-throated sparrow captured at distance with Sony 200-600mm"
+          caption="White-throated sparrow — captured from at least 50 feet away"
+        />
         <p>
           This white-throated sparrow was captured from at least 50 feet away and you can see that
           the lens has the ability to capture stunning images of far-away subjects in great detail.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01876.jpg"
+          alt="Tufted titmouse in backyard tree"
+        />
         <p>
           Putting out seeds attracted a variety of songbirds, sparrows, cardinals, and robins — and
           of course squirrels. A tufted titmouse and a male cardinal were both captured in great
           detail from my deck, in the trees and bird feeder below.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01880.jpg"
+          alt="Male cardinal at backyard feeder"
+          caption="Male cardinal at the feeder"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01896.jpg"
+          alt="White-throated sparrow on fence"
+          caption="My favorite — white-throated sparrow on the fence"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01902.jpg"
+          alt="Backyard bird in winter"
+        />
         <p>
           My favorite photo is of the white-throated sparrow hanging out on the fence.
         </p>
@@ -98,6 +176,7 @@ const postData: Record<string, Post> = {
     date: 'January 16, 2025',
     location: 'Lexington, KY',
     category: 'Macro',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01701-1.jpg',
     prev: { slug: 'solar-eclipse-part-2', title: 'Solar Eclipse — Part II' },
     next: { slug: 'capturing-backyard-birds', title: 'Capturing Backyard Birds' },
     body: (
@@ -129,6 +208,11 @@ const postData: Record<string, Post> = {
             photo-worthy specimen.
           </li>
         </ol>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01701-1.jpg"
+          alt="Snowflake macro photography attempt"
+          caption="Snowflake macro — first attempt"
+        />
         <p>
           Wilson Bentley spent years perfecting his setup in order to capture the stunning images we
           have all seen. It was with some hubris that I set out to capture snowflakes, and it
@@ -149,6 +233,7 @@ const postData: Record<string, Post> = {
     date: 'April 12, 2024',
     location: 'Springboro, OH',
     category: 'Astrophotography',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc01026.jpg',
     prev: { slug: 'solar-eclipse-part-1', title: 'Solar Eclipse — Part I' },
     body: (
       <div className="flex flex-col gap-5">
@@ -161,11 +246,21 @@ const postData: Record<string, Post> = {
           As soon as the light faded, I ripped off the solar filters and began capturing images of
           the total eclipse — using my Sony Alpha 7 III camera with a 300mm lens.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc01010-1.jpg"
+          alt="Total solar eclipse — Bailey's beads and solar flares visible around the moon"
+          caption="Totality — solar flares visible around the moon's edge"
+        />
         <p>
           The reddish-pink spots surrounding the moon are massive solar flares erupting from the
           sun, and you can see the light just starting to peek around the moon&apos;s edge. Absolutely
           incredible to witness in person and to be able to capture.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc01026.jpg"
+          alt="Total solar eclipse totality shot with corona visible"
+          caption="Full totality — the corona and solar flares"
+        />
         <p>
           With enough planning, I believe a larger lens (400mm) would render even better pictures.
           The images through my telescope showed the same details with incredible clarity — about
@@ -188,6 +283,7 @@ const postData: Record<string, Post> = {
     date: 'April 12, 2024',
     location: 'Springboro, OH',
     category: 'Astrophotography',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc00961.jpg',
     prev: { slug: 'lensball-photography', title: 'How to: Lensball Photography' },
     next: { slug: 'solar-eclipse-part-2', title: 'Solar Eclipse — Part II' },
     body: (
@@ -202,10 +298,25 @@ const postData: Record<string, Post> = {
           I&apos;ve decided to break the eclipse posts into two parts: one to discuss setup and
           filters, and one to cover the photos captured during totality.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc00961.jpg"
+          alt="Sun with sunspots photographed through solar filter"
+          caption="Sun with visible sunspots — shot through a homemade solar filter on a 300mm lens"
+        />
         <p>
           This image was captured through a solar filter on a 300mm lens on a Sony Alpha 7 III. It
           is incredible to be able to capture sunspots with consumer gear.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc00968-1.jpg"
+          alt="Partial solar eclipse — moon beginning to cover the sun"
+          caption="Partial phase — the moon beginning its transit"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc00979-1.jpg"
+          alt="Partial solar eclipse — moon covering most of the sun"
+          caption="Deep partial phase approaching totality"
+        />
         <p>
           There was a serious risk of burning out the camera sensor — but the homemade filter worked
           perfectly. I was able to document the progress as the moon slowly covered the sun through
@@ -220,6 +331,7 @@ const postData: Record<string, Post> = {
     date: 'December 12, 2023',
     location: 'Lexington, KY',
     category: 'How-To',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc08116.jpg',
     prev: { slug: 'exploring-frankfort', title: 'Exploring Frankfort, KY' },
     next: { slug: 'solar-eclipse-part-1', title: 'Solar Eclipse — Part I' },
     body: (
@@ -234,11 +346,20 @@ const postData: Record<string, Post> = {
           lensball can concentrate sunlight and poses a risk of fire, eye damage, or camera sensor
           damage. Never shoot directly through it toward the sun and be careful about placement.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc07761.jpg"
+          alt="Lensball photography — inverted scene inside crystal sphere"
+          caption="First attempt — autumn trees inverted in the lensball"
+        />
         <p>
           I&apos;ve only had a couple of chances to take this fun tool out, but in the short time I
           could see that it presented real challenges. Capturing the clean, professional images found
           on the Lensball website was not going to happen anytime soon.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc07789.jpg"
+          alt="Lensball with outdoor scene inverted inside"
+        />
         <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
           Common Mistakes
         </h3>
@@ -263,6 +384,23 @@ const postData: Record<string, Post> = {
             the ball — otherwise your images will be hampered by fingerprints and dirt.
           </li>
         </ol>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc07813.jpg"
+          alt="Lensball with landscape inverted inside crystal sphere"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc07828.jpg"
+          alt="Lensball photography experiment"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc07835-1.jpg"
+          alt="Lensball photography — experimenting with placement and aperture"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc08116.jpg"
+          alt="Lensball with reflected scene — best shot of the session"
+          caption="Best result from the session"
+        />
         <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
           Tips for Beginners
         </h3>
@@ -280,6 +418,7 @@ const postData: Record<string, Post> = {
     date: 'May 1, 2023',
     location: 'Frankfort, KY',
     category: 'Street',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02193-1.jpg',
     prev: { slug: 'macro-at-folly-beach', title: 'Macro Photography at Folly Beach' },
     next: { slug: 'lensball-photography', title: 'How to: Lensball Photography' },
     body: (
@@ -289,12 +428,26 @@ const postData: Record<string, Post> = {
           I&apos;ve always been drawn to the Kentucky Military History Museum building — it has
           always fascinated me.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc01991.jpg"
+          alt="Kentucky Military History Museum — red brick building on a hill overlooking the Kentucky River"
+          caption="Kentucky Military History Museum — perched above the Kentucky River"
+        />
         <p>
           Capturing this building in a way that helps explain why it has always been interesting to
           me was supremely difficult. Perched on a hill overlooking the Kentucky River, this red
           brick castle perfectly encapsulates the history contained within. I highly recommend a
           visit — I don&apos;t think my photos do it justice.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc01999.jpg"
+          alt="Street in Frankfort, KY — trees between buildings with a power line"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02018.jpg"
+          alt="Frankfort KY street scene — striking natural boundary between colors and textures"
+          caption="Trees and power line creating a natural graphic divide"
+        />
         <p>
           I also set out to capture a photo with clear, distinct boundaries that are striking and
           naturally occurring. I have seen several examples of this type of photography but have
@@ -302,10 +455,35 @@ const postData: Record<string, Post> = {
           trees peeking between buildings, crossed by a power line, provided a striking distinction
           between colors and textures that I tried to capture in a single shot.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02044.jpg"
+          alt="Frankfort KY street detail"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02052.jpg"
+          alt="Ivy on a wall with a broken window — quiet ruin in Frankfort KY"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02120.jpg"
+          alt="Street scene in Frankfort KY"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02129.jpg"
+          alt="Frankfort KY — architectural detail"
+        />
         <p>
           My favorite picture from the day was of ivy growing on a wall with a broken window — a
           quiet piece of ruin hiding in plain sight on a side street.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02193-1.jpg"
+          alt="Ivy growing on a wall with a broken window in Frankfort KY"
+          caption="Ivy on a broken window — a quiet ruin on a side street"
+        />
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02219.jpg"
+          alt="Frankfort KY — street photography"
+        />
       </div>
     ),
   },
@@ -315,6 +493,7 @@ const postData: Record<string, Post> = {
     date: 'December 15, 2021',
     location: 'Folly Beach, SC',
     category: 'Macro',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2021/12/unnamed-1.jpg',
     next: { slug: 'exploring-frankfort', title: 'Exploring Frankfort, KY' },
     body: (
       <div className="flex flex-col gap-5">
@@ -323,6 +502,11 @@ const postData: Record<string, Post> = {
           and sand. I was using my Sony A6000 with a new macro lens and wanted to push the limits of
           what it could do.
         </p>
+        <PostImage
+          src="https://chrisbrenzel.com/wp-content/uploads/2021/12/unnamed-1.jpg"
+          alt="Tiny shell on sand at Folly Beach, SC — macro photography"
+          caption="A shell that would fit on the tip of a finger — Folly Beach, SC"
+        />
         <p>
           Capturing small shells was incredibly difficult as the wind kept blowing the tiny sand
           grains around. The shell in the image may look large but would have easily fit on the tip
@@ -371,8 +555,21 @@ export default async function FieldNotePost({
 
   return (
     <main className="pt-14">
+      {/* Hero cover image */}
+      <div className="relative w-full aspect-[21/9] bg-[#111] overflow-hidden">
+        <Image
+          src={post.cover}
+          alt={post.title}
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/30 to-transparent" />
+      </div>
+
       {/* Content */}
-      <article className="max-w-3xl mx-auto px-6 pt-20 pb-24 md:pt-28">
+      <article className="max-w-3xl mx-auto px-6 pt-12 pb-24">
         {/* Back link */}
         <Link
           href="/photography/field-notes"

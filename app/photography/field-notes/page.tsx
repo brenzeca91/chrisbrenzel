@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 
 const posts = [
@@ -10,6 +11,7 @@ const posts = [
     excerpt:
       'Winter bird photography at a nature preserve surrounded by feeders — bright plumage against white snow, bare branches, and the challenge of shooting through glass in cold overcast light.',
     slug: 'birding-at-bettman',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc02188.jpeg',
   },
   {
     title: 'Capturing Backyard Birds',
@@ -19,6 +21,7 @@ const posts = [
     excerpt:
       'A review of the Sony FE 200-600mm f/5.6-6.3 G OSS and what a backyard feeder setup can unlock — white-throated sparrows, cardinals, and a tufted titmouse at 50 feet.',
     slug: 'capturing-backyard-birds',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01896.jpg',
   },
   {
     title: 'Capturing Snowflakes',
@@ -28,6 +31,7 @@ const posts = [
     excerpt:
       'Following in the footsteps of Wilson A. Bentley, who photographed over 5,000 snowflakes. A humbling first attempt at extreme macro photography of ice crystals before they melt.',
     slug: 'capturing-snowflakes',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01701-1.jpg',
   },
   {
     title: 'Solar Eclipse — Part II',
@@ -35,8 +39,9 @@ const posts = [
     date: 'April 12, 2024',
     location: 'Springboro, OH',
     excerpt:
-      'The moment of totality: solar filters off, shutter open. Massive solar flares visible around the moon\'s silhouette and the eerie light of a darkened afternoon sky.',
+      "The moment of totality: solar filters off, shutter open. Massive solar flares visible around the moon's silhouette and the eerie light of a darkened afternoon sky.",
     slug: 'solar-eclipse-part-2',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc01026.jpg',
   },
   {
     title: 'Solar Eclipse — Part I',
@@ -46,6 +51,7 @@ const posts = [
     excerpt:
       'April 8, 2024: a total solar eclipse visible across a wide swath of the US. Setup, solar filters, and a homemade solution for protecting the camera sensor from the sun.',
     slug: 'solar-eclipse-part-1',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc00961.jpg',
   },
   {
     title: 'How to: Lensball Photography',
@@ -55,6 +61,7 @@ const posts = [
     excerpt:
       'A crystal sphere that bends and inverts the world — and the unexpected challenges of capturing clean, original images through one. Common mistakes and tips for beginners.',
     slug: 'lensball-photography',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc08116.jpg',
   },
   {
     title: 'Exploring Frankfort, KY',
@@ -62,8 +69,9 @@ const posts = [
     date: 'May 1, 2023',
     location: 'Frankfort, KY',
     excerpt:
-      'A day of street photography in Kentucky\'s capital — the brick castle of the Military History Museum, the river, ivy on a broken window, and a hunt for a striking natural divide.',
+      "A day of street photography in Kentucky's capital — the brick castle of the Military History Museum, the river, ivy on a broken window, and a hunt for a striking natural divide.",
     slug: 'exploring-frankfort',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02193-1.jpg',
   },
   {
     title: 'Macro Photography at Folly Beach',
@@ -73,6 +81,7 @@ const posts = [
     excerpt:
       'First outing with a macro lens on a Sony A6000. Tiny shells, sand grains, and the difficulty of keeping wind-blown subjects still long enough to focus.',
     slug: 'macro-at-folly-beach',
+    cover: 'https://chrisbrenzel.com/wp-content/uploads/2021/12/unnamed-1.jpg',
   },
 ]
 
@@ -104,9 +113,21 @@ export default function FieldNotesPage() {
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden hover:bg-[#141414] transition-all"
+              className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden hover:bg-[#141414] transition-all flex flex-col"
             >
-              <div className="p-6">
+              {/* Cover image */}
+              <Link href={`/photography/field-notes/${post.slug}`} className="block overflow-hidden aspect-[4/3] relative bg-[#111]">
+                <Image
+                  src={post.cover}
+                  alt={post.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c]/60 to-transparent" />
+              </Link>
+
+              <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-3">
                   <p className="text-white/30 font-sans text-[10px] tracking-[0.15em] uppercase">
                     {post.category}
@@ -116,7 +137,7 @@ export default function FieldNotesPage() {
                 <h2 className="text-[#f5f0eb] font-serif text-lg font-medium mb-3 group-hover:text-white transition-colors leading-snug">
                   {post.title}
                 </h2>
-                <p className="text-white/40 font-sans text-sm leading-relaxed mb-5">
+                <p className="text-white/40 font-sans text-sm leading-relaxed mb-5 flex-1">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
