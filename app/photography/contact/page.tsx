@@ -8,6 +8,8 @@ import SiteFooter from '@/components/SiteFooter'
 
 export default function PhotographyContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -15,14 +17,23 @@ export default function PhotographyContactPage() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`${form.inquiryType} — from ${form.name}`)
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nInquiry type: ${form.inquiryType}\n\n${form.message}`
-    )
-    window.location.href = `mailto:chris@chrisbrenzel.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    setSending(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, source: 'photography' }),
+      })
+      if (!res.ok) throw new Error('Failed to send')
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong — please email chris@chrisbrenzel.com directly.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -170,12 +181,16 @@ export default function PhotographyContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-red-400 font-sans text-sm">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 font-sans font-medium text-sm px-6 py-3 rounded transition-colors self-start bg-white/10 hover:bg-white/15 text-[#f5f0eb] border border-[#333]"
+                    disabled={sending}
+                    className="inline-flex items-center gap-2 font-sans font-medium text-sm px-6 py-3 rounded transition-colors self-start bg-white/10 hover:bg-white/15 text-[#f5f0eb] border border-[#333] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send message
-                    <ArrowRight className="w-4 h-4" />
+                    {sending ? 'Sending…' : 'Send message'}
+                    {!sending && <ArrowRight className="w-4 h-4" />}
                   </button>
                 </form>
               )}

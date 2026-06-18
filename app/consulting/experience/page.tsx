@@ -1,3 +1,50 @@
+// Institution logo badges — initials + brand color, inline SVG wordmark
+const orgLogos: Record<string, { initials: string; color: string; bg: string; full?: string }> = {
+  'The START Center for Cancer Research / XenoSTART': {
+    initials: 'SC', color: '#ef4444', bg: '#1f0a0a', full: 'START Center',
+  },
+  'GemPharmatech': {
+    initials: 'GP', color: '#22c55e', bg: '#071a0e', full: 'GemPharmatech',
+  },
+  'Hera BioLabs, Inc.': {
+    initials: 'HB', color: '#60a5fa', bg: '#071427', full: 'Hera BioLabs',
+  },
+  'Transposagen Biopharmaceuticals, Inc.': {
+    initials: 'TX', color: '#a78bfa', bg: '#130b24', full: 'Transposagen',
+  },
+  'University of Cincinnati — James L. Winkle College of Pharmacy': {
+    initials: 'UC', color: '#e63000', bg: '#1f0a00', full: 'Univ. of Cincinnati',
+  },
+  'University of Notre Dame': {
+    initials: 'ND', color: '#c9a84c', bg: '#0f0c02', full: 'Notre Dame',
+  },
+}
+
+function OrgLogo({ org }: { org: string }) {
+  const logo = orgLogos[org]
+  if (!logo) return null
+  return (
+    <div
+      className="flex items-center gap-2 px-3 py-1.5 rounded border shrink-0"
+      style={{ borderColor: logo.color + '33', background: logo.bg }}
+      title={org}
+    >
+      <span
+        className="font-mono font-bold text-sm leading-none"
+        style={{ color: logo.color }}
+      >
+        {logo.initials}
+      </span>
+      <span
+        className="hidden sm:block font-sans text-xs leading-none"
+        style={{ color: logo.color + 'cc' }}
+      >
+        {logo.full}
+      </span>
+    </div>
+  )
+}
+
 const timeline = [
   {
     title: 'Director of Business Development',
@@ -217,9 +264,12 @@ export default function ExperiencePage() {
                   <p className="text-[#4a6380] font-mono text-xs tracking-widest mb-2">
                     {role.period}
                   </p>
-                  <h3 className="text-white font-sans font-semibold text-lg mb-1">
-                    {role.title}
-                  </h3>
+                  <div className="flex items-start justify-between gap-4 mb-1">
+                    <h3 className="text-white font-sans font-semibold text-lg">
+                      {role.title}
+                    </h3>
+                    <OrgLogo org={role.org} />
+                  </div>
                   <p className="text-blue-400 font-sans text-sm mb-4">
                     {role.org}
                     <span className="text-[#4a6380]"> · {role.location}</span>
@@ -274,16 +324,31 @@ export default function ExperiencePage() {
           Education
         </p>
         <div className="flex flex-col gap-8 max-w-2xl">
-          <div>
-            <h3 className="text-white font-sans font-semibold text-base mb-1">
-              M.S. Pharmacogenomics & Personalized Healthcare
-            </h3>
-            <p className="text-blue-400 font-sans text-sm">
-              University of Cincinnati — James L. Winkle College of Pharmacy
-            </p>
-            <p className="text-[#4a6380] font-sans text-xs mt-1">
-              In progress (Part-Time/Evenings) — Expected Spring 2028
-            </p>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h3 className="text-white font-sans font-semibold text-base mb-1">
+                M.S. Pharmacogenomics &amp; Personalized Healthcare
+              </h3>
+              <p className="text-blue-400 font-sans text-sm">
+                University of Cincinnati — James L. Winkle College of Pharmacy
+              </p>
+              <p className="text-[#4a6380] font-sans text-xs mt-1">
+                In progress (Part-Time/Evenings) — Expected Spring 2028
+              </p>
+            </div>
+            <OrgLogo org="University of Cincinnati — James L. Winkle College of Pharmacy" />
+          </div>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h3 className="text-white font-sans font-semibold text-base mb-1">
+                B.S. Biology
+              </h3>
+              <p className="text-blue-400 font-sans text-sm">University of Notre Dame</p>
+              <p className="text-[#4a6380] font-sans text-xs mt-1">
+                Minor: Science, Business &amp; Technology — 2014
+              </p>
+            </div>
+            <OrgLogo org="University of Notre Dame" />
           </div>
           <div>
             <h3 className="text-white font-sans font-semibold text-base mb-1">

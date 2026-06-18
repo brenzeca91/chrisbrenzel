@@ -6,8 +6,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const consultingLinks = [
-  { label: 'Consulting', href: '/consulting' },
-  { label: 'Services', href: '/consulting/services' },
+  { label: 'Professional', href: '/consulting' },
   { label: 'Experience', href: '/consulting/experience' },
   { label: 'About', href: '/consulting/about' },
   { label: 'Contact', href: '/consulting/contact' },
@@ -55,7 +54,7 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
             isConsulting ? 'text-blue-400' : 'text-white/40'
           }`}
         >
-          {mode}
+          {mode === 'consulting' ? 'professional' : mode}
         </span>
 
         {/* Desktop links */}

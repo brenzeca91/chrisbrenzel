@@ -6,6 +6,8 @@ import { ArrowRight, Mail, Linkedin } from 'lucide-react'
 
 export default function ConsultingContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -14,9 +16,23 @@ export default function ConsultingContactPage() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSending(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, source: 'consulting' }),
+      })
+      if (!res.ok) throw new Error('Failed to send')
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong — please email chris@chrisbrenzel.com directly.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -183,12 +199,16 @@ export default function ConsultingContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-red-400 font-sans text-sm">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 font-sans font-medium text-sm px-6 py-3 rounded transition-colors self-start bg-blue-600 hover:bg-blue-500 text-white"
+                    disabled={sending}
+                    className="inline-flex items-center gap-2 font-sans font-medium text-sm px-6 py-3 rounded transition-colors self-start bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send message
-                    <ArrowRight className="w-4 h-4" />
+                    {sending ? 'Sending…' : 'Send message'}
+                    {!sending && <ArrowRight className="w-4 h-4" />}
                   </button>
                 </form>
               )}
