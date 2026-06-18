@@ -49,9 +49,9 @@ const allPhotos = [
   { src: '/images/collections/wildlife/wl-14.jpg', title: 'Red Fire Hydrant', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A sun-faded red fire hydrant on a quiet street.' },
 
   // --- ic5 batch ---
-  { src: '/images/ic5/moon-crescent.jpg',      title: 'Latte Art', category: 'People', location: 'Kentucky', caption: 'Hands cradling a ceramic cup of freshly poured latte with a heart design in the crema.' },
-  { src: '/images/ic5/eiffel-tower-night.jpg', title: 'Eiffel Tower at Night', category: 'Travel', location: 'Paris, France', caption: 'The Eiffel Tower lit in warm gold, shot from directly below looking straight up its iron lattice.' },
-  { src: '/images/ic5/two-babies-bw.jpg',      title: 'Bright Eyes', category: 'People', location: 'Kentucky', caption: 'Two young children tucked under a fleece blanket, soft window light, black and white.' },
+  { src: '/images/ic5/moon-crescent.jpg',      title: 'Latte Art', category: 'People', location: 'Kentucky', caption: 'Two hands cradling an orange speckled ceramic cup with a heart poured in the foam.' },
+  { src: '/images/ic5/eiffel-tower-night.jpg', title: 'Eiffel Tower at Night', category: 'Travel', location: 'Paris, France', caption: 'The Eiffel Tower blazing gold against a pure black sky, shot looking straight up its iron lattice.' },
+  { src: '/images/ic5/two-babies-bw.jpg',      title: 'Cozy Dessert', category: 'People', location: 'Kentucky', caption: 'Hands holding a slice of dark chocolate cake and a speckled ceramic mug beside a glowing fireplace.' },
   { src: '/images/ic5/paris-scene.jpg',        title: 'Swift Camp Creek Falls', category: 'Landscapes', location: 'Red River Gorge, KY', caption: 'Long-exposure waterfall on Swift Camp Creek, moss-covered sandstone and bare winter canopy above.' },
   { src: '/images/ic5/macro-oct2021.jpg',      title: 'Green Orb-Weaver', category: 'Wildlife', location: 'Kentucky', caption: 'A vivid green orb-weaver spider centered in its web, with a captured moth blurred behind.' },
   { src: '/images/ic5/macro-sony-a.jpg',       title: 'Ladybug on Lichen', category: 'Wildlife', location: 'Kentucky', caption: 'An orange ladybug with black spots crawling across lichen-crusted bark, viewed face-on.' },
