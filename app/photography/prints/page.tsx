@@ -9,8 +9,8 @@ export default function PrintsPage() {
       <section className="w-full">
         <div className="relative w-full aspect-[21/9] overflow-hidden">
           <Image
-            src="/images/gallery/photo-2.jpg"
-            alt="Ring of Fire solar eclipse — the diamond ring effect with the moon fully covering the sun and a single brilliant flare of light at the lower edge, surrounded by the solar corona against a deep black sky"
+            src="/images/prints-featured.jpg"
+            alt="Rusted industrial gears, chain drive, and iron wheel inside an abandoned mill — warm amber and teal tones with rich decay detail"
             fill
             className="object-cover object-center"
             priority
@@ -21,7 +21,7 @@ export default function PrintsPage() {
               Featured print
             </p>
             <p className="text-[#f5f0eb] font-serif italic text-xl md:text-2xl font-medium">
-              Ring of Fire — Solar Eclipse Totality
+              The Mill — Rust &amp; Ruin
             </p>
           </div>
         </div>
@@ -116,18 +116,20 @@ export default function PrintsPage() {
           in a living space.
         </p>
 
-        <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]">
-          <Image
-            src="/images/prints-wall-mockup.png"
-            alt="Backlit moss print in a slim black frame mounted above an oak sideboard in a minimal living room with warm white walls"
-            width={1200}
-            height={900}
-            className="w-full h-auto"
-          />
-          <div className="absolute bottom-5 right-6">
-            <p className="text-white/40 font-sans text-xs italic">
-              &ldquo;Backlit Moss&rdquo; — Forest floor macro
-            </p>
+        <div className="flex justify-center">
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a] w-full md:w-[70%]">
+            <Image
+              src="/images/prints-wall-mockup.png"
+              alt="Great Blue Heron fine art print in a slim black frame mounted above an oak credenza in a minimal living room with warm white walls"
+              width={1200}
+              height={900}
+              className="w-full h-auto"
+            />
+            <div className="absolute bottom-5 right-6">
+              <p className="text-white/40 font-sans text-xs italic">
+                &ldquo;Great Blue Heron&rdquo; — Wildlife
+              </p>
+            </div>
           </div>
         </div>
       </section>
