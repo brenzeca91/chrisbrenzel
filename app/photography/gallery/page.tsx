@@ -62,6 +62,14 @@ const allPhotos = [
   { src: '/images/ic5/kite-day-5.jpg',         title: 'Eastern Kingbird', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'An eastern kingbird on a slender branch, black cap and white belly against soft green bokeh.' },
   { src: '/images/ic5/kite-day-6.jpg',         title: 'Mallard Hen with Ducklings', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'A mallard hen surrounded by a huddle of downy ducklings on a grassy bank above still water.' },
   { src: '/images/ic5/kite-day-1.jpg',         title: 'Kite Day — Afternoon', category: 'People', location: 'Kentucky', caption: 'A red dragon kite high in a blue sky above golden meadow grass.' },
+
+  // --- ic6 batch ---
+  { src: '/images/ic6/couple-field-sunset.jpg',          title: 'Golden Hour', category: 'People', location: 'Kentucky', caption: 'A couple standing arm in arm in a green field, facing a dramatic sunset sky with wine in hand.' },
+  { src: '/images/ic6/eclipse-partial.jpg',              title: 'Partial Solar Eclipse', category: 'Eclipse & Astrophotography', location: 'Kentucky', caption: 'The moon encroaching on the lower-right of the sun\'s disc, sunspots faintly visible on the warm amber surface.' },
+  { src: '/images/ic6/eclipse-totality-prominences.jpg', title: 'Totality — Solar Prominences', category: 'Eclipse & Astrophotography', location: 'Kentucky', caption: 'Full totality with the corona glowing around the silhouetted moon, vivid red solar prominences erupting at the edge.' },
+  { src: '/images/ic6/girl-on-swing.jpg',                title: 'The Rope Swing', category: 'People', location: 'Shenandoah Valley, VA', caption: 'A young girl in a pink jacket swinging on a rope beneath a massive bare oak, mountain valley stretching behind her.' },
+  { src: '/images/ic6/engagement-ring.jpg',              title: 'The Ring', category: 'People', location: 'Kentucky', caption: 'A close-up of intertwined hands, a round solitaire diamond on a yellow gold band catching soft light.' },
+  { src: '/images/ic6/full-moon.jpg',                    title: 'Full Moon', category: 'Eclipse & Astrophotography', location: 'Kentucky', caption: 'A near-full moon filling the frame, crisp crater detail and maria visible across the lunar surface against pure black.' },
 ]
 
 const categories = ['All', 'Wildlife', 'Landscapes', 'Macro', 'Eclipse & Astrophotography', 'Rust & Ruin', 'Travel', 'People']
