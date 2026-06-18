@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { SelectedWorksSlider } from '@/components/photography/selected-works-slider'
 
 const categories = [
   { label: 'Wildlife', href: '/photography/gallery?category=wildlife', color: '#2d4a2d' },
@@ -113,6 +114,14 @@ export default function PhotographyPage() {
           ))}
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Selected works slider */}
+      <SelectedWorksSlider />
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
