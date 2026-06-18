@@ -12,7 +12,7 @@ export default function PrintsPage() {
             src="/images/prints-featured.jpg"
             alt="Rusted industrial gears, chain drive, and iron wheel inside an abandoned mill — warm amber and teal tones with rich decay detail"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[center_30%]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
@@ -119,7 +119,7 @@ export default function PrintsPage() {
         <div className="flex justify-center">
           <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a] w-full md:w-[70%]">
             <Image
-              src="/images/prints-wall-mockup.png"
+              src="/images/prints-wall-composite.png"
               alt="Great Blue Heron fine art print in a slim black frame mounted above an oak credenza in a minimal living room with warm white walls"
               width={1200}
               height={900}
