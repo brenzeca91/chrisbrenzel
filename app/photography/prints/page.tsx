@@ -1,11 +1,34 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail } from 'lucide-react'
 
 export default function PrintsPage() {
   return (
     <main className="pt-14">
+      {/* Hero — Ring of Fire eclipse totality */}
+      <section className="w-full">
+        <div className="relative w-full aspect-[21/9] overflow-hidden">
+          <Image
+            src="/images/gallery/photo-2.jpg"
+            alt="Ring of Fire solar eclipse — the diamond ring effect with the moon fully covering the sun and a single brilliant flare of light at the lower edge, surrounded by the solar corona against a deep black sky"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
+          <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12">
+            <p className="text-white/40 text-xs font-medium tracking-[0.2em] uppercase mb-2 font-sans">
+              Featured print
+            </p>
+            <p className="text-[#f5f0eb] font-serif italic text-xl md:text-2xl font-medium">
+              Ring of Fire — Solar Eclipse Totality
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
+      <section className="max-w-7xl mx-auto px-6 pt-20 pb-16 md:pt-24 md:pb-20">
         <p className="text-white/30 text-xs font-medium tracking-[0.2em] uppercase mb-5 font-sans">
           Prints
         </p>
@@ -72,6 +95,38 @@ export default function PrintsPage() {
               Response time is typically within a few days. Not all images are
               available for every use or format — I will let you know what is
               possible for the specific image you are interested in.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#1a1a1a]" />
+      </div>
+
+      {/* Wall mockup */}
+      <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+          What it looks like
+        </p>
+        <p className="text-white/40 font-sans text-sm leading-relaxed max-w-lg mb-12">
+          Prints are produced at high resolution and look striking at large
+          scale. Here is an example of how a print might look mounted and hung
+          in a living space.
+        </p>
+
+        <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]">
+          <Image
+            src="/images/prints-wall-mockup.png"
+            alt="Backlit moss print in a slim black frame mounted above an oak sideboard in a minimal living room with warm white walls"
+            width={1200}
+            height={900}
+            className="w-full h-auto"
+          />
+          <div className="absolute bottom-5 right-6">
+            <p className="text-white/40 font-sans text-xs italic">
+              &ldquo;Backlit Moss&rdquo; — Forest floor macro
             </p>
           </div>
         </div>
