@@ -248,6 +248,40 @@ export default function PhotographyPage() {
           ))}
         </div>
       </section>
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Prints CTA */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="w-full md:w-[28%] shrink-0 rounded overflow-hidden border border-[#1a1a1a]">
+            <img
+              src="/images/mockups/mockup-living-room.png"
+              alt="Kite Day — Father and Son print displayed in a minimal living room"
+              className="w-full h-auto block"
+            />
+          </div>
+          <div>
+            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
+              Prints by Inquiry
+            </p>
+            <h2 className="text-[#f5f0eb] font-serif italic text-2xl md:text-3xl font-medium mb-4 text-balance">
+              Bring a photograph home.
+            </h2>
+            <p className="text-white/50 font-sans text-sm leading-relaxed max-w-md mb-6">
+              Select images from this collection are available as fine-art prints. Each is printed to order — reach out to discuss sizing, framing, and availability.
+            </p>
+            <Link
+              href="/photography/prints"
+              className="inline-flex items-center gap-2 text-[#f5f0eb] hover:text-white font-sans text-sm border border-[#333] hover:border-[#555] px-5 py-2.5 rounded transition-all"
+            >
+              View prints <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
