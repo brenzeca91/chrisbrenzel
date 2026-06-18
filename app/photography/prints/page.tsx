@@ -13,7 +13,7 @@ export default function PrintsPage() {
             src="/images/prints-hero.jpg"
             alt="Red kite soaring above a golden-green hillside under a dramatic blue sky filled with billowing white cumulus clouds, two silhouetted figures standing on the ridge"
             fill
-            className="object-cover object-[center_55%]"
+            className="object-cover object-[center_75%]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
@@ -22,7 +22,7 @@ export default function PrintsPage() {
               Featured print
             </p>
             <p className="text-[#f5f0eb] font-serif italic text-xl md:text-2xl font-medium">
-              Kite Day — Piedmont Meadow
+              Kite Day — Father and Son
             </p>
           </div>
         </div>
