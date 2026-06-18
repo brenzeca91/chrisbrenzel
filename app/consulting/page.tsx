@@ -73,7 +73,7 @@ export default function ConsultingPage() {
                 className="w-full h-full object-cover aspect-[4/5]"
               />
               <div
-                className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent pt-[25px] pb-[25px]"
                 aria-hidden="true"
               />
             </div>
@@ -116,18 +116,20 @@ export default function ConsultingPage() {
 
       {/* Lab image band */}
       <section className="max-w-7xl mx-auto px-6 pb-20 md:pb-28">
-        <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a]">
-          <img
-            src="/images/consulting-collaboration.jpg"
-            alt="Two scientists reviewing imaging results together at a biosafety cabinet in a research laboratory"
-            className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
-          />
+        <div
+          className="relative rounded-lg overflow-hidden border border-[#1e2d4a] aspect-[16/9] md:aspect-[21/9] bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: "url('/images/consulting-collaboration.jpg')" }}
+          role="img"
+          aria-label="Two scientists reviewing imaging results together at a biosafety cabinet in a research laboratory"
+        >
           <div
             className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/70 via-transparent to-transparent"
             aria-hidden="true"
           />
-          <p className="absolute bottom-5 left-6 text-[#b8c7d9] font-sans text-sm max-w-md">
-            Connecting scientific capabilities with practical commercial strategy.
+          <p className="relative z-10 text-[#b8c7d9] font-sans text-[24px] max-w-md text-center px-6">
+            <b className="text-[36px] font-bold block">
+              Connecting scientific capabilities with practical commercial strategy.
+            </b>
           </p>
         </div>
       </section>

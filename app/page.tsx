@@ -33,7 +33,7 @@ export default function HomePage() {
           {/* Content */}
           <div className="relative z-20 flex flex-col justify-end h-full p-10 md:p-16 lg:p-20">
             <p className="text-blue-400 text-xs font-medium tracking-[0.2em] uppercase mb-5 font-sans">
-              Consulting
+              Professional
             </p>
 
             <h1 className="font-sans leading-tight mb-4 text-balance">
@@ -46,7 +46,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-[#5b9bff] font-sans font-medium text-lg md:text-xl tracking-wide mb-4">
-              Biotech Consultant
+              Preclinical & Translational Drug Development
             </p>
 
             <p className="text-[#aec3dd] font-sans text-sm md:text-base leading-relaxed max-w-sm">
