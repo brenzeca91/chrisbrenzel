@@ -73,7 +73,7 @@ export default function ConsultingPage() {
                 className="w-full h-full object-cover aspect-[4/5]"
               />
               <div
-                className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent pt-[25px] pb-[25px]"
                 aria-hidden="true"
               />
             </div>
