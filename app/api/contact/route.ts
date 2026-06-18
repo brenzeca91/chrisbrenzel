@@ -38,10 +38,8 @@ export async function POST(req: NextRequest) {
       </div>
     `
 
-    const fromAddress = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev'
-
     const { error } = await resend.emails.send({
-      from: `Contact Form <${fromAddress}>`,
+      from: 'Contact Form <noreply@chrisbrenzel.com>',
       to: 'chris@chrisbrenzel.com',
       replyTo: email,
       subject: subjectLine,
