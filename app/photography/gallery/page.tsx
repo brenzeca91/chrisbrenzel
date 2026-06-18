@@ -30,7 +30,6 @@ const allPhotos = [
   { src: '/images/collections/rust-and-ruin/rr-12.jpg', title: 'Broken Windows & Stair', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A decaying exterior staircase beside blown-out windows.' },
   { src: '/images/collections/rust-and-ruin/rr-13.jpg', title: 'Brick Archway Storeroom', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Light filtering through a collapsed brick arch.' },
   { src: '/images/collections/rust-and-ruin/rr-14.jpg', title: 'Art-Deco Brick Facade', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Ornate brickwork on a forgotten urban building.' },
-  { src: '/images/collections/rust-and-ruin/rr-15.jpg', title: 'Stone Weir', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A moss-topped historic stone dam wall reflected in still water.' },
   { src: '/images/collections/rust-and-ruin/rr-16.jpg', title: 'Vintage Fire Hydrant', category: 'Rust & Ruin', location: 'Kentucky', caption: 'An old red fire hydrant spotted with rust and age.' },
 
   // --- Wildlife (13, wl-13 removed as duplicate of rr-15) ---
@@ -46,14 +45,14 @@ const allPhotos = [
   { src: '/images/collections/wildlife/wl-10.jpg', title: 'Forest Fern Macro', category: 'Macro', location: 'Kentucky', caption: 'Unfurling fern fronds in a damp woodland understory.' },
   { src: '/images/collections/wildlife/wl-11.jpg', title: 'Seedlings on Bark', category: 'Macro', location: 'Kentucky', caption: 'Tiny seedlings taking hold on the surface of a fallen log.' },
   { src: '/images/collections/wildlife/wl-12.jpg', title: 'Slug on Oak Leaf', category: 'Wildlife', location: 'Kentucky', caption: 'A slug crossing a fallen red oak leaf in autumn.' },
-  { src: '/images/collections/wildlife/wl-14.jpg', title: 'Red Fire Hydrant', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A sun-faded red fire hydrant on a quiet street.' },
+
 
   // --- ic5 batch ---
   { src: '/images/ic5/moon-crescent.jpg',      title: 'Latte Art', category: 'People', location: 'Kentucky', caption: 'Two hands cradling an orange speckled ceramic cup with a heart poured in the foam.' },
   { src: '/images/ic5/eiffel-tower-night.jpg', title: 'Eiffel Tower at Night', category: 'Travel', location: 'Paris, France', caption: 'The Eiffel Tower blazing gold against a pure black sky, shot looking straight up its iron lattice.' },
   { src: '/images/ic5/two-babies-bw.jpg',      title: 'Cozy Dessert', category: 'People', location: 'Kentucky', caption: 'Hands holding a slice of dark chocolate cake and a speckled ceramic mug beside a glowing fireplace.' },
   { src: '/images/ic5/paris-scene.jpg',        title: 'Swift Camp Creek Falls', category: 'Landscapes', location: 'Red River Gorge, KY', caption: 'Long-exposure waterfall on Swift Camp Creek, moss-covered sandstone and bare winter canopy above.' },
-  { src: '/images/ic5/macro-oct2021.jpg',      title: 'Green Orb-Weaver', category: 'Wildlife', location: 'Kentucky', caption: 'A vivid green orb-weaver spider centered in its web, with a captured moth blurred behind.' },
+  { src: '/images/ic5/macro-oct2021.jpg',      title: 'Orchard Spider', category: 'Wildlife', location: 'Kentucky', caption: 'A metallic green-and-yellow orchard spider (Leucauge venusta) hanging on its web, a small captured fly wrapped in silk visible to the right.' },
   { src: '/images/ic5/macro-sony-a.jpg',       title: 'Ladybug on Lichen', category: 'Wildlife', location: 'Kentucky', caption: 'An orange ladybug with black spots crawling across lichen-crusted bark, viewed face-on.' },
   { src: '/images/ic5/macro-sony-b.jpg',       title: 'Bumblebee on Redbud', category: 'Wildlife', location: 'Kentucky', caption: 'A bumblebee hanging from a cluster of vivid pink redbud blossoms in early spring.' },
   { src: '/images/ic5/kite-day-2.jpg',         title: 'Double-Crested Cormorants', category: 'Wildlife', location: 'Bettman Nature Preserve, KY', caption: 'Two cormorants perched on bare branches against a grey sky, framed by sweetgum leaves.' },
