@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Consulting tokens */
+  --color-consulting-bg: #0a0f1e;
+  --color-consulting-surface: #0d1530;
+  --color-consulting-border: #1e2d4a;
+  --color-consulting-text: #f0f4f8;
+  --color-consulting-muted: #8fa3bb;
+  --color-consulting-accent: #3b82f6;
+
+  /* Photography tokens */
+  --color-photo-bg: #0c0c0c;
+  --color-photo-surface: #141414;
+  --color-photo-border: #222222;
+  --color-photo-text: #f5f0eb;
+  --color-photo-muted: #888888;
+
+  --radius: 0.375rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth zoom on image hover */
+.photo-zoom {
+  overflow: hidden;
+}
+
+.photo-zoom img,
+.photo-zoom .img-inner {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-zoom:hover img,
+.photo-zoom:hover .img-inner {
+  transform: scale(1.05);
+}
+
+/* Navigation link underline */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.consulting-nav-link::after {
+  background-color: var(--color-consulting-accent);
+}
+
+.photo-nav-link::after {
+  background-color: var(--color-photo-text);
+}
