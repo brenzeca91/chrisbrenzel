@@ -50,21 +50,21 @@ export default function HomePage() {
             </p>
 
             <p className="text-[#aec3dd] font-sans text-sm md:text-base leading-relaxed max-w-sm">
-              Business development, preclinical strategy, and scientific partnership
-              support for biotech and research service organizations.
+              Preclinical research services, gene editing technologies, translational oncology,
+              scientific communication, and business development in biotech and life sciences.
             </p>
 
             <div className="mt-8 flex items-center gap-2 text-[#5b9bff] text-sm font-medium
                             opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0
                             transition-all duration-300">
-              <span>View consulting work</span>
+              <span>View professional profile</span>
               <ArrowRight className="w-4 h-4" />
             </div>
           </div>
 
           {/* Corner indicator */}
           <div className="absolute top-6 right-8 z-20 text-white/25 text-xs font-mono tracking-widest select-none hidden md:block">
-            01 / CONSULTING
+            01 / PROFESSIONAL
           </div>
         </Link>
 
