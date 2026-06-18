@@ -84,6 +84,9 @@ export default function PhotographyPage() {
         </div>
       </section>
 
+      {/* Selected works slider */}
+      <SelectedWorksSlider />
+
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px bg-[#222]" />
@@ -114,14 +117,6 @@ export default function PhotographyPage() {
           ))}
         </div>
       </section>
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Selected works slider */}
-      <SelectedWorksSlider />
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">

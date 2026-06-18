@@ -23,103 +23,111 @@ const works: Work[] = [
 
 export function SelectedWorksSlider() {
   const scrollRef = useRef<HTMLDivElement>(null)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const updateScrollState = useCallback(() => {
+  const updateActiveIndex = useCallback(() => {
     const el = scrollRef.current
     if (!el) return
-    setCanScrollLeft(el.scrollLeft > 8)
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 8)
+    const index = Math.round(el.scrollLeft / el.clientWidth)
+    setActiveIndex(Math.min(Math.max(index, 0), works.length - 1))
   }, [])
 
   useEffect(() => {
-    updateScrollState()
     const el = scrollRef.current
     if (!el) return
-    el.addEventListener('scroll', updateScrollState, { passive: true })
-    window.addEventListener('resize', updateScrollState)
-    return () => {
-      el.removeEventListener('scroll', updateScrollState)
-      window.removeEventListener('resize', updateScrollState)
-    }
-  }, [updateScrollState])
+    el.addEventListener('scroll', updateActiveIndex, { passive: true })
+    return () => el.removeEventListener('scroll', updateActiveIndex)
+  }, [updateActiveIndex])
 
-  const scrollByAmount = (dir: 'left' | 'right') => {
+  const scrollToIndex = (index: number) => {
     const el = scrollRef.current
     if (!el) return
-    const amount = Math.max(el.clientWidth * 0.8, 320)
-    el.scrollBy({ left: dir === 'left' ? -amount : amount, behavior: 'smooth' })
+    const clamped = Math.min(Math.max(index, 0), works.length - 1)
+    el.scrollTo({ left: clamped * el.clientWidth, behavior: 'smooth' })
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-      <div className="flex items-end justify-between mb-8">
-        <div>
-          <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
-            Selected Works
-          </p>
-          <h2 className="text-[#f5f0eb] font-serif italic text-3xl md:text-4xl font-medium text-balance">
-            Recent captures
-          </h2>
-        </div>
-        <div className="hidden sm:flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => scrollByAmount('left')}
-            disabled={!canScrollLeft}
-            aria-label="Scroll to previous photos"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#2a2a2a]
-                       text-[#f5f0eb] transition-all hover:border-[#555] hover:bg-[#161616]
-                       disabled:opacity-30 disabled:cursor-not-allowed"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollByAmount('right')}
-            disabled={!canScrollRight}
-            aria-label="Scroll to more photos"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#2a2a2a]
-                       text-[#f5f0eb] transition-all hover:border-[#555] hover:bg-[#161616]
-                       disabled:opacity-30 disabled:cursor-not-allowed"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
+    <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+      <div className="text-center mb-10">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
+          Selected Works
+        </p>
+        <h2 className="text-[#f5f0eb] font-serif italic text-3xl md:text-5xl font-medium text-balance">
+          Recent captures
+        </h2>
       </div>
 
-      <div
-        ref={scrollRef}
-        className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory
-                   [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-      >
-        {works.map((work) => (
-          <figure
+      <div className="relative">
+        {/* Scroll track — one image per view, centered */}
+        <div
+          ref={scrollRef}
+          className="works-scroll flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+        >
+          {works.map((work) => (
+            <figure
+              key={work.src}
+              className="relative shrink-0 w-full snap-center flex flex-col items-center px-1"
+            >
+              <div className="flex w-full items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={work.src || '/placeholder.svg'}
+                  alt={`${work.title} — ${work.category} photography by Christopher Brenzel`}
+                  className="max-h-[70vh] w-auto max-w-full object-contain rounded-lg border border-[#1a1a1a]"
+                />
+              </div>
+              <figcaption className="mt-4 text-center">
+                <p className="text-white/40 font-sans text-[10px] tracking-[0.2em] uppercase mb-1">
+                  {work.category}
+                </p>
+                <p className="text-[#f5f0eb] font-serif italic text-lg font-medium">
+                  {work.title}
+                </p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        {/* Arrow controls */}
+        <button
+          type="button"
+          onClick={() => scrollToIndex(activeIndex - 1)}
+          disabled={activeIndex === 0}
+          aria-label="Previous photo"
+          className="absolute left-2 top-[35%] -translate-y-1/2 hidden sm:flex h-11 w-11 items-center
+                     justify-center rounded-full border border-[#2a2a2a] bg-black/40 backdrop-blur-sm
+                     text-[#f5f0eb] transition-all hover:border-[#555] hover:bg-black/70
+                     disabled:opacity-0 disabled:cursor-default"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToIndex(activeIndex + 1)}
+          disabled={activeIndex === works.length - 1}
+          aria-label="Next photo"
+          className="absolute right-2 top-[35%] -translate-y-1/2 hidden sm:flex h-11 w-11 items-center
+                     justify-center rounded-full border border-[#2a2a2a] bg-black/40 backdrop-blur-sm
+                     text-[#f5f0eb] transition-all hover:border-[#555] hover:bg-black/70
+                     disabled:opacity-0 disabled:cursor-default"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Dot indicators */}
+      <div className="mt-8 flex items-center justify-center gap-2">
+        {works.map((work, i) => (
+          <button
             key={work.src}
-            className="group relative snap-start shrink-0 overflow-hidden rounded-lg border border-[#1a1a1a]
-                       w-[80vw] sm:w-[60vw] md:w-[42vw] lg:w-[30vw] max-w-[440px]"
-          >
-            <div className="aspect-[4/3] overflow-hidden bg-[#141414]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={work.src || "/placeholder.svg"}
-                alt={`${work.title} — ${work.category} photography by Christopher Brenzel`}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-            </div>
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
-              aria-hidden="true"
-            />
-            <figcaption className="absolute bottom-0 left-0 right-0 p-4">
-              <p className="text-white/50 font-sans text-[10px] tracking-[0.15em] uppercase mb-1">
-                {work.category}
-              </p>
-              <p className="text-[#f5f0eb] font-serif text-base font-medium">{work.title}</p>
-            </figcaption>
-          </figure>
+            type="button"
+            onClick={() => scrollToIndex(i)}
+            aria-label={`Go to photo ${i + 1}: ${work.title}`}
+            aria-current={i === activeIndex}
+            className={`h-1.5 rounded-full transition-all ${
+              i === activeIndex ? 'w-6 bg-[#f5f0eb]' : 'w-1.5 bg-white/25 hover:bg-white/50'
+            }`}
+          />
         ))}
       </div>
     </section>
