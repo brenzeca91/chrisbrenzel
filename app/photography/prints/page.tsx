@@ -6,23 +6,23 @@ import { PrintsMockupCarousel } from '@/components/photography/prints-mockup-car
 export default function PrintsPage() {
   return (
     <main className="pt-14">
-      {/* Hero — Ring of Fire eclipse totality */}
+      {/* Hero — Kite day */}
       <section className="w-full">
         <div className="relative w-full aspect-[21/9] overflow-hidden">
           <Image
-            src="/images/prints-featured.jpg"
-            alt="Rusted industrial gears, chain drive, and iron wheel inside an abandoned mill — warm amber and teal tones with rich decay detail"
+            src="/images/prints-hero.jpg"
+            alt="Red kite soaring above a golden-green hillside under a dramatic blue sky filled with billowing white cumulus clouds, two silhouetted figures standing on the ridge"
             fill
-            className="object-cover object-[center_30%]"
+            className="object-cover object-[center_55%]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
           <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12">
-            <p className="text-white/40 text-xs font-medium tracking-[0.2em] uppercase mb-2 font-sans">
+            <p className="text-white/50 text-xs font-medium tracking-[0.2em] uppercase mb-2 font-sans">
               Featured print
             </p>
             <p className="text-[#f5f0eb] font-serif italic text-xl md:text-2xl font-medium">
-              The Mill — Rust &amp; Ruin
+              Kite Day — Piedmont Meadow
             </p>
           </div>
         </div>
