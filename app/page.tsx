@@ -13,7 +13,7 @@ export default function HomePage() {
           href="/consulting"
           className="group relative flex-1 overflow-hidden min-h-[50vh] md:min-h-0
                      transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
-                     md:hover:flex-[0.6]"
+                     md:hover:flex-[1.4]"
           aria-label="Enter consulting section"
         >
           {/* Background image with zoom */}
@@ -76,7 +76,7 @@ export default function HomePage() {
           href="/photography"
           className="group relative flex-1 overflow-hidden min-h-[50vh] md:min-h-0
                      transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
-                     md:hover:flex-[0.6]"
+                     md:hover:flex-[1.4]"
           aria-label="Enter photography section"
         >
           {/* Background image with zoom */}
