@@ -6,12 +6,12 @@ import { PrintsMockupCarousel } from '@/components/photography/prints-mockup-car
 export default function PrintsPage() {
   return (
     <main className="pt-14">
-      {/* Hero — Kite day */}
+      {/* Hero */}
       <section className="w-full">
         <div className="relative w-full aspect-[21/9] overflow-hidden">
           <Image
             src="/images/prints-hero.jpg"
-            alt="Red kite soaring above a golden-green hillside under a dramatic blue sky filled with billowing white cumulus clouds, two silhouetted figures standing on the ridge"
+            alt="Red kite soaring above a golden-green hillside under a dramatic blue sky, two silhouetted figures on the ridge"
             fill
             className="object-cover object-[center_75%]"
             priority
@@ -29,38 +29,35 @@ export default function PrintsPage() {
       </section>
 
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 pt-20 pb-16 md:pt-24 md:pb-20">
-        <p className="text-white/30 text-xs font-medium tracking-[0.2em] uppercase mb-5 font-sans">
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-10 md:pt-14 md:pb-12">
+        <p className="text-white/30 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
           Prints
         </p>
-        <h1 className="text-[#f5f0eb] font-serif italic text-4xl md:text-5xl font-medium leading-tight mb-4 text-balance">
+        <h1 className="text-[#f5f0eb] font-serif italic text-4xl md:text-5xl font-medium leading-tight mb-3 text-balance">
           Prints by inquiry.
         </h1>
-        <p className="text-white/50 font-sans text-base md:text-lg leading-relaxed max-w-2xl">
+        <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl">
           Selected images are available as print-quality files or prints by
           inquiry. Availability depends on the image, intended use, preferred
           size, and format.
         </p>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#1a1a1a]" />
-      </div>
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* How it works */}
-      <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-8 font-sans">
           How to inquire
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
           <div>
-            <p className="text-white/60 font-sans text-base leading-relaxed mb-8">
+            <p className="text-white/60 font-sans text-base leading-relaxed mb-6">
               When reaching out, include the following details so I can give you
               an accurate response:
             </p>
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-3">
               {[
                 'The image title or a link to the gallery',
                 'Intended use (personal, gift, commercial, etc.)',
@@ -75,11 +72,11 @@ export default function PrintsPage() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5">
             <a
               href="mailto:chris@chrisbrenzel.com?subject=Print inquiry"
               className="group flex items-center gap-4 border border-[#222] hover:border-[#444]
-                         rounded p-6 transition-all hover:bg-[#141414]"
+                         rounded p-5 transition-all hover:bg-[#141414]"
             >
               <Mail className="w-5 h-5 text-white/30 group-hover:text-white/60 transition-colors shrink-0" />
               <div>
@@ -101,33 +98,24 @@ export default function PrintsPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#1a1a1a]" />
-      </div>
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
-      {/* Wall mockup */}
-      <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+      {/* Wall mockup carousel */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
           What it looks like
         </p>
-        <p className="text-white/40 font-sans text-sm leading-relaxed max-w-lg mb-12">
-          Prints are produced at high resolution and look striking at large
-          scale. Here is an example of how a print might look mounted and hung
-          in a living space.
+        <p className="text-white/40 font-sans text-sm leading-relaxed max-w-lg mb-8">
+          Prints look striking at large scale. A few examples of how they might look mounted and hung.
         </p>
-
         <PrintsMockupCarousel />
       </section>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#1a1a1a]" />
-      </div>
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* Browse gallery link */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <p className="text-white/40 font-sans text-sm max-w-sm">
             Browse the gallery to find an image you are interested in, then use the
             title or link when you reach out.

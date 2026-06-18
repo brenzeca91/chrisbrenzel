@@ -5,7 +5,7 @@ import { useState } from 'react'
 const allPhotos = [
   // --- Selected Works (9) ---
   { src: '/images/gallery/photo-1.jpg', title: 'Spring Phlox', category: 'Macro', location: 'Kentucky', caption: 'Wild blue phlox in close detail, golden stamens against soft-focus foliage.' },
-  { src: '/images/gallery/photo-2.jpg', title: 'Diamond Ring Eclipse', category: 'Eclipses', location: 'Central Kentucky', caption: 'The diamond ring effect at the moment of totality — a single brilliant flare piercing the corona.' },
+  { src: '/images/gallery/photo-2.jpg', title: 'Diamond Ring', category: 'Eclipse & Astrophotography', location: 'Central Kentucky', caption: 'The diamond ring effect at the moment of totality — a single brilliant flare piercing the corona.' },
   { src: '/images/gallery/photo-3.jpg', title: 'Maple Leaf on Still Water', category: 'Macro', location: 'Kentucky', caption: 'An autumn maple leaf resting on a dark pond surface surrounded by submerged foliage.' },
   { src: '/images/gallery/photo-4.jpg', title: 'Alhambra', category: 'Travel', location: 'Granada, Spain', caption: 'Moorish archways and ornate plasterwork in the palace complex of the Alhambra.' },
   { src: '/images/gallery/photo-5.jpg', title: 'Great Blue Heron', category: 'Wildlife', location: 'Kentucky', caption: 'A Great Blue Heron standing tall on a log at the water\'s edge, surrounded by summer greenery.' },
@@ -25,15 +25,15 @@ const allPhotos = [
   { src: '/images/collections/rust-and-ruin/rr-7.jpg',  title: 'Abandoned Brick Porch', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A derelict wooden porch sagging against a brick facade.' },
   { src: '/images/collections/rust-and-ruin/rr-8.jpg',  title: 'Rusted Machinery Gears', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Close detail of oxidized iron gears on old farm equipment.' },
   { src: '/images/collections/rust-and-ruin/rr-9.jpg',  title: 'Old Farm Gate', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A rusted iron gate half-open in an overgrown pasture.' },
-  { src: '/images/collections/rust-and-ruin/rr-10.jpg', title: 'Derelict Stained-Glass Door', category: 'Rust & Ruin', location: 'Kentucky', caption: 'An abandoned doorway with a cracked transom window.' },
+  { src: '/images/collections/rust-and-ruin/rr-10.jpg', title: 'Derelict Door', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A collapsed painted door framing vivid autumn foliage through a crumbling brick wall.' },
   { src: '/images/collections/rust-and-ruin/rr-11.jpg', title: 'Graffiti Underpass', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Layered spray paint beneath a concrete overpass.' },
   { src: '/images/collections/rust-and-ruin/rr-12.jpg', title: 'Broken Windows & Stair', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A decaying exterior staircase beside blown-out windows.' },
   { src: '/images/collections/rust-and-ruin/rr-13.jpg', title: 'Brick Archway Storeroom', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Light filtering through a collapsed brick arch.' },
   { src: '/images/collections/rust-and-ruin/rr-14.jpg', title: 'Art-Deco Brick Facade', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Ornate brickwork on a forgotten urban building.' },
-  { src: '/images/collections/rust-and-ruin/rr-15.jpg', title: 'Stone Weir', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A historic stone dam wall reflected in still water below.' },
+  { src: '/images/collections/rust-and-ruin/rr-15.jpg', title: 'Stone Weir', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A moss-topped historic stone dam wall reflected in still water.' },
   { src: '/images/collections/rust-and-ruin/rr-16.jpg', title: 'Vintage Fire Hydrant', category: 'Rust & Ruin', location: 'Kentucky', caption: 'An old red fire hydrant spotted with rust and age.' },
 
-  // --- Wildlife (14) ---
+  // --- Wildlife (13, wl-13 removed as duplicate of rr-15) ---
   { src: '/images/collections/wildlife/wl-1.jpg',  title: 'Mourning Dove', category: 'Wildlife', location: 'Lexington, KY', caption: 'A mourning dove resting at a backyard feeder.' },
   { src: '/images/collections/wildlife/wl-2.jpg',  title: 'Green Anole', category: 'Wildlife', location: 'Kentucky', caption: 'A green anole clinging to stone, dewlap extended.' },
   { src: '/images/collections/wildlife/wl-3.jpg',  title: 'Autumn Maple Leaves', category: 'Macro', location: 'Kentucky', caption: 'Vivid autumn maple leaves against an open blue sky.' },
@@ -46,14 +46,13 @@ const allPhotos = [
   { src: '/images/collections/wildlife/wl-10.jpg', title: 'Forest Fern Macro', category: 'Macro', location: 'Kentucky', caption: 'Unfurling fern fronds in a damp woodland understory.' },
   { src: '/images/collections/wildlife/wl-11.jpg', title: 'Seedlings on Bark', category: 'Macro', location: 'Kentucky', caption: 'Tiny seedlings taking hold on the surface of a fallen log.' },
   { src: '/images/collections/wildlife/wl-12.jpg', title: 'Slug on Oak Leaf', category: 'Wildlife', location: 'Kentucky', caption: 'A slug crossing a fallen red oak leaf in autumn.' },
-  { src: '/images/collections/wildlife/wl-13.jpg', title: 'Historic Stone Dam', category: 'Landscapes', location: 'Kentucky', caption: 'A stone weir wall with its reflection in calm water.' },
   { src: '/images/collections/wildlife/wl-14.jpg', title: 'Red Fire Hydrant', category: 'Rust & Ruin', location: 'Kentucky', caption: 'A sun-faded red fire hydrant on a quiet street.' },
 
-  // --- iCloud Photos (5) — ic5 batch ---
-  { src: '/images/ic5/moon-crescent.jpg',      title: 'Waning Crescent Moon', category: 'Eclipses', location: 'Kentucky', caption: 'A crescent moon fading on the left edge, crater detail crisp against a pure black sky.' },
+  // --- ic5 batch ---
+  { src: '/images/ic5/moon-crescent.jpg',      title: 'Latte Art', category: 'People', location: 'Kentucky', caption: 'Hands cradling a ceramic cup of freshly poured latte with a heart design in the crema.' },
   { src: '/images/ic5/eiffel-tower-night.jpg', title: 'Eiffel Tower at Night', category: 'Travel', location: 'Paris, France', caption: 'The Eiffel Tower lit in warm gold, shot from directly below looking straight up its iron lattice.' },
-  { src: '/images/ic5/two-babies-bw.jpg',      title: 'Morning Light', category: 'People', location: 'Kentucky', caption: 'Two young children tucked under a fleece blanket, soft window light, black and white.' },
-  { src: '/images/ic5/paris-scene.jpg',        title: 'Twin Falls', category: 'Landscapes', location: 'Red River Gorge, KY', caption: 'A long-exposure waterfall splitting over a sandstone ledge into a tannin-pooled basin, bare winter trees above.' },
+  { src: '/images/ic5/two-babies-bw.jpg',      title: 'Bright Eyes', category: 'People', location: 'Kentucky', caption: 'Two young children tucked under a fleece blanket, soft window light, black and white.' },
+  { src: '/images/ic5/paris-scene.jpg',        title: 'Swift Camp Creek Falls', category: 'Landscapes', location: 'Red River Gorge, KY', caption: 'Long-exposure waterfall on Swift Camp Creek, moss-covered sandstone and bare winter canopy above.' },
   { src: '/images/ic5/macro-oct2021.jpg',      title: 'Green Orb-Weaver', category: 'Wildlife', location: 'Kentucky', caption: 'A vivid green orb-weaver spider centered in its web, with a captured moth blurred behind.' },
   { src: '/images/ic5/macro-sony-a.jpg',       title: 'Ladybug on Lichen', category: 'Wildlife', location: 'Kentucky', caption: 'An orange ladybug with black spots crawling across lichen-crusted bark, viewed face-on.' },
   { src: '/images/ic5/macro-sony-b.jpg',       title: 'Bumblebee on Redbud', category: 'Wildlife', location: 'Kentucky', caption: 'A bumblebee hanging from a cluster of vivid pink redbud blossoms in early spring.' },
@@ -65,7 +64,7 @@ const allPhotos = [
   { src: '/images/ic5/kite-day-1.jpg',         title: 'Kite Day — Afternoon', category: 'People', location: 'Kentucky', caption: 'A red dragon kite high in a blue sky above golden meadow grass.' },
 ]
 
-const categories = ['All', 'Wildlife', 'Landscapes', 'Macro', 'Eclipses', 'Rust & Ruin', 'Travel', 'People']
+const categories = ['All', 'Wildlife', 'Landscapes', 'Macro', 'Eclipse & Astrophotography', 'Rust & Ruin', 'Travel', 'People']
 
 export default function GalleryPage() {
   const [active, setActive] = useState('All')
@@ -157,7 +156,6 @@ export default function GalleryPage() {
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
           onClick={closeLightbox}
         >
-          {/* Close */}
           <button
             onClick={closeLightbox}
             className="absolute top-5 right-6 text-white/50 hover:text-white font-sans text-2xl leading-none z-10"
@@ -166,7 +164,6 @@ export default function GalleryPage() {
             &times;
           </button>
 
-          {/* Prev */}
           {lightbox > 0 && (
             <button
               onClick={(e) => { e.stopPropagation(); prev() }}
@@ -178,7 +175,6 @@ export default function GalleryPage() {
             </button>
           )}
 
-          {/* Image */}
           <div className="max-w-5xl max-h-[90vh] px-16" onClick={(e) => e.stopPropagation()}>
             <img
               src={filtered[lightbox].src}
@@ -194,7 +190,6 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          {/* Next */}
           {lightbox < filtered.length - 1 && (
             <button
               onClick={(e) => { e.stopPropagation(); next() }}
@@ -206,7 +201,6 @@ export default function GalleryPage() {
             </button>
           )}
 
-          {/* Counter */}
           <p className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/30 font-sans text-xs">
             {lightbox + 1} / {filtered.length}
           </p>

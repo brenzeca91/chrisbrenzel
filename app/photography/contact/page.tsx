@@ -17,6 +17,11 @@ export default function PhotographyContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const subject = encodeURIComponent(`${form.inquiryType} — from ${form.name}`)
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nInquiry type: ${form.inquiryType}\n\n${form.message}`
+    )
+    window.location.href = `mailto:chris@chrisbrenzel.com?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
