@@ -1,6 +1,23 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { SelectedWorksSlider } from '@/components/photography/selected-works-slider'
+import { CollectionSlider } from '@/components/photography/collection-slider'
+
+const rustAndRuinPreview = [
+  { src: '/images/collections/rust-and-ruin/rr-6.jpg',  title: 'Autumn Ivy on Fire-Escape Facade' },
+  { src: '/images/collections/rust-and-ruin/rr-8.jpg',  title: 'Rusted Machinery Gears' },
+  { src: '/images/collections/rust-and-ruin/rr-3.jpg',  title: 'Broken Greenhouse Glass' },
+  { src: '/images/collections/rust-and-ruin/rr-7.jpg',  title: 'Abandoned Brick Porch' },
+  { src: '/images/collections/rust-and-ruin/rr-5.jpg',  title: 'Looking Up Through a Stone Tower' },
+]
+
+const wildlifePreview = [
+  { src: '/images/gallery/photo-5.jpg',                 title: 'Great Blue Heron' },
+  { src: '/images/collections/wildlife/wl-2.jpg',       title: 'Green Anole' },
+  { src: '/images/collections/wildlife/wl-5.jpg',       title: 'House Finch' },
+  { src: '/images/collections/wildlife/wl-4.jpg',       title: 'Garden Snail' },
+  { src: '/images/collections/wildlife/wl-12.jpg',      title: 'Slug on Fallen Oak Leaf' },
+]
 
 const categories = [
   { label: 'Wildlife', href: '/photography/gallery?category=wildlife', color: '#2d4a2d' },
@@ -117,6 +134,36 @@ export default function PhotographyPage() {
           ))}
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Rust & Ruin collection preview */}
+      <CollectionSlider
+        title="Rust & Ruin"
+        subtitle="Nature & Decay"
+        description="Nature reclaiming what was built — ivy pressing through mortar, rust blooming on iron, glass cracking under the weight of vines."
+        href="/photography/collections/rust-and-ruin"
+        photos={rustAndRuinPreview}
+        accentColor="#e8d5c0"
+      />
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Wildlife collection preview */}
+      <CollectionSlider
+        title="Wildlife"
+        subtitle="Birds & Creatures"
+        description="Birds, reptiles, and small creatures caught in an unguarded moment — still long enough to be seen, close enough to be known."
+        href="/photography/collections/wildlife"
+        photos={wildlifePreview}
+        accentColor="#c8dfc8"
+      />
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
