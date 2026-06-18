@@ -4,15 +4,15 @@ import { useState } from 'react'
 
 const allPhotos = [
   // --- Selected Works (9) ---
-  { src: '/images/gallery/photo-1.jpg', title: 'Great Blue Heron', category: 'Wildlife', location: 'Kentucky', caption: 'A heron standing motionless in shallow water at dusk.' },
-  { src: '/images/gallery/photo-2.jpg', title: 'Ring of Fire Eclipse', category: 'Eclipses', location: 'Central Kentucky', caption: 'Annular eclipse at maximum coverage.' },
-  { src: '/images/gallery/photo-3.jpg', title: 'Cascade Detail', category: 'Landscapes', location: 'Red River Gorge, KY', caption: 'Long-exposure water over mossy sandstone.' },
-  { src: '/images/gallery/photo-4.jpg', title: 'Spring Phlox', category: 'Macro', location: 'Kentucky', caption: 'Wild blue phlox backlit in early morning.' },
-  { src: '/images/gallery/photo-5.jpg', title: 'Floating Maple Leaf', category: 'Macro', location: 'Kentucky', caption: 'Autumn maple leaf drifting on a still pond.' },
-  { src: '/images/gallery/photo-6.jpg', title: 'Leopard Slug', category: 'Wildlife', location: 'Kentucky', caption: 'A leopard slug moving through fallen leaves.' },
-  { src: '/images/gallery/photo-7.jpg', title: 'White Coneflower', category: 'Macro', location: 'Lexington, KY', caption: 'A late-season coneflower against a dark background.' },
-  { src: '/images/gallery/photo-8.jpg', title: 'Backlit Forest Moss', category: 'Macro', location: 'Red River Gorge, KY', caption: 'Moss-covered bark lit from behind by afternoon sun.' },
-  { src: '/images/gallery/photo-9.jpg', title: 'Alhambra', category: 'Travel', location: 'Granada, Spain', caption: 'Courtyard details at the Alhambra palace complex.' },
+  { src: '/images/gallery/photo-1.jpg', title: 'Spring Phlox', category: 'Macro', location: 'Kentucky', caption: 'Wild blue phlox in close detail, golden stamens against soft-focus foliage.' },
+  { src: '/images/gallery/photo-2.jpg', title: 'Diamond Ring Eclipse', category: 'Eclipses', location: 'Central Kentucky', caption: 'The diamond ring effect at the moment of totality — a single brilliant flare piercing the corona.' },
+  { src: '/images/gallery/photo-3.jpg', title: 'Maple Leaf on Still Water', category: 'Macro', location: 'Kentucky', caption: 'An autumn maple leaf resting on a dark pond surface surrounded by submerged foliage.' },
+  { src: '/images/gallery/photo-4.jpg', title: 'Alhambra', category: 'Travel', location: 'Granada, Spain', caption: 'Moorish archways and ornate plasterwork in the palace complex of the Alhambra.' },
+  { src: '/images/gallery/photo-5.jpg', title: 'Great Blue Heron', category: 'Wildlife', location: 'Kentucky', caption: 'A Great Blue Heron standing tall on a log at the water\'s edge, surrounded by summer greenery.' },
+  { src: '/images/gallery/photo-6.jpg', title: 'White Coneflower', category: 'Macro', location: 'Lexington, KY', caption: 'A pair of white coneflowers with vivid orange centers against a soft green background.' },
+  { src: '/images/gallery/photo-7.jpg', title: 'Seedlings on Bark', category: 'Macro', location: 'Kentucky', caption: 'A delicate vine of tiny seedlings clinging to the edge of a weathered log, backlit against darkness.' },
+  { src: '/images/gallery/photo-8.jpg', title: 'Slug on Autumn Leaf', category: 'Wildlife', location: 'Kentucky', caption: 'A slug arching over the stem of a golden autumn leaf with rain droplets on the surface.' },
+  { src: '/images/gallery/photo-9.jpg', title: 'Cascade Falls', category: 'Landscapes', location: 'Red River Gorge, KY', caption: 'Long-exposure waterfall spilling over sandstone ledges into a tannin-stained pool.' },
   { src: '/images/prints-hero.jpg', title: 'Kite Day — Father and Son', category: 'People', location: 'Kentucky', caption: 'A red kite soaring above a golden hillside, two silhouetted figures on the ridge.' },
 
   // --- Rust & Ruin (16) ---
@@ -36,12 +36,12 @@ const allPhotos = [
   // --- Wildlife (14) ---
   { src: '/images/collections/wildlife/wl-1.jpg',  title: 'Mourning Dove', category: 'Wildlife', location: 'Lexington, KY', caption: 'A mourning dove resting at a backyard feeder.' },
   { src: '/images/collections/wildlife/wl-2.jpg',  title: 'Green Anole', category: 'Wildlife', location: 'Kentucky', caption: 'A green anole clinging to stone, dewlap extended.' },
-  { src: '/images/collections/wildlife/wl-3.jpg',  title: 'Autumn Maple Canopy', category: 'Landscapes', location: 'Kentucky', caption: 'Peak autumn color looking up through the maple canopy.' },
+  { src: '/images/collections/wildlife/wl-3.jpg',  title: 'Autumn Maple Leaves', category: 'Macro', location: 'Kentucky', caption: 'Vivid autumn maple leaves against an open blue sky.' },
   { src: '/images/collections/wildlife/wl-4.jpg',  title: 'Garden Snail', category: 'Wildlife', location: 'Kentucky', caption: 'A garden snail moving slowly across a rusty iron rail.' },
   { src: '/images/collections/wildlife/wl-5.jpg',  title: 'House Finch', category: 'Wildlife', location: 'Lexington, KY', caption: 'A house finch perched on a weathered metal railing.' },
   { src: '/images/collections/wildlife/wl-6.jpg',  title: 'Brick & Cable Tower', category: 'Rust & Ruin', location: 'Kentucky', caption: 'Industrial brick tower with aged cable hardware.' },
   { src: '/images/collections/wildlife/wl-7.jpg',  title: 'Orange Leaf on Lily Pads', category: 'Macro', location: 'Kentucky', caption: 'A single autumn leaf resting on lily pad surface.' },
-  { src: '/images/collections/wildlife/wl-8.jpg',  title: 'Alhambra Gardens', category: 'Travel', location: 'Granada, Spain', caption: 'A visitor pausing in the palace gardens at the Alhambra.' },
+  { src: '/images/collections/wildlife/wl-8.jpg',  title: 'Alhambra — Light and Shadow', category: 'Travel', location: 'Granada, Spain', caption: 'Strong diagonal shadows across the white plasterwork of the Alhambra, a figure passing beneath an ornate arch.' },
   { src: '/images/collections/wildlife/wl-9.jpg',  title: 'Bracket Fungus', category: 'Macro', location: 'Kentucky', caption: 'Close detail of a shelf fungus on an old hardwood log.' },
   { src: '/images/collections/wildlife/wl-10.jpg', title: 'Forest Fern Macro', category: 'Macro', location: 'Kentucky', caption: 'Unfurling fern fronds in a damp woodland understory.' },
   { src: '/images/collections/wildlife/wl-11.jpg', title: 'Seedlings on Bark', category: 'Macro', location: 'Kentucky', caption: 'Tiny seedlings taking hold on the surface of a fallen log.' },
