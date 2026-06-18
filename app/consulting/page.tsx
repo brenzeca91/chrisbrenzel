@@ -126,8 +126,10 @@ export default function ConsultingPage() {
             className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/70 via-transparent to-transparent"
             aria-hidden="true"
           />
-          <p className="relative z-10 text-[#b8c7d9] font-sans text-sm md:text-base max-w-md text-center px-6">
-            Connecting scientific capabilities with practical commercial strategy.
+          <p className="relative z-10 text-[#b8c7d9] font-sans text-[24px] max-w-md text-center px-6">
+            <b className="text-[36px] font-bold block">
+              Connecting scientific capabilities with practical commercial strategy.
+            </b>
           </p>
         </div>
       </section>
