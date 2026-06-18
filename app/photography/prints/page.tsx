@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mail } from 'lucide-react'
+import { PrintsMockupCarousel } from '@/components/photography/prints-mockup-carousel'
 
 export default function PrintsPage() {
   return (
@@ -116,22 +117,7 @@ export default function PrintsPage() {
           in a living space.
         </p>
 
-        <div className="flex justify-center">
-          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a] w-full md:w-[70%]">
-            <Image
-              src="/images/prints-wall-composite.png"
-              alt="Great Blue Heron fine art print in a slim black frame mounted above an oak credenza in a minimal living room with warm white walls"
-              width={1200}
-              height={900}
-              className="w-full h-auto"
-            />
-            <div className="absolute bottom-5 right-6">
-              <p className="text-white/40 font-sans text-xs italic">
-                &ldquo;Great Blue Heron&rdquo; — Wildlife
-              </p>
-            </div>
-          </div>
-        </div>
+        <PrintsMockupCarousel />
       </section>
 
       {/* Divider */}
