@@ -20,44 +20,71 @@ const wildlifePreview = [
 ]
 
 const categories = [
-  { label: 'Wildlife', href: '/photography/gallery?category=wildlife', color: '#2d4a2d' },
-  { label: 'Landscapes', href: '/photography/gallery?category=landscapes', color: '#1a2d3d' },
-  { label: 'Weather', href: '/photography/gallery?category=weather', color: '#1e1e2d' },
-  { label: 'Eclipses', href: '/photography/gallery?category=eclipses', color: '#2d1a0a' },
-  { label: 'Macro', href: '/photography/gallery?category=macro', color: '#1a2a1a' },
-  { label: 'Travel', href: '/photography/gallery?category=travel', color: '#1a1a2a' },
+  {
+    label: 'Wildlife',
+    href: '/photography/gallery?category=wildlife',
+    image: '/images/collections/wildlife/wl-1.jpg',
+    alt: 'Mourning dove perched on a bare winter branch',
+  },
+  {
+    label: 'Macro',
+    href: '/photography/gallery?category=macro',
+    image: '/images/field-notes/folly-beach.jpg',
+    alt: 'Macro photograph of shells and sand grains at Folly Beach',
+  },
+  {
+    label: 'Eclipses',
+    href: '/photography/gallery?category=eclipses',
+    image: '/images/field-notes/eclipse-part2.jpg',
+    alt: 'Total solar eclipse at totality with solar flares visible',
+  },
+  {
+    label: 'Rust & Ruin',
+    href: '/photography/collections/rust-and-ruin',
+    image: '/images/collections/rust-and-ruin/rr-3.jpg',
+    alt: 'Ivy growing through a broken greenhouse window',
+  },
+  {
+    label: 'Travel',
+    href: '/photography/gallery?category=travel',
+    image: '/images/field-notes/frankfort.jpg',
+    alt: 'Ivy growing on a wall with broken window in Frankfort, KY',
+  },
+  {
+    label: 'Astrophotography',
+    href: '/photography/gallery?category=astrophotography',
+    image: '/images/field-notes/eclipse-part1.jpg',
+    alt: 'Partial solar eclipse through a solar filter',
+  },
 ]
 
-const featuredGrid = [
+const fieldNotesPosts = [
   {
-    title: 'Bettman Nature Preserve',
+    title: 'Birding at Bettman Nature Preserve',
     category: 'Wildlife',
-    color: '#0d1f0d',
-    aspect: 'col-span-2 row-span-2',
+    date: 'Jan 21, 2025',
+    excerpt: 'Winter bird photography at a nature preserve surrounded by feeders — bright plumage against white snow and bare branches.',
+    image: '/images/field-notes/bettman.jpg',
+    alt: 'Dark-eyed junco perched on bare winter branches',
+    slug: 'birding-at-bettman',
   },
   {
-    title: 'Solar Eclipse',
-    category: 'Eclipses',
-    color: '#1a0d00',
-    aspect: '',
+    title: 'Solar Eclipse — Part II',
+    category: 'Astrophotography',
+    date: 'Apr 12, 2024',
+    excerpt: 'The moment of totality: solar filters off, shutter open. Massive solar flares visible around the moon\'s silhouette.',
+    image: '/images/field-notes/eclipse-part2.jpg',
+    alt: 'Total solar eclipse at totality with solar corona and flares',
+    slug: 'solar-eclipse-part-2',
   },
   {
-    title: 'Capturing Snowflakes',
+    title: 'Macro Photography at Folly Beach',
     category: 'Macro',
-    color: '#0d0d1f',
-    aspect: '',
-  },
-  {
-    title: 'Macro at Folly Beach',
-    category: 'Macro',
-    color: '#0d1a0d',
-    aspect: '',
-  },
-  {
-    title: 'Exploring Frankfort, KY',
-    category: 'Travel',
-    color: '#1a1208',
-    aspect: '',
+    date: 'Dec 15, 2021',
+    excerpt: 'First outing with a macro lens. Tiny shells, sand grains, and the challenge of keeping wind-blown subjects in focus.',
+    image: '/images/field-notes/folly-beach.jpg',
+    alt: 'Macro close-up of a shell resting in sand at Folly Beach SC',
+    slug: 'macro-at-folly-beach',
   },
 ]
 
@@ -66,20 +93,17 @@ export default function PhotographyPage() {
     <main className="pt-14">
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/photography-hero.jpg')" }}
           aria-hidden="true"
         />
-        {/* Overlays for legibility */}
         <div
           className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/40 to-[#0c0c0c]/20"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
 
-        {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 md:pb-20 w-full">
           <p className="text-white/50 text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
             Nature Photography
@@ -109,7 +133,7 @@ export default function PhotographyPage() {
         <div className="h-px bg-[#222]" />
       </div>
 
-      {/* Category grid */}
+      {/* Browse by subject */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-8 font-sans">
           Browse by subject
@@ -119,17 +143,21 @@ export default function PhotographyPage() {
             <Link
               key={cat.label}
               href={cat.href}
-              className="group relative overflow-hidden rounded aspect-square flex items-end p-4
-                         border border-[#222] hover:border-[#444] transition-all"
-              style={{ backgroundColor: cat.color }}
+              className="group relative overflow-hidden rounded aspect-square border border-[#222] hover:border-[#444] transition-all"
+              aria-label={`Browse ${cat.label} photos`}
             >
-              <span
-                className="text-[#f5f0eb] font-sans text-sm font-medium relative z-10
-                              group-hover:text-white transition-colors"
-              >
+              {/* Real photo background */}
+              <img
+                src={cat.image}
+                alt={cat.alt}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              {/* Label */}
+              <span className="absolute bottom-3 left-3 right-3 text-[#f5f0eb] font-sans text-sm font-medium z-10 group-hover:text-white transition-colors">
                 {cat.label}
               </span>
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all" />
             </Link>
           ))}
         </div>
@@ -170,58 +198,6 @@ export default function PhotographyPage() {
         <div className="h-px bg-[#222]" />
       </div>
 
-      {/* Featured image grid */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="flex items-end justify-between mb-8">
-          <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase font-sans">
-            Recent work
-          </p>
-          <Link
-            href="/photography/gallery"
-            className="flex items-center gap-2 text-white/40 hover:text-white/70 font-sans text-sm transition-colors"
-          >
-            All photos <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        {/* Masonry-style grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {featuredGrid.map((item, i) => (
-            <Link
-              key={item.title}
-              href="/photography/gallery"
-              className={`photo-zoom group relative rounded overflow-hidden border border-[#1a1a1a] hover:border-[#333]
-                          transition-all ${i === 0 ? 'row-span-2' : ''}`}
-              style={{
-                backgroundColor: item.color,
-                aspectRatio: i === 0 ? 'auto' : '4/3',
-                minHeight: i === 0 ? '400px' : '200px',
-              }}
-            >
-              {/* Placeholder image bg */}
-              <div
-                className="img-inner absolute inset-0"
-                style={{ backgroundColor: item.color }}
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
-              {/* Text */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 z-20 translate-y-1 group-hover:translate-y-0 transition-transform">
-                <p className="text-white/50 font-sans text-[10px] tracking-[0.15em] uppercase mb-1">
-                  {item.category}
-                </p>
-                <p className="text-[#f5f0eb] font-serif text-sm font-medium">{item.title}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
       {/* Field notes teaser */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="flex items-end justify-between mb-8">
@@ -242,26 +218,28 @@ export default function PhotographyPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { title: 'Birding at Bettman Nature Preserve', category: 'Wildlife', excerpt: 'Notes and observations from a morning walk through one of Lexington\'s best birding spots.' },
-            { title: 'Solar Eclipse Part I', category: 'Eclipses', excerpt: 'Preparation, gear, and the experience of capturing totality from central Kentucky.' },
-            { title: 'Macro Photography at Folly Beach', category: 'Macro', excerpt: 'Finding detail in the texture of shoreline subjects.' },
-          ].map((post) => (
+          {fieldNotesPosts.map((post) => (
             <Link
-              key={post.title}
-              href="/photography/field-notes"
-              className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden
-                         hover:bg-[#141414] transition-all"
+              key={post.slug}
+              href={`/photography/field-notes/${post.slug}`}
+              className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden hover:bg-[#141414] transition-all"
             >
-              <div
-                className="aspect-video bg-[#141414] border-b border-[#1a1a1a]"
-                aria-hidden="true"
-              />
+              <div className="aspect-video overflow-hidden border-b border-[#1a1a1a] bg-[#0c0c0c]">
+                <img
+                  src={post.image}
+                  alt={post.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
               <div className="p-6">
-                <p className="text-white/30 font-sans text-[10px] tracking-[0.15em] uppercase mb-2">
-                  {post.category}
-                </p>
-                <h3 className="text-[#f5f0eb] font-serif text-lg font-medium mb-3 group-hover:text-white transition-colors">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-white/30 font-sans text-[10px] tracking-[0.15em] uppercase">
+                    {post.category}
+                  </p>
+                  <p className="text-white/25 font-sans text-xs">{post.date}</p>
+                </div>
+                <h3 className="text-[#f5f0eb] font-serif text-lg font-medium mb-3 group-hover:text-white transition-colors leading-snug">
                   {post.title}
                 </h3>
                 <p className="text-white/40 font-sans text-sm leading-relaxed">{post.excerpt}</p>
