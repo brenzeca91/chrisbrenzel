@@ -278,7 +278,7 @@ export default function ExperiencePage() {
 
       {/* Timeline */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-12 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-12 font-sans">
           Career history
         </p>
         <div className="relative">
@@ -334,7 +334,7 @@ export default function ExperiencePage() {
 
       {/* Achievements */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Selected achievements
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
@@ -356,7 +356,7 @@ export default function ExperiencePage() {
 
       {/* Education */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Education
         </p>
         <div className="flex flex-col gap-8 max-w-2xl">
@@ -396,7 +396,7 @@ export default function ExperiencePage() {
 
       {/* Publications */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Posters &amp; scientific presentations
         </p>
         <div className="flex flex-col gap-8 max-w-4xl">
@@ -426,7 +426,7 @@ export default function ExperiencePage() {
 
       {/* Expertise */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Areas of expertise
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
