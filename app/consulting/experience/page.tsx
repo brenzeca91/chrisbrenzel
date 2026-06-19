@@ -1,45 +1,74 @@
-// Institution logo badges — initials + brand color, inline SVG wordmark
-const orgLogos: Record<string, { initials: string; color: string; bg: string; full?: string }> = {
-  'The START Center for Cancer Research / XenoSTART': {
-    initials: 'SC', color: '#ef4444', bg: '#1f0a0a', full: 'START Center',
-  },
-  'GemPharmatech': {
-    initials: 'GP', color: '#22c55e', bg: '#071a0e', full: 'GemPharmatech',
-  },
+// Orgs with real logo image files
+const orgImageLogos: Record<string, { src: string; alt: string; bg: string; height: number }> = {
   'Hera BioLabs, Inc.': {
-    initials: 'HB', color: '#60a5fa', bg: '#071427', full: 'Hera BioLabs',
+    src: '/images/logos/hera-biolabs.png',
+    alt: 'Hera BioLabs',
+    bg: '#ffffff',
+    height: 52,
   },
   'Transposagen Biopharmaceuticals, Inc.': {
-    initials: 'TX', color: '#a78bfa', bg: '#130b24', full: 'Transposagen',
+    src: '/images/logos/transposagen.webp',
+    alt: 'Transposagen',
+    bg: '#ffffff',
+    height: 44,
   },
   'University of Cincinnati — James L. Winkle College of Pharmacy': {
-    initials: 'UC', color: '#e63000', bg: '#1f0a00', full: 'Univ. of Cincinnati',
+    src: '/images/logos/university-of-cincinnati.png',
+    alt: 'University of Cincinnati',
+    bg: '#e00122',
+    height: 52,
   },
   'University of Notre Dame': {
-    initials: 'ND', color: '#c9a84c', bg: '#0f0c02', full: 'Notre Dame',
+    src: '/images/logos/notre-dame.webp',
+    alt: 'University of Notre Dame',
+    bg: '#0c2340',
+    height: 52,
+  },
+  'GemPharmatech': {
+    src: '/images/logos/gempharmatech.png',
+    alt: 'GemPharmatech',
+    bg: '#ffffff',
+    height: 44,
+  },
+}
+
+// Text badge fallback for orgs without image logos
+const orgBadges: Record<string, { initials: string; color: string; bg: string; full: string }> = {
+  'The START Center for Cancer Research / XenoSTART': {
+    initials: 'SC', color: '#ef4444', bg: '#1f0a0a', full: 'START Center',
   },
 }
 
 function OrgLogo({ org }: { org: string }) {
-  const logo = orgLogos[org]
-  if (!logo) return null
+  const img = orgImageLogos[org]
+  if (img) {
+    return (
+      <div
+        className="shrink-0 rounded overflow-hidden flex items-center justify-center px-3 py-2"
+        style={{ background: img.bg, height: img.height, minWidth: 80 }}
+        title={org}
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          style={{ height: img.height - 16, width: 'auto', maxWidth: 120, objectFit: 'contain' }}
+        />
+      </div>
+    )
+  }
+  const badge = orgBadges[org]
+  if (!badge) return null
   return (
     <div
       className="flex items-center gap-2 px-3 py-1.5 rounded border shrink-0"
-      style={{ borderColor: logo.color + '33', background: logo.bg }}
+      style={{ borderColor: badge.color + '33', background: badge.bg }}
       title={org}
     >
-      <span
-        className="font-mono font-bold text-sm leading-none"
-        style={{ color: logo.color }}
-      >
-        {logo.initials}
+      <span className="font-mono font-bold text-sm leading-none" style={{ color: badge.color }}>
+        {badge.initials}
       </span>
-      <span
-        className="hidden sm:block font-sans text-xs leading-none"
-        style={{ color: logo.color + 'cc' }}
-      >
-        {logo.full}
+      <span className="hidden sm:block font-sans text-xs leading-none" style={{ color: badge.color + 'cc' }}>
+        {badge.full}
       </span>
     </div>
   )
@@ -222,14 +251,21 @@ export default function ExperiencePage() {
 
       {/* Lab image */}
       <section className="max-w-7xl mx-auto px-6 pb-4">
-        <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a]">
+        <div
+          className="relative rounded-lg overflow-hidden border border-[#1e2d4a]"
+          style={{ height: '320px' }}
+          role="img"
+          aria-label="A row of preclinical research instruments lined up along a laboratory bench"
+        >
           <img
             src="/images/consulting-instruments.jpg"
-            alt="A row of preclinical research instruments lined up along a laboratory bench"
-            className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ transform: 'scaleY(1.43)', transformOrigin: 'center' }}
           />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/60 to-transparent"
+            className="absolute inset-0 bg-[#0a0f1e]/50"
             aria-hidden="true"
           />
         </div>
@@ -242,7 +278,7 @@ export default function ExperiencePage() {
 
       {/* Timeline */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-12 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-12 font-sans">
           Career history
         </p>
         <div className="relative">
@@ -298,7 +334,7 @@ export default function ExperiencePage() {
 
       {/* Achievements */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Selected achievements
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
@@ -320,7 +356,7 @@ export default function ExperiencePage() {
 
       {/* Education */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Education
         </p>
         <div className="flex flex-col gap-8 max-w-2xl">
@@ -350,15 +386,6 @@ export default function ExperiencePage() {
             </div>
             <OrgLogo org="University of Notre Dame" />
           </div>
-          <div>
-            <h3 className="text-white font-sans font-semibold text-base mb-1">
-              B.S. Biology
-            </h3>
-            <p className="text-blue-400 font-sans text-sm">University of Notre Dame</p>
-            <p className="text-[#4a6380] font-sans text-xs mt-1">
-              Minor: Science, Business &amp; Technology — 2014
-            </p>
-          </div>
         </div>
       </section>
 
@@ -369,7 +396,7 @@ export default function ExperiencePage() {
 
       {/* Publications */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Posters &amp; scientific presentations
         </p>
         <div className="flex flex-col gap-8 max-w-4xl">
@@ -399,7 +426,7 @@ export default function ExperiencePage() {
 
       {/* Expertise */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-10 font-sans">
           Areas of expertise
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

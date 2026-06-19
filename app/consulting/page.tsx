@@ -100,18 +100,20 @@ export default function ProfessionalPage() {
           </div>
 
           {/* Portrait */}
-          <div className="relative">
-            <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a]">
-              <img
-                src="/images/chris-lab-portrait.jpg"
-                alt="Christopher Brenzel in a research laboratory"
-                className="w-full h-full object-cover aspect-[4/5]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent" aria-hidden="true" />
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-[#0d1530] border border-[#1e2d4a] rounded px-5 py-3">
-              <p className="text-white font-sans text-sm font-medium">Christopher Brenzel</p>
-              <p className="text-[#6b8aaa] font-sans text-xs mt-0.5">Preclinical &amp; Translational Drug Development</p>
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative w-64 md:w-72 lg:w-80">
+              <div className="relative rounded-2xl overflow-hidden border border-[#1e2d4a]">
+                <img
+                  src="/images/chris-lab-portrait.jpg"
+                  alt="Christopher Brenzel in a research laboratory"
+                  className="w-full h-full object-cover aspect-[4/5]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent" aria-hidden="true" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-[#0d1530] border border-[#1e2d4a] rounded-xl px-4 py-2.5">
+                <p className="text-white font-sans text-sm font-medium">Christopher Brenzel</p>
+                <p className="text-[#6b8aaa] font-sans text-xs mt-0.5">Preclinical &amp; Translational Drug Development</p>
+              </div>
             </div>
           </div>
         </div>
@@ -171,12 +173,19 @@ export default function ProfessionalPage() {
       {/* Lab image band */}
       <section className="max-w-7xl mx-auto px-6 pb-20 md:pb-28">
         <div
-          className="relative rounded-lg overflow-hidden border border-[#1e2d4a] aspect-[21/9] bg-cover bg-center flex items-center justify-center"
-          style={{ backgroundImage: "url('/images/consulting-collaboration.jpg')" }}
+          className="relative rounded-lg overflow-hidden border border-[#1e2d4a] flex items-center justify-center"
+          style={{ height: '320px' }}
           role="img"
           aria-label="Two scientists reviewing imaging results together in a research laboratory"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/70 via-[#0a0f1e]/30 to-transparent" aria-hidden="true" />
+          <img
+            src="/images/consulting-collaboration.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ transform: 'scaleY(1.43)', transformOrigin: 'center' }}
+          />
+          <div className="absolute inset-0 bg-[#0a0f1e]/60" aria-hidden="true" />
           <p className="relative z-10 text-[#b8c7d9] font-sans text-xl md:text-2xl max-w-xl text-center px-6 text-balance">
             <strong className="block text-white font-semibold text-2xl md:text-3xl mb-2">
               Scientific understanding. Clear communication. Careful execution.
