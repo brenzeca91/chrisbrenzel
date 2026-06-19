@@ -251,14 +251,21 @@ export default function ExperiencePage() {
 
       {/* Lab image */}
       <section className="max-w-7xl mx-auto px-6 pb-4">
-        <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a]">
+        <div
+          className="relative rounded-lg overflow-hidden border border-[#1e2d4a]"
+          style={{ height: '320px' }}
+          role="img"
+          aria-label="A row of preclinical research instruments lined up along a laboratory bench"
+        >
           <img
             src="/images/consulting-instruments.jpg"
-            alt="A row of preclinical research instruments lined up along a laboratory bench"
-            className="w-full object-cover aspect-[16/9] md:aspect-[21/9]"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ transform: 'scaleY(1.43)', transformOrigin: 'center' }}
           />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/60 to-transparent"
+            className="absolute inset-0 bg-[#0a0f1e]/50"
             aria-hidden="true"
           />
         </div>
