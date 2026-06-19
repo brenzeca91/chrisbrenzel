@@ -24,15 +24,18 @@ const orgImageLogos: Record<string, { src: string; alt: string; bg: string; heig
     bg: '#0c2340',
     height: 52,
   },
+  'GemPharmatech': {
+    src: '/images/logos/gempharmatech.png',
+    alt: 'GemPharmatech',
+    bg: '#ffffff',
+    height: 44,
+  },
 }
 
 // Text badge fallback for orgs without image logos
 const orgBadges: Record<string, { initials: string; color: string; bg: string; full: string }> = {
   'The START Center for Cancer Research / XenoSTART': {
     initials: 'SC', color: '#ef4444', bg: '#1f0a0a', full: 'START Center',
-  },
-  'GemPharmatech': {
-    initials: 'GP', color: '#22c55e', bg: '#071a0e', full: 'GemPharmatech',
   },
 }
 
