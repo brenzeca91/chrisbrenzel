@@ -100,18 +100,20 @@ export default function ProfessionalPage() {
           </div>
 
           {/* Portrait */}
-          <div className="relative">
-            <div className="relative rounded-lg overflow-hidden border border-[#1e2d4a]">
-              <img
-                src="/images/chris-lab-portrait.jpg"
-                alt="Christopher Brenzel in a research laboratory"
-                className="w-full h-full object-cover aspect-[4/5]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent" aria-hidden="true" />
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-[#0d1530] border border-[#1e2d4a] rounded px-5 py-3">
-              <p className="text-white font-sans text-sm font-medium">Christopher Brenzel</p>
-              <p className="text-[#6b8aaa] font-sans text-xs mt-0.5">Preclinical &amp; Translational Drug Development</p>
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative w-64 md:w-72 lg:w-80">
+              <div className="relative rounded-2xl overflow-hidden border border-[#1e2d4a]">
+                <img
+                  src="/images/chris-lab-portrait.jpg"
+                  alt="Christopher Brenzel in a research laboratory"
+                  className="w-full h-full object-cover aspect-[4/5]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/40 to-transparent" aria-hidden="true" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-[#0d1530] border border-[#1e2d4a] rounded-xl px-4 py-2.5">
+                <p className="text-white font-sans text-sm font-medium">Christopher Brenzel</p>
+                <p className="text-[#6b8aaa] font-sans text-xs mt-0.5">Preclinical &amp; Translational Drug Development</p>
+              </div>
             </div>
           </div>
         </div>
