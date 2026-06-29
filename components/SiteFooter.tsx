@@ -81,7 +81,15 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
               isConsulting ? 'text-[#4a6380]' : 'text-white/25'
             }`}
           >
-            &copy; {new Date().getFullYear()} Christopher Brenzel. All rights reserved.
+            &copy; {new Date().getFullYear()} Christopher Brenzel.{' '}
+            <Link
+              href="/photography/terms"
+              className={`underline underline-offset-2 transition-colors ${
+                isConsulting ? 'hover:text-[#8fa3bb]' : 'hover:text-white/50'
+              }`}
+            >
+              All rights reserved.
+            </Link>
           </p>
           <div className="flex flex-wrap gap-6">
             <Link
