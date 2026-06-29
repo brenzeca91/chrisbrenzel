@@ -83,7 +83,7 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
           >
             &copy; {new Date().getFullYear()} Christopher Brenzel. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-6">
             <Link
               href="/"
               className={`font-sans text-xs transition-colors ${
@@ -102,7 +102,27 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
                   : 'text-white/25 hover:text-white/50'
               }`}
             >
-              {isConsulting ? 'Photography' : 'Consulting'}
+              {isConsulting ? 'Photography' : 'Professional'}
+            </Link>
+            <Link
+              href="/photography/contact"
+              className={`font-sans text-xs transition-colors ${
+                isConsulting
+                  ? 'text-[#4a6380] hover:text-[#8fa3bb]'
+                  : 'text-white/25 hover:text-white/50'
+              }`}
+            >
+              Contact
+            </Link>
+            <Link
+              href="/photography/terms"
+              className={`font-sans text-xs transition-colors ${
+                isConsulting
+                  ? 'text-[#4a6380] hover:text-[#8fa3bb]'
+                  : 'text-white/25 hover:text-white/50'
+              }`}
+            >
+              Terms of Use
             </Link>
           </div>
         </div>
