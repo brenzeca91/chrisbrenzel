@@ -81,9 +81,17 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
               isConsulting ? 'text-[#4a6380]' : 'text-white/25'
             }`}
           >
-            &copy; {new Date().getFullYear()} Christopher Brenzel. All rights reserved.
+            &copy; {new Date().getFullYear()} Christopher Brenzel.{' '}
+            <Link
+              href="/photography/terms"
+              className={`underline underline-offset-2 transition-colors ${
+                isConsulting ? 'hover:text-[#8fa3bb]' : 'hover:text-white/50'
+              }`}
+            >
+              All rights reserved.
+            </Link>
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-6">
             <Link
               href="/"
               className={`font-sans text-xs transition-colors ${
@@ -102,7 +110,37 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
                   : 'text-white/25 hover:text-white/50'
               }`}
             >
-              {isConsulting ? 'Photography' : 'Consulting'}
+              {isConsulting ? 'Photography' : 'Professional'}
+            </Link>
+            <Link
+              href="/photography/contact"
+              className={`font-sans text-xs transition-colors ${
+                isConsulting
+                  ? 'text-[#4a6380] hover:text-[#8fa3bb]'
+                  : 'text-white/25 hover:text-white/50'
+              }`}
+            >
+              Contact
+            </Link>
+            <Link
+              href="/photography/terms"
+              className={`font-sans text-xs transition-colors ${
+                isConsulting
+                  ? 'text-[#4a6380] hover:text-[#8fa3bb]'
+                  : 'text-white/25 hover:text-white/50'
+              }`}
+            >
+              Terms of Use
+            </Link>
+            <Link
+              href="/photography/privacy"
+              className={`font-sans text-xs transition-colors ${
+                isConsulting
+                  ? 'text-[#4a6380] hover:text-[#8fa3bb]'
+                  : 'text-white/25 hover:text-white/50'
+              }`}
+            >
+              Privacy Policy
             </Link>
           </div>
         </div>
