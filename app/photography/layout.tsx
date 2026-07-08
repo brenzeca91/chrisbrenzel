@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+
+export const metadata: Metadata = {
+  other: {
+    'impact-site-verification': '8f3e30af-413b-4104-8ea9-99c5c5b26d0e',
+  },
+}
 
 export default function PhotographyLayout({
   children,
