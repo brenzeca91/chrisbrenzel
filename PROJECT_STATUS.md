@@ -5,23 +5,30 @@
 - Runtime/UI: React 19, TypeScript, Tailwind CSS 3, `lucide-react` icons, and custom components.
 - Package manager: pnpm, confirmed by `pnpm-lock.yaml`. No npm lockfile was found.
 - Repository inspected: `brenzeca91/chrisbrenzel` on GitHub, default branch `main`.
+- Local clone inspected: `C:\Users\chris\OneDrive\Documents\Chris Brenzel Website\chrisbrenzel`.
 
 ## Important Directories
-- `app/`: App Router pages, layouts, metadata, and route-level content.
-- `components/`: Shared React components, including `SiteNav`, `SiteFooter`, and photography sliders.
-- `components/photography/`: Photography-specific reusable components such as selected-work and collection sliders.
-- `public/`: Static files served from the site root, including images and downloadable files.
+- `app/`: App Router pages, layouts, metadata, API routes, and route-level content.
+- `components/`: Shared React components, including `SiteNav` and `SiteFooter`.
+- `components/photography/`: Photography-specific reusable components such as selected-work, collection, and print mockup sliders.
+- `data/`: Source Word documents for privacy policy and terms/disclosures.
+- `scripts/`: Utility scripts, currently including `composite-wall.mjs`.
+- `public/`: Static files served from the site root, including images, staging assets, and downloadable files.
 - `public/images/`: Main site image assets used by the professional and photography pages.
-- `public/images/gallery/`, `public/images/field-notes/`, `public/images/collections/`, and `public/images/mockups/`: Photography, article, collection, and print mockup image assets referenced by pages.
+- `public/images/gallery/`, `public/images/field-notes/`, `public/images/collections/`, `public/images/ic5/`, `public/images/ic6/`, `public/images/logos/`, and `public/images/mockups/`: Photography, article, collection, logo, and print mockup assets.
+- `public/staging/`: Staging image assets that may be temporary or awaiting placement.
+- `images/`: Root-level image files that appear separate from the deployed `public/` asset tree.
 
 ## Current Page and Routes Structure
 Confirmed routes and links include:
 
 - `/`: Split landing page linking to Professional and Photography.
+- `/api/contact`: Contact form API route using Resend.
 - `/consulting`: Professional landing page.
 - `/consulting/experience`: Selected experience page, linked from the professional nav.
 - `/consulting/about`: About page, linked from the professional nav.
 - `/consulting/contact`: Contact page, linked from the professional nav.
+- `/consulting/services`: Services page present in the route tree.
 - `/photography`: Photography landing page.
 - `/photography/gallery`: Gallery page, with category query links such as `?category=wildlife`, `?category=macro`, `?category=eclipses`, `?category=travel`, and `?category=astrophotography`.
 - `/photography/collections/rust-and-ruin`: Collection page linked from the photography landing page.
@@ -39,6 +46,8 @@ Confirmed routes and links include:
 - Navigation labels and primary route links are hard-coded in `components/SiteNav.tsx`.
 - Footer identity, email, LinkedIn link, and legal links are hard-coded in `components/SiteFooter.tsx`.
 - Photography landing-page categories, collection previews, and field-note teasers are hard-coded in `app/photography/page.tsx`.
+- Field-note detail content is stored in `app/photography/field-notes/[slug]/page.tsx`.
+- Legal policy source documents are stored in `data/`, while rendered routes live under `app/photography/privacy` and `app/photography/terms`.
 - No CMS, database, Markdown, MDX, or content collection system was confirmed during this baseline inspection.
 
 ## Where Images and Assets Are Stored
@@ -47,6 +56,8 @@ Confirmed routes and links include:
 - Field note images are referenced from `/images/field-notes/...`.
 - Collection images are referenced from `/images/collections/...`.
 - Print mockups are referenced from `/images/mockups/...`.
+- Logos are stored in `public/images/logos/`.
+- Staging image batches are stored in `public/staging/`.
 - Downloadable CV link currently points to `/CV-Christopher-Brenzel.pdf`.
 - `next.config.mjs` allows remote images from `chrisbrenzel.com`, `i0.wp.com`, and `eatingendeavors.files.wordpress.com`.
 
@@ -71,29 +82,33 @@ Confirmed routes and links include:
 
 ## Vercel Deployment Assumptions
 - The project appears compatible with Vercel's default Next.js framework detection.
-- No `vercel.json` was confirmed during baseline inspection, so build settings are likely inferred from `package.json`.
+- No `vercel.json` was found, so build settings are likely inferred from `package.json`.
 - The production domain is assumed to be `https://chrisbrenzel.com`, based on `app/layout.tsx` Open Graph metadata and `next.config.mjs` remote image settings.
 - Remote image host allowlisting suggests some migrated or legacy image content may still depend on WordPress-hosted domains.
-- The app includes `resend`, so contact or email features may depend on environment variables that should be confirmed in Vercel before production changes.
+- Contact form delivery depends on Resend and requires `RESEND_API_KEY` in the build/runtime environment.
 
 ## Verification Results
 - GitHub repository access confirmed: `brenzeca91/chrisbrenzel`, default branch `main`, with write permissions available through the GitHub connector.
-- `package.json`, `pnpm-lock.yaml`, `next.config.mjs`, `app/layout.tsx`, `app/page.tsx`, `app/consulting/page.tsx`, `app/consulting/layout.tsx`, `app/photography/page.tsx`, `app/photography/layout.tsx`, `components/SiteNav.tsx`, and `components/SiteFooter.tsx` were inspected.
+- Local clone inspected at `C:\Users\chris\OneDrive\Documents\Chris Brenzel Website\chrisbrenzel`.
+- `pnpm install` downloaded dependencies, but exited nonzero because pnpm ignored the `sharp@0.34.5` build script and requested `pnpm approve-builds`. Dependencies were still present afterward.
+- TypeScript check passed with `tsc --noEmit`.
+- Lint did not complete: `next lint` is deprecated and opened an interactive ESLint setup prompt because no ESLint config exists.
+- Production build compiled successfully, then failed while collecting page data for `/api/contact` because `app/api/contact/route.ts` constructs `new Resend(process.env.RESEND_API_KEY)` at module load time and no `RESEND_API_KEY` was available locally.
 - `AGENTS.md` and `PROJECT_STATUS.md` were added on branch `codex/project-baseline`.
-- Local install/lint/typecheck/build were not completed in this session because `git` was unavailable in the shell and downloading the full repository ZIP timed out before producing a valid archive. A separate local checkout or Vercel preview should run the verification commands above.
 
 ## Open Questions or Risks
-- The Codex desktop workspace initially pointed at an empty local folder, while a different site export existed in Downloads. GitHub should be treated as the source of truth going forward.
-- `pnpm lint` uses `next lint`, which may be incompatible with newer Next.js versions if the project is upgraded later.
+- `pnpm install` requires a decision about approving `sharp` build scripts.
+- `pnpm lint` uses deprecated `next lint` and currently prompts to create an ESLint config instead of running non-interactively.
 - There is no dedicated `typecheck` script.
+- Local production build requires `RESEND_API_KEY` or a contact route change that avoids constructing the Resend client during build-time module evaluation.
 - The footer LinkedIn URL currently appears to be the generic `https://linkedin.com`; confirm the correct profile URL.
 - `next.config.mjs` references `eatingendeavors.files.wordpress.com`, which may be legacy branding or migration residue.
 - Remote WordPress image domains should be reviewed before removing them, because current pages may still depend on migrated images.
 - Field-note and photography copy includes specific locations, dates, observations, and image titles. Confirm firsthand details before expanding SEO content.
 - Current professional path is `/consulting`, while the desired positioning may be broader than consulting. Future routing changes should be planned carefully to avoid breaking existing links.
-- Contact/email functionality and any required `RESEND` environment variables were not verified.
+- `public/staging/` and root-level `images/` should be reviewed to decide whether they are active assets, temporary staging files, or safe cleanup candidates.
 
 ## Recommended Next Three Tasks
-1. Run a clean local or Vercel verification pass: `pnpm install`, `pnpm exec tsc --noEmit`, `pnpm lint`, and `pnpm build`.
+1. Fix verification blockers: add a non-interactive lint setup or script, decide how to handle `sharp` build approval, and adjust the contact API so `pnpm build` does not fail without local Resend credentials.
 2. Audit navigation and route naming against the desired Professional, Photography, About, Contact, Photo Journal, and Prints structure.
-3. Review legacy links, remote image hosts, LinkedIn URL, CV filename, and contact/email behavior before making broader content or design changes.
+3. Review legacy links, remote image hosts, LinkedIn URL, CV filename, staging assets, and contact/email behavior before making broader content or design changes.
