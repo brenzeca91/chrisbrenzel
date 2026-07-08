@@ -16,6 +16,7 @@ const photographyLinks = [
   { label: 'Photography', href: '/photography' },
   { label: 'Gallery', href: '/photography/gallery' },
   { label: 'Field Notes', href: '/photography/field-notes' },
+  { label: 'Camera Bag', href: '/photography/camera-bag' },
   { label: 'Prints', href: '/photography/prints' },
   { label: 'Contact', href: '/photography/contact' },
 ]
