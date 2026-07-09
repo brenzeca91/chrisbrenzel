@@ -69,15 +69,19 @@ function PhotoCarousel() {
   const next = () => setCurrent((c) => (c + 1) % carouselSlides.length)
 
   return (
-    <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]">
+    <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a] bg-[#080808]">
       {carouselSlides.map((slide, i) => (
-        <img
+        <div
           key={slide.src}
-          src={slide.src}
-          alt={slide.alt}
-          className="w-full h-auto block transition-opacity duration-700"
-          style={{ opacity: i === current ? 1 : 0, display: i === current ? 'block' : 'none' }}
-        />
+          className="px-[25%] py-6"
+          style={{ display: i === current ? 'block' : 'none' }}
+        >
+          <img
+            src={slide.src}
+            alt={slide.alt}
+            className="w-full h-auto block rounded"
+          />
+        </div>
       ))}
       {/* Prev / Next */}
       <button
