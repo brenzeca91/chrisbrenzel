@@ -30,7 +30,7 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
                 isConsulting ? 'text-[#8fa3bb]' : 'text-white/50'
               }`}
             >
-              Biotech professional and nature photography
+              Biotech professional and nature photographer.
             </p>
             <p
               className={`font-sans text-sm ${
