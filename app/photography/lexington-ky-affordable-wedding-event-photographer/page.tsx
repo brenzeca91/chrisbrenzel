@@ -315,55 +315,176 @@ export default function LexingtonEventPhotographyPage() {
       {/* Recommended pros */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
         <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
-          For full wedding coverage, I recommend
+          Top recommendations
         </p>
         <p className="text-white/50 font-sans text-sm leading-relaxed max-w-2xl mb-8">
-          These Lexington-area photographers specialize in full wedding coverage
-          and have the experience, workflow, and style to handle complex events well.
+          I have personally seen both of these photographers work. They are
+          excellent and I recommend them without hesitation.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mb-12">
+          {/* Kevin and Anna */}
           <a
             href="https://kevinandannaweddings.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col gap-3 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
+            className="group flex flex-col border border-[#222] hover:border-[#3a3a3a] rounded-lg overflow-hidden transition-all hover:bg-[#0e0e0e]"
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Heart className="w-4 h-4 text-[#5b9bff]" />
+            <div className="relative overflow-hidden" style={{ height: '180px' }}>
+              <img
+                src="/images/photographers/kevin-anna.jpg"
+                alt="Sample wedding photo by Kevin and Anna Photography - outdoor ceremony at a Kentucky horse farm"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-3 left-4 flex items-center gap-1.5">
+                <Heart className="w-3.5 h-3.5 text-[#5b9bff]" />
+                <span className="text-white font-sans text-xs font-semibold">Top pick</span>
+              </div>
+            </div>
+            <div className="p-5 flex flex-col gap-2">
+              <div className="flex items-center justify-between">
                 <p className="text-[#f5f0eb] font-sans font-semibold text-base group-hover:text-white transition-colors">
                   Kevin and Anna Photography
                 </p>
+                <ExternalLink className="w-3.5 h-3.5 text-white/20 group-hover:text-white/40 transition-colors shrink-0" />
               </div>
-              <ExternalLink className="w-3.5 h-3.5 text-white/20 group-hover:text-white/40 transition-colors" />
+              <p className="text-white/35 font-sans text-sm leading-relaxed">
+                Award-winning husband and wife wedding photography team based in
+                Lexington, KY. Full-day coverage, editorial style, over 150
+                weddings photographed.
+              </p>
+              <p className="text-[#5b9bff] font-sans text-xs mt-1">kevinandannaweddings.com</p>
             </div>
-            <p className="text-white/35 font-sans text-sm leading-relaxed">
-              Dedicated wedding photographers with a full-service wedding
-              workflow, full-day coverage, and an editorial style.
-            </p>
-            <p className="text-[#5b9bff] font-sans text-xs">kevinandannaweddings.com</p>
           </a>
 
+          {/* Meghan Beth */}
           <a
             href="https://www.meghanbeth.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col gap-3 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
+            className="group flex flex-col border border-[#222] hover:border-[#3a3a3a] rounded-lg overflow-hidden transition-all hover:bg-[#0e0e0e]"
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Heart className="w-4 h-4 text-[#5b9bff]" />
+            <div className="relative overflow-hidden" style={{ height: '180px' }}>
+              <img
+                src="/images/photographers/meghan-beth.jpg"
+                alt="Sample wedding photo by Meghan Beth Photography - warm, intimate couple portrait"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-3 left-4 flex items-center gap-1.5">
+                <Heart className="w-3.5 h-3.5 text-[#5b9bff]" />
+                <span className="text-white font-sans text-xs font-semibold">Top pick</span>
+              </div>
+            </div>
+            <div className="p-5 flex flex-col gap-2">
+              <div className="flex items-center justify-between">
                 <p className="text-[#f5f0eb] font-sans font-semibold text-base group-hover:text-white transition-colors">
                   Meghan Beth Photography
                 </p>
+                <ExternalLink className="w-3.5 h-3.5 text-white/20 group-hover:text-white/40 transition-colors shrink-0" />
               </div>
-              <ExternalLink className="w-3.5 h-3.5 text-white/20 group-hover:text-white/40 transition-colors" />
+              <p className="text-white/35 font-sans text-sm leading-relaxed">
+                Full wedding coverage, albums, and a warm, natural style. Weddings,
+                newborns, and family sessions in Lexington and surrounding areas.
+              </p>
+              <p className="text-[#5b9bff] font-sans text-xs mt-1">meghanbeth.com</p>
             </div>
-            <p className="text-white/35 font-sans text-sm leading-relaxed">
-              Full wedding coverage, albums, and a warm, natural style suited
-              for couples looking for a polished, professional experience.
-            </p>
-            <p className="text-[#5b9bff] font-sans text-xs">meghanbeth.com</p>
+          </a>
+        </div>
+
+        {/* Also worth looking at */}
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+          Also worth looking at
+        </p>
+        <p className="text-white/50 font-sans text-sm leading-relaxed max-w-2xl mb-8">
+          Other photographers doing great work in the Lexington area.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl">
+          {/* Created with Grace */}
+          <a
+            href="https://www.createdwithgrace.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col border border-[#222] hover:border-[#3a3a3a] rounded-lg overflow-hidden transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="relative overflow-hidden" style={{ height: '160px' }}>
+              <img
+                src="/images/photographers/created-with-grace.jpg"
+                alt="Sample photo by Created with Grace Photography - Lexington KY wedding and portrait photographer"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            </div>
+            <div className="p-5 flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <p className="text-[#f5f0eb] font-sans font-semibold text-sm group-hover:text-white transition-colors">
+                  Created with Grace
+                </p>
+                <ExternalLink className="w-3 h-3 text-white/20 group-hover:text-white/40 transition-colors shrink-0" />
+              </div>
+              <p className="text-white/30 font-sans text-xs leading-relaxed">
+                Lexington KY wedding and portrait photographer. Bright, timeless style.
+              </p>
+              <p className="text-[#5b9bff] font-sans text-xs mt-1">createdwithgrace.com</p>
+            </div>
+          </a>
+
+          {/* Megan Sweeting */}
+          <a
+            href="https://megansweeting.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col border border-[#222] hover:border-[#3a3a3a] rounded-lg overflow-hidden transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="relative overflow-hidden" style={{ height: '160px' }}>
+              <img
+                src="/images/photographers/megan-sweeting.jpg"
+                alt="Sample wedding photo by Megan Sweeting Photo and Video - Lexington KY wedding photographers"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            </div>
+            <div className="p-5 flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <p className="text-[#f5f0eb] font-sans font-semibold text-sm group-hover:text-white transition-colors">
+                  Megan Sweeting Photo + Video
+                </p>
+                <ExternalLink className="w-3 h-3 text-white/20 group-hover:text-white/40 transition-colors shrink-0" />
+              </div>
+              <p className="text-white/30 font-sans text-xs leading-relaxed">
+                Lexington KY wedding photo and video. Documentary approach to wedding coverage.
+              </p>
+              <p className="text-[#5b9bff] font-sans text-xs mt-1">megansweeting.com</p>
+            </div>
+          </a>
+
+          {/* Jennifer Chang */}
+          <a
+            href="https://jenniferchangphotography.com/portfolio#portfolio.0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col border border-[#222] hover:border-[#3a3a3a] rounded-lg overflow-hidden transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="relative overflow-hidden" style={{ height: '160px' }}>
+              <img
+                src="/images/photographers/jennifer-chang.jpg"
+                alt="Sample wedding photo by Jennifer Chang Photography - elegant wedding portrait"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            </div>
+            <div className="p-5 flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <p className="text-[#f5f0eb] font-sans font-semibold text-sm group-hover:text-white transition-colors">
+                  Jennifer Chang Photography
+                </p>
+                <ExternalLink className="w-3 h-3 text-white/20 group-hover:text-white/40 transition-colors shrink-0" />
+              </div>
+              <p className="text-white/30 font-sans text-xs leading-relaxed">
+                Wedding and portrait photographer. Fine art, editorial style portfolio.
+              </p>
+              <p className="text-[#5b9bff] font-sans text-xs mt-1">jenniferchangphotography.com</p>
+            </div>
           </a>
         </div>
       </section>
