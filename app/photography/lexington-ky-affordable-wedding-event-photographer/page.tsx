@@ -115,7 +115,7 @@ export default function LexingtonEventPhotographyPage() {
     <main className="pt-14">
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 pt-12 pb-10 md:pt-16 md:pb-14">
+      <section className="max-w-7xl mx-auto px-6 pt-12 md:pt-16">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-5 font-sans">
           Lexington, KY
         </p>
@@ -154,12 +154,12 @@ export default function LexingtonEventPhotographyPage() {
           className="relative rounded-lg overflow-hidden border border-[#1a1a1a]"
           style={{ height: '500px' }}
         >
+          <div className="absolute inset-0 bg-[#0a0f1e]/20" aria-hidden="true" />
           <img
             src="/images/events/couple-champagne.jpg"
             alt="Couple laughing and popping champagne in a sunlit pine tree avenue during an engagement shoot"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[#0a0f1e]/20" aria-hidden="true" />
         </div>
       </section>
 
