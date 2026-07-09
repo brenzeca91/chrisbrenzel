@@ -328,7 +328,7 @@ export default function LexingtonEventPhotographyPage() {
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* Recommended pros */}
-      <section id="top-recommendations" className="max-w-7xl mx-auto px-6 pb-12 md:pb-14">
+      <section id="top-recommendations" className="max-w-7xl mx-auto px-6 mt-11 pb-12 md:pb-14">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           Top recommendations
         </p>
