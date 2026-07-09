@@ -61,7 +61,7 @@ const posts = [
     excerpt:
       'A crystal sphere that bends and inverts the world — and the unexpected challenges of capturing clean, original images through one. Common mistakes and tips for beginners.',
     slug: 'lensball-photography',
-    cover: '/images/field-notes/lensball.jpg',
+    cover: '/images/field-notes/lensball-forest-log-refraction-christopher-brenzel.jpg',
   },
   {
     title: 'Exploring Frankfort, KY',
