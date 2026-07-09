@@ -70,11 +70,11 @@ const faqItems = [
   },
   {
     q: 'How much do you charge for a wedding?',
-    a: 'For a wedding I typically charge $1,000 plus $500 to $2,000 depending on the agreed upon photo package and types of deliverables. Standard delivery includes 150 to 300 edited photos (color and b&w) available for digital download.',
+    a: 'For very small weddings, courthouse ceremonies, or short elopement-style coverage, limited packages may be available under $500 depending on date, location, and coverage length. More involved wedding coverage typically starts closer to $1,000 and may increase depending on hours, deliverables, travel, and editing needs. I\'ll always be upfront about whether your budget and expectations are a good fit.',
   },
   {
     q: 'Are you a full-time wedding photographer?',
-    a: 'No. My primary work is nature, wildlife, macro, and landscape photography in Kentucky. I take on a small number of personal event sessions per year, to support my other photography efforts such as travel expenses, buying lenses and equipment, and other overhead costs. When the event is a good fit for a candid, natural approach and the client has realistic expectations.',
+    a: 'No. My primary work is nature, wildlife, macro, and landscape photography in Kentucky. I take on a small number of personal event sessions each year to support my photography work, travel, lenses, equipment, and other overhead costs. I\'m a good fit when the event is small, relaxed, candid, and expectations are clear.',
   },
   {
     q: 'What types of events do you cover?',
@@ -161,7 +161,7 @@ export default function LexingtonEventPhotographyPage() {
             <p className="text-white/60 font-sans text-base leading-relaxed mb-4">
               I am a Lexington-based photographer focused primarily on nature,
               wildlife, macro, and landscape photography in Kentucky. My day-to-day
-              work is out in the field, not in a studio or capturing portraits.
+              work is usually out in the field, not in a traditional portrait studio or full-service wedding workflow.
             </p>
             <p className="text-white/60 font-sans text-base leading-relaxed mb-4">
               That said, I occasionally take on limited personal event work for
@@ -198,9 +198,10 @@ export default function LexingtonEventPhotographyPage() {
               photos under $500 in Lexington KY, this may be worth a conversation.
             </p>
             <p className="text-white/45 font-sans text-sm leading-relaxed">
-              As a courthouse wedding photographer Lexington KY or Lexington KY
-              engagement photographer, I can offer a relaxed, natural approach at
-              a price point that full-service studios typically cannot.
+              For courthouse weddings, engagement photos, and small personal
+              events in Lexington, KY, I can offer a relaxed, natural approach
+              at a price point that is often more accessible than a full-service
+              wedding studio.
             </p>
           </div>
         </div>
