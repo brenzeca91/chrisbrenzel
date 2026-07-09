@@ -12,7 +12,7 @@ const posts = [
       'A firsthand look at renting the Sony 200-600mm and other wildlife lenses through Lensrentals -- shipping, condition, turnaround, and whether it makes sense before buying.',
     slug: 'lensrentals-review-wildlife-photography-gear',
     href: '/photography/lensrentals-review-wildlife-photography-gear',
-    cover: '/images/field-notes/backyard-birds.jpg',
+    cover: '/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg',
   },
   {
     title: 'Birding at Bettman Nature Preserve',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight, ExternalLink } from 'lucide-react'
 
@@ -63,6 +64,25 @@ export default function LensrentalsReviewPage() {
         </p>
         <CTAButton />
       </section>
+
+      {/* Hero photo */}
+      <div className="max-w-3xl mx-auto px-6 pb-8">
+        <figure>
+          <div className="rounded overflow-hidden bg-[#111]">
+            <Image
+              src="/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg"
+              alt="Two photographers in a forest -- one with binoculars, one shooting upward with a rented telephoto lens"
+              width={1300}
+              height={868}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+          <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+            Renting a telephoto for a birding trip -- binoculars to spot, long lens to capture.
+          </figcaption>
+        </figure>
+      </div>
 
       <div className="max-w-3xl mx-auto px-6">
         <hr className="border-white/10 my-8" />
