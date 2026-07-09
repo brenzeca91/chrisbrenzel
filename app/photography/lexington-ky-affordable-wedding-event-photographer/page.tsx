@@ -314,8 +314,14 @@ export default function LexingtonEventPhotographyPage() {
         </ul>
         <p className="text-white/40 font-sans text-sm leading-relaxed max-w-xl">
           If your event needs any of the above, please hire a professional whose
-          primary work is weddings. Two photographers in Lexington I can
-          personally recommend are listed below.
+          primary work is weddings.
+          <br />
+          <br />
+          Wedding photographers who specialize in capturing people and events are
+          always worth the investment. Skip the cheap wedding photographers and
+          consider my recommendations below. These photographers in Lexington, KY
+          that I can personally recommend and either will do an incredible job
+          capturing your wedding.
         </p>
       </section>
 
