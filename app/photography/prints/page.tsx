@@ -37,9 +37,9 @@ export default function PrintsPage() {
           Order prints online.
         </h1>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl">
-          Fine art prints of selected Kentucky nature images are now available to
-          order directly through my Pixieset print store; professional lab
-          printing, multiple sizes, and shipping handled for you.
+          Fine art prints of selected images are now available to order directly
+          through my Pixieset print store; professional lab printing, multiple
+          sizes, and shipping handled for you.
         </p>
       </section>
 
@@ -67,7 +67,7 @@ export default function PrintsPage() {
             </div>
           </div>
           <a
-            href="https://chrisbrenzelphotography.pixieset.com/kentuckynature/store/"
+            href="https://chrisbrenzelphotography.pixieset.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#6fcf97] hover:bg-[#9fe7b8] text-[#071a0e] font-sans font-semibold text-sm px-6 py-3 rounded transition-colors whitespace-nowrap shrink-0"
