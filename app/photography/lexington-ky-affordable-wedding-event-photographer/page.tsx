@@ -116,7 +116,7 @@ export default function LexingtonEventPhotographyPage() {
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-12 pb-10 md:pt-16 md:pb-14">
-        <p className="text-white/30 text-xs font-medium tracking-[0.2em] uppercase mb-5 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-5 font-sans">
           Lexington, KY
         </p>
         <h1 className="text-[#f5f0eb] font-serif italic text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-5 text-balance max-w-4xl">
@@ -169,7 +169,7 @@ export default function LexingtonEventPhotographyPage() {
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl">
           <div>
-            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
               About Christopher
             </p>
             <p className="text-white/60 font-sans text-base leading-relaxed mb-4">
@@ -210,7 +210,7 @@ export default function LexingtonEventPhotographyPage() {
 
       {/* Good fit events */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           This may be a good fit for
         </p>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-10">
@@ -245,7 +245,7 @@ export default function LexingtonEventPhotographyPage() {
           </div>
 
           <div>
-            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
               What to expect
             </p>
             <ul className="flex flex-col gap-3">
@@ -260,7 +260,7 @@ export default function LexingtonEventPhotographyPage() {
 
           {/* Pricing */}
           <div>
-            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
               Pricing &amp; availability
             </p>
             <p className="text-white/55 font-sans text-sm leading-relaxed mb-4">
@@ -287,7 +287,7 @@ export default function LexingtonEventPhotographyPage() {
 
       {/* When to hire a dedicated wedding photographer */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           When to hire a dedicated wedding photographer
         </p>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-8">
@@ -314,7 +314,7 @@ export default function LexingtonEventPhotographyPage() {
 
       {/* Recommended pros */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           Top recommendations
         </p>
         <p className="text-white/50 font-sans text-sm leading-relaxed max-w-2xl mb-8">
@@ -393,7 +393,7 @@ export default function LexingtonEventPhotographyPage() {
         </div>
 
         {/* Also worth looking at */}
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           Also worth looking at
         </p>
         <p className="text-white/50 font-sans text-sm leading-relaxed max-w-2xl mb-8">
@@ -493,7 +493,7 @@ export default function LexingtonEventPhotographyPage() {
 
       {/* Inquiry */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           Ask about availability
         </p>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-8">
