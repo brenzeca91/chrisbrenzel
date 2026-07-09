@@ -4,6 +4,17 @@ import { ArrowRight } from 'lucide-react'
 
 const posts = [
   {
+    title: 'Lensrentals Review: Renting Gear for Wildlife Photography',
+    category: 'Gear',
+    date: 'July 9, 2026',
+    location: 'Lexington, KY',
+    excerpt:
+      'A firsthand look at renting the Sony 200-600mm and other wildlife lenses through Lensrentals -- shipping, condition, turnaround, and whether it makes sense before buying.',
+    slug: 'lensrentals-review-wildlife-photography-gear',
+    href: '/photography/lensrentals-review-wildlife-photography-gear',
+    cover: '/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg',
+  },
+  {
     title: 'Birding at Bettman Nature Preserve',
     category: 'Wildlife',
     date: 'January 21, 2025',
@@ -110,13 +121,14 @@ export default function FieldNotesPage() {
       {/* Posts grid */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post) => (
-            <article
+          {posts.map((post) => {
+            const postHref = 'href' in post ? post.href : `/photography/field-notes/${post.slug}`
+            return <article
               key={post.slug}
               className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden hover:bg-[#141414] transition-all flex flex-col"
             >
               {/* Cover image */}
-              <Link href={`/photography/field-notes/${post.slug}`} className="block overflow-hidden aspect-[4/3] relative bg-[#111]">
+              <Link href={postHref} className="block overflow-hidden aspect-[4/3] relative bg-[#111]">
                 <Image
                   src={post.cover}
                   alt={post.title}
@@ -143,7 +155,7 @@ export default function FieldNotesPage() {
                 <div className="flex items-center justify-between">
                   <span className="text-white/20 font-sans text-xs">{post.location}</span>
                   <Link
-                    href={`/photography/field-notes/${post.slug}`}
+                    href={postHref}
                     className="flex items-center gap-1.5 text-white/35 hover:text-white/70 font-sans text-xs font-medium transition-colors"
                   >
                     Read more <ArrowRight className="w-3.5 h-3.5" />
@@ -151,7 +163,7 @@ export default function FieldNotesPage() {
                 </div>
               </div>
             </article>
-          ))}
+          })}
         </div>
       </section>
     </main>
