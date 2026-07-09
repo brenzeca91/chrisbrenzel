@@ -37,9 +37,9 @@ export default function PrintsPage() {
           Order prints online.
         </h1>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl">
-          Fine art prints of selected Kentucky nature images are now available to
-          order directly through my Pixieset print store; professional lab
-          printing, multiple sizes, and shipping handled for you.
+          Fine art prints of selected images are now available to order directly
+          through my Pixieset print store; professional lab printing, multiple
+          sizes, and shipping handled for you.
         </p>
       </section>
 
