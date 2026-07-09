@@ -11,7 +11,7 @@ const posts = [
     excerpt:
       'Winter bird photography at a nature preserve surrounded by feeders — bright plumage against white snow, bare branches, and the challenge of shooting through glass in cold overcast light.',
     slug: 'birding-at-bettman',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc02188.jpeg',
+    cover: '/images/field-notes/bettman.jpg',
   },
   {
     title: 'Capturing Backyard Birds',
@@ -21,7 +21,7 @@ const posts = [
     excerpt:
       'A review of the Sony FE 200-600mm f/5.6-6.3 G OSS and what a backyard feeder setup can unlock — white-throated sparrows, cardinals, and a tufted titmouse at 50 feet.',
     slug: 'capturing-backyard-birds',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01896.jpg',
+    cover: '/images/field-notes/backyard-birds.jpg',
   },
   {
     title: 'Capturing Snowflakes',
@@ -31,7 +31,7 @@ const posts = [
     excerpt:
       'Following in the footsteps of Wilson A. Bentley, who photographed over 5,000 snowflakes. A humbling first attempt at extreme macro photography of ice crystals before they melt.',
     slug: 'capturing-snowflakes',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2025/01/dsc01701-1.jpg',
+    cover: '/images/field-notes/snowflakes.jpg',
   },
   {
     title: 'Solar Eclipse — Part II',
@@ -41,7 +41,7 @@ const posts = [
     excerpt:
       "The moment of totality: solar filters off, shutter open. Massive solar flares visible around the moon's silhouette and the eerie light of a darkened afternoon sky.",
     slug: 'solar-eclipse-part-2',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc01026.jpg',
+    cover: '/images/field-notes/eclipse-part2.jpg',
   },
   {
     title: 'Solar Eclipse — Part I',
@@ -51,7 +51,7 @@ const posts = [
     excerpt:
       'April 8, 2024: a total solar eclipse visible across a wide swath of the US. Setup, solar filters, and a homemade solution for protecting the camera sensor from the sun.',
     slug: 'solar-eclipse-part-1',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc00961.jpg',
+    cover: '/images/field-notes/eclipse-part1.jpg',
   },
   {
     title: 'How to: Lensball Photography',
@@ -61,7 +61,7 @@ const posts = [
     excerpt:
       'A crystal sphere that bends and inverts the world — and the unexpected challenges of capturing clean, original images through one. Common mistakes and tips for beginners.',
     slug: 'lensball-photography',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc08116.jpg',
+    cover: '/images/field-notes/lensball.jpg',
   },
   {
     title: 'Exploring Frankfort, KY',
@@ -71,7 +71,7 @@ const posts = [
     excerpt:
       "A day of street photography in Kentucky's capital — the brick castle of the Military History Museum, the river, ivy on a broken window, and a hunt for a striking natural divide.",
     slug: 'exploring-frankfort',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2024/04/dsc02193-1.jpg',
+    cover: '/images/field-notes/frankfort.jpg',
   },
   {
     title: 'Macro Photography at Folly Beach',
@@ -79,9 +79,9 @@ const posts = [
     date: 'December 15, 2021',
     location: 'Folly Beach, SC',
     excerpt:
-      'First outing with a macro lens on a Sony A6000. Tiny shells, sand grains, and the difficulty of keeping wind-blown subjects still long enough to focus.',
+      'First outing with a macro lens on a Sony A6000. Tiny shells, sand grains, and the difficulty of keeping wind-blown subjects still long enough to cover.',
     slug: 'macro-at-folly-beach',
-    cover: 'https://chrisbrenzel.com/wp-content/uploads/2021/12/unnamed-1.jpg',
+    cover: '/images/field-notes/folly-beach.jpg',
   },
 ]
 
