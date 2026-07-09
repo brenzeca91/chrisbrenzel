@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
+import { ShoppingBag, ArrowUpRight } from 'lucide-react'
 
 const allPhotos = [
   // --- Selected Works (9) ---
@@ -155,6 +157,43 @@ export default function GalleryPage() {
             <p className="text-white/25 font-sans text-sm">No photos in this category yet.</p>
           </div>
         )}
+      </section>
+
+      {/* Print store CTA */}
+      <section className="max-w-7xl mx-auto px-6 pb-16">
+        <div className="border border-[#1e2d1e] bg-[#0a120a] rounded-lg p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-md bg-[#1a2e1a] shrink-0">
+              <ShoppingBag className="w-5 h-5 text-[#6fcf97]" />
+            </div>
+            <div>
+              <p className="text-[#f5f0eb] font-sans font-semibold text-lg mb-1">
+                Print Store -- Chris Brenzel Photography
+              </p>
+              <p className="text-white/40 font-sans text-sm leading-relaxed max-w-lg">
+                Browse the full collection and place your order directly. Ordering, payment, and
+                fulfillment are handled by Pixieset, a professional photography print platform.
+                If you run into any issues, feel free to{' '}
+                <Link href="/photography/contact" className="text-[#6fcf97] hover:text-[#9fe7b8] underline underline-offset-2 transition-colors">
+                  get in touch
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://chrisbrenzelphotography.pixieset.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#6fcf97] hover:bg-[#9fe7b8] text-[#071a0e] font-sans font-semibold text-sm px-6 py-3 rounded transition-colors whitespace-nowrap shrink-0"
+          >
+            Visit Print Store
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </div>
+        <p className="text-white/20 font-sans text-xs mt-3 leading-relaxed">
+          Prints are fulfilled by Pixieset via professional lab partners. All images remain the copyright of Christopher Brenzel.
+        </p>
       </section>
 
       {/* Lightbox */}
