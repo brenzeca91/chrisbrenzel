@@ -146,7 +146,7 @@ export default function LexingtonEventPhotographyPage() {
             View Photography
           </Link>
         </div>
-        <p className="text-white/20 font-sans text-xs mt-5 leading-relaxed max-w-lg">
+        <p className="text-blue-300 font-sans text-xs mt-5 leading-relaxed max-w-lg">
           Limited availability. Small events only. Full wedding coverage is best
           handled by a dedicated wedding photographer.
         </p>
@@ -179,7 +179,7 @@ export default function LexingtonEventPhotographyPage() {
             <p className="text-white/60 font-sans text-base leading-relaxed mb-4">
               I am a Lexington-based photographer focused primarily on nature,
               wildlife, macro, and landscape photography in Kentucky. My day-to-day
-              work is out in the field, not in a studio.
+              work is out in the field, not in a studio or capturing portraits.
             </p>
             <p className="text-white/60 font-sans text-base leading-relaxed">
               That said, I occasionally take on limited personal event work for
@@ -213,7 +213,7 @@ export default function LexingtonEventPhotographyPage() {
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* Good fit events */}
-      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+      <section className="max-w-7xl mx-auto px-6 pt-12 md:pt-14">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           This may be a good fit for
         </p>
@@ -290,7 +290,7 @@ export default function LexingtonEventPhotographyPage() {
       <div className="max-w-7xl mx-auto px-6 mt-4"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* When to hire a dedicated wedding photographer */}
-      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+      <section className="max-w-7xl mx-auto px-6 pb-12 md:pb-14">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           When to hire a dedicated wedding photographer
         </p>
@@ -317,7 +317,7 @@ export default function LexingtonEventPhotographyPage() {
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* Recommended pros */}
-      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+      <section className="max-w-7xl mx-auto px-6 pb-12 md:pb-14">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           Top recommendations
         </p>
