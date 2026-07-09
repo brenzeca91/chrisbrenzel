@@ -317,22 +317,25 @@ const postData: Record<string, Post> = {
     category: 'How-To',
     cover: '/images/field-notes/lensball-forest-log-refraction-christopher-brenzel.jpg',
     prev: { slug: 'exploring-frankfort', title: 'Exploring Frankfort, KY' },
-    next: { slug: 'solar-eclipse-part-1', title: 'Solar Eclipse — Part I' },
+    next: { slug: 'solar-eclipse-part-1', title: 'Solar Eclipse -- Part I' },
     body: (
       <div className="flex flex-col gap-5">
 
-        {/* Affiliate disclosure */}
-        <p className="text-white/35 text-xs border border-white/10 rounded px-3 py-2 font-sans">
-          This post contains affiliate links. If you purchase through them I may earn a small
-          commission at no extra cost to you.
-        </p>
-
         <p>
-          I was recently gifted a lensball — a solid glass sphere that acts as a natural lens,
-          bending and inverting the world around it. If you&apos;ve seen crystal ball photography
-          on Instagram, this is the tool behind most of those shots. The concept is simple: place
-          the ball in front of your camera, focus through it, and the sphere inverts and compresses
-          the scene inside a perfect circle.
+          I was recently gifted a{' '}
+          <a
+            href="https://amzn.to/4fcseDj"
+            rel="sponsored nofollow"
+            target="_blank"
+            className="text-blue-300 hover:text-blue-200 transition-colors underline"
+          >
+            lensball
+          </a>{' '}
+          -- a solid glass sphere that acts as a natural lens, bending and inverting the world
+          around it. If you&apos;ve seen crystal ball photography on Instagram, this is the tool
+          behind most of those shots. The concept is simple: place the ball in front of your
+          camera, focus through it, and the sphere inverts and compresses the scene inside a
+          perfect circle.
         </p>
 
         <PostImage
@@ -345,7 +348,7 @@ const postData: Record<string, Post> = {
           What Is Lensball Photography?
         </h3>
         <p>
-          Lensball photography — sometimes called crystal ball photography — is a creative technique
+          Lensball photography -- sometimes called crystal ball photography -- is a creative technique
           where a solid glass sphere is used to refract and invert a scene. The ball functions like
           a fisheye lens compressed into a small circle. Subjects like trees, architecture, and
           landscapes bend inward, creating a miniaturized world inside the sphere. You shoot through
@@ -353,7 +356,7 @@ const postData: Record<string, Post> = {
           to isolate the ball against a blurred background.
         </p>
         <p>
-          The technique works because the glass sphere bends light from all angles simultaneously —
+          The technique works because the glass sphere bends light from all angles simultaneously --
           the same physics that make a water droplet reflect a whole scene. The result is a
           180-degree field of view compressed into the diameter of the ball, always flipped
           upside-down.
@@ -371,14 +374,14 @@ const postData: Record<string, Post> = {
         <p>
           I took the lensball out to a pine forest and placed it on a fallen log. The warm wood
           gave the ball a natural resting point and kept the forest floor from dominating the frame.
-          The vertical pine trees created strong lines inside the sphere — which, inverted, read as
+          The vertical pine trees created strong lines inside the sphere -- which, inverted, read as
           a clean pattern radiating from the bottom edge.
         </p>
         <p>
           Getting the ball sharp while keeping a blurred background required more experimentation
           than I expected. Too close and the background compressed into a smear. Too far and the
-          sphere lost its presence against the scene. The sweet spot — at least with the lens I had
-          — was around two to three feet from the ball at a moderate aperture like f/5.6 or f/8.
+          sphere lost its presence against the scene.           The sweet spot -- at least with the lens I had -- was around two to three feet from the
+          ball at a moderate aperture like f/5.6 or f/8.
         </p>
 
         {/* Photo notes callout */}
@@ -404,7 +407,7 @@ const postData: Record<string, Post> = {
 
         <p className="text-white/55">
           <strong className="text-white/70">1. Including too much ground.</strong> When the ball
-          sits too low — directly on the ground or on a low surface — the forest floor fills a
+          sits too low -- directly on the ground or on a low surface -- the forest floor fills a
           large portion of the interior. In a forest setting, this means pine needles and dirt
           dominate the composition rather than the trees or sky you were trying to capture.
         </p>
@@ -433,7 +436,7 @@ const postData: Record<string, Post> = {
           <strong className="text-white/70">3. Originality.</strong> After looking at hundreds of
           lensball photos on Instagram, finding a composition that doesn&apos;t feel like a
           repeat of what everyone else has done is genuinely difficult. The sphere is the star of
-          almost every shot — which means the challenge quickly becomes finding backgrounds,
+          almost every shot -- which means the challenge quickly becomes finding backgrounds,
           surfaces, and lighting that make yours stand apart.
         </p>
 
@@ -448,7 +451,7 @@ const postData: Record<string, Post> = {
         <p className="text-white/55">
           <strong className="text-white/70">5. Smudges and fingerprints.</strong> Bring a
           microfiber cloth. Any fingerprint on the glass surface will show up clearly in the
-          final image — especially when shooting in bright conditions. Clean the ball before
+          final image -- especially when shooting in bright conditions. Clean the ball before
           every shot.
         </p>
 
@@ -458,7 +461,7 @@ const postData: Record<string, Post> = {
         <p>
           A lensball is a magnifying glass. In direct sunlight, it will concentrate light into a
           focused beam intense enough to burn skin, start a fire, or damage a camera sensor.
-          Never leave a lensball sitting in direct sunlight unattended — on a car seat, a table,
+          Never leave a lensball sitting in direct sunlight unattended -- on a car seat, a table,
           or the ground. Treat it the same way you would treat a magnifying glass around paper.
           When shooting in bright sun, keep your shooting time brief and never point the sphere
           directly toward the sun.
@@ -497,7 +500,7 @@ const postData: Record<string, Post> = {
         </h3>
         <ul className="list-disc list-inside flex flex-col gap-2 text-white/55">
           <li>
-            Place the ball on an elevated natural surface — a rock, log, or fence post — to
+            Place the ball on an elevated natural surface -- a rock, log, or fence post -- to
             reduce ground coverage inside the sphere.
           </li>
           <li>
@@ -616,6 +619,12 @@ const postData: Record<string, Post> = {
             </a>
           </p>
         </div>
+
+        {/* Affiliate disclosure */}
+        <p className="text-white/30 text-xs font-sans leading-relaxed">
+          Disclosure: this post contains affiliate links. If you purchase through them I may earn a
+          small commission at no extra cost to you.
+        </p>
 
       </div>
     ),
