@@ -69,14 +69,14 @@ function PhotoCarousel() {
   const next = () => setCurrent((c) => (c + 1) % carouselSlides.length)
 
   return (
-    <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '420px' }}>
+    <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]">
       {carouselSlides.map((slide, i) => (
         <img
           key={slide.src}
           src={slide.src}
           alt={slide.alt}
-          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700"
-          style={{ opacity: i === current ? 1 : 0 }}
+          className="w-full h-auto block transition-opacity duration-700"
+          style={{ opacity: i === current ? 1 : 0, display: i === current ? 'block' : 'none' }}
         />
       ))}
       {/* Prev / Next */}
