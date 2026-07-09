@@ -84,57 +84,85 @@ export default function PrintsPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
-      {/* How it works */}
+      {/* Beyond the store — inquire directly */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-8 font-sans">
-          How to inquire
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
+          Beyond the store
+        </p>
+        <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-10">
+          The print store covers standard sizes and personal use. For anything
+          outside of that — reach out directly.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
-          <div>
-            <p className="text-white/60 font-sans text-base leading-relaxed mb-6">
-              When reaching out, include the following details so I can give you
-              an accurate response:
-            </p>
-            <ul className="flex flex-col gap-3">
-              {[
-                'The image title or a link to the gallery',
-                'Intended use (personal, gift, commercial, etc.)',
-                'Preferred size or format',
-                'Timeline if relevant',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-1 h-1 rounded-full bg-white/30 mt-2.5 shrink-0" />
-                  <span className="text-white/50 font-sans text-sm leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Custom prints */}
+          <a
+            href="mailto:chris@chrisbrenzel.com?subject=Custom print inquiry"
+            className="group flex flex-col gap-4 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="w-8 h-8 rounded-md bg-[#1a1a2e] flex items-center justify-center shrink-0">
+              <Mail className="w-4 h-4 text-[#5b9bff]" />
+            </div>
+            <div>
+              <p className="text-[#f5f0eb] font-sans font-semibold text-base mb-2 group-hover:text-white transition-colors">
+                Custom prints
+              </p>
+              <p className="text-white/35 font-sans text-sm leading-relaxed">
+                Non-standard sizes, panoramic formats, canvas, metal, or acrylic
+                substrates. Also available as high-resolution digital files for
+                your own printing.
+              </p>
+            </div>
+            <p className="text-[#5b9bff] font-sans text-xs mt-auto">Get in touch &rarr;</p>
+          </a>
 
-          <div className="flex flex-col gap-5">
-            <a
-              href="mailto:chris@chrisbrenzel.com?subject=Print inquiry"
-              className="group flex items-center gap-4 border border-[#222] hover:border-[#444]
-                         rounded p-5 transition-all hover:bg-[#141414]"
-            >
-              <Mail className="w-5 h-5 text-white/30 group-hover:text-white/60 transition-colors shrink-0" />
-              <div>
-                <p className="text-[#f5f0eb] font-sans text-sm font-medium mb-0.5 group-hover:text-white transition-colors">
-                  Email Christopher about a print
-                </p>
-                <p className="text-white/30 font-sans text-xs">
-                  chris@chrisbrenzel.com
-                </p>
-              </div>
-            </a>
+          {/* Commercial licensing */}
+          <a
+            href="mailto:chris@chrisbrenzel.com?subject=Commercial licensing inquiry"
+            className="group flex flex-col gap-4 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="w-8 h-8 rounded-md bg-[#1a1a2e] flex items-center justify-center shrink-0">
+              <Mail className="w-4 h-4 text-[#5b9bff]" />
+            </div>
+            <div>
+              <p className="text-[#f5f0eb] font-sans font-semibold text-base mb-2 group-hover:text-white transition-colors">
+                Commercial licensing
+              </p>
+              <p className="text-white/35 font-sans text-sm leading-relaxed">
+                Editorial, advertising, product packaging, or any use that goes
+                beyond personal display. License terms and pricing depend on the
+                image and scope of use.
+              </p>
+            </div>
+            <p className="text-[#5b9bff] font-sans text-xs mt-auto">Get in touch &rarr;</p>
+          </a>
 
-            <p className="text-white/25 font-sans text-xs leading-relaxed">
-              Response time is typically within a few days. Not all images are
-              available for every use or format — I will let you know what is
-              possible for the specific image you are interested in.
-            </p>
-          </div>
+          {/* Event photography */}
+          <a
+            href="mailto:chris@chrisbrenzel.com?subject=Event photography inquiry"
+            className="group flex flex-col gap-4 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="w-8 h-8 rounded-md bg-[#1a1a2e] flex items-center justify-center shrink-0">
+              <Mail className="w-4 h-4 text-[#5b9bff]" />
+            </div>
+            <div>
+              <p className="text-[#f5f0eb] font-sans font-semibold text-base mb-2 group-hover:text-white transition-colors">
+                Hire Chris to shoot
+              </p>
+              <p className="text-white/35 font-sans text-sm leading-relaxed">
+                Outdoor events, nature tours, field work, or other shoots where
+                you need a photographer on location. Based in Kentucky —
+                available for travel.
+              </p>
+            </div>
+            <p className="text-[#5b9bff] font-sans text-xs mt-auto">Get in touch &rarr;</p>
+          </a>
         </div>
+
+        <p className="text-white/20 font-sans text-xs mt-6 leading-relaxed">
+          Response time is typically within a few days. Include the image title,
+          intended use, and any relevant timeline when reaching out.
+        </p>
       </section>
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
