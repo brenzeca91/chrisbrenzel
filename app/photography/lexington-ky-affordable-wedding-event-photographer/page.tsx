@@ -146,9 +146,15 @@ export default function LexingtonEventPhotographyPage() {
             View Photography
           </Link>
         </div>
-        <p className="text-blue-300 font-sans text-xs mt-5 leading-relaxed max-w-lg">
-          Limited availability. Small events only. Full wedding coverage is best
-          handled by a dedicated wedding photographer.
+        <p className="text-blue-300 font-sans text-xs mt-4 mb-4 leading-relaxed max-w-lg">
+          In most cases full wedding coverage is best handled by a dedicated wedding
+          photographer.{' '}
+          <a
+            href="#top-recommendations"
+            className="hover:text-[#7ab2ff] transition-colors underline"
+          >
+            Check out my top recommendations
+          </a>
         </p>
       </section>
 
@@ -290,14 +296,13 @@ export default function LexingtonEventPhotographyPage() {
       <div className="max-w-7xl mx-auto px-6 mt-4"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* When to hire a dedicated wedding photographer */}
-      <section className="max-w-7xl mx-auto px-6 pb-12 md:pb-14">
+      <section className="max-w-7xl mx-auto px-6 pt-10 pb-9 md:pb-9">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           When to hire a dedicated wedding photographer
         </p>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-8">
-          I want to be straightforward: for larger, more complex weddings, a
-          full-time wedding photographer will serve you far better than I can.
-          That includes:
+          For larger, more complex weddings, a full-time wedding photographer will
+          serve you far better than I can. That includes:
         </p>
         <ul className="flex flex-col gap-3 max-w-xl mb-8">
           {fullWeddingNeeds.map((item) => (
@@ -317,13 +322,14 @@ export default function LexingtonEventPhotographyPage() {
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* Recommended pros */}
-      <section className="max-w-7xl mx-auto px-6 pb-12 md:pb-14">
+      <section id="top-recommendations" className="max-w-7xl mx-auto px-6 pb-12 md:pb-14">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
           Top recommendations
         </p>
         <p className="text-white/50 font-sans text-sm leading-relaxed max-w-2xl mb-8">
           I have personally seen both of these photographers work. They are
-          excellent and I recommend them without hesitation.
+          excellent and I highly recommend them without hesitation for weddings,
+          family portraits, engagement photos, and more!
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mb-12">
           {/* Kevin and Anna */}
