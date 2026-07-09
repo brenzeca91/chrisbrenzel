@@ -311,75 +311,312 @@ const postData: Record<string, Post> = {
   },
 
   'lensball-photography': {
-    title: 'How to: Lensball Photography',
+    title: 'How to Use a Lensball for Creative Nature Photography',
     date: 'December 12, 2023',
     location: 'Lexington, KY',
     category: 'How-To',
-    cover: '/images/field-notes/lensball.jpg',
+    cover: '/images/field-notes/lensball-forest-log-refraction-christopher-brenzel.jpg',
     prev: { slug: 'exploring-frankfort', title: 'Exploring Frankfort, KY' },
     next: { slug: 'solar-eclipse-part-1', title: 'Solar Eclipse — Part I' },
     body: (
       <div className="flex flex-col gap-5">
-        <p>
-          I was recently gifted a fascinating photography tool — a lens ball (or lensball). If you
-          haven&apos;t seen one, imagine a crystal ball that acts as a lens, creating mesmerizing
-          photos by bending and magnifying light.
+
+        {/* Affiliate disclosure */}
+        <p className="text-white/35 text-xs border border-white/10 rounded px-3 py-2 font-sans">
+          This post contains affiliate links. If you purchase through them I may earn a small
+          commission at no extra cost to you.
         </p>
+
         <p>
-          <strong className="text-white/70">Safety first:</strong> like any magnifying glass, the
-          lensball can concentrate sunlight and poses a risk of fire, eye damage, or camera sensor
-          damage. Never shoot directly through it toward the sun and be careful about placement.
+          I was recently gifted a lensball — a solid glass sphere that acts as a natural lens,
+          bending and inverting the world around it. If you&apos;ve seen crystal ball photography
+          on Instagram, this is the tool behind most of those shots. The concept is simple: place
+          the ball in front of your camera, focus through it, and the sphere inverts and compresses
+          the scene inside a perfect circle.
         </p>
+
         <PostImage
-          src="/images/field-notes/lensball-autumn.png"
-          alt="Lensball photography — inverted scene inside crystal sphere"
-          caption="First attempt — autumn trees inverted in the lensball"
+          src="/images/field-notes/lensball-forest-log-refraction-christopher-brenzel.jpg"
+          alt="Lensball photograph reflecting pine trees on a fallen log in a Kentucky forest"
+          caption="A lensball turns a simple forest scene into a small inverted world."
         />
-        <p>
-          I&apos;ve only had a couple of chances to take this fun tool out, but in the short time I
-          could see that it presented real challenges. Capturing the clean, professional images found
-          on the Lensball website was not going to happen anytime soon.
-        </p>
-        <PostImage
-          src="/images/field-notes/lensball.jpg"
-          alt="Lensball with outdoor scene inverted inside"
-        />
+
         <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
-          Common Mistakes
+          What Is Lensball Photography?
         </h3>
-        <ol className="list-decimal list-inside flex flex-col gap-2 text-white/55">
-          <li>
-            <strong className="text-white/70">Capturing your own fingers or the stand.</strong>{' '}
-            Because almost all light that passes through is reflected, I had difficulty keeping
-            whatever was holding the ball — my hand, the ground, or a stand — out of the image.
-          </li>
-          <li>
-            <strong className="text-white/70">Originality.</strong> Having looked at many examples
-            on Instagram before attempting my own, I found it difficult to find original
-            applications that aren&apos;t already done over and over again.
-          </li>
-          <li>
-            <strong className="text-white/70">Focal length and aperture.</strong> Getting the image
-            inside the ball sharp while keeping a nice background blur requires significant
-            experimentation.
-          </li>
-          <li>
-            <strong className="text-white/70">Avoiding smudges.</strong> Bring something to clean
-            the ball — otherwise your images will be hampered by fingerprints and dirt.
-          </li>
-        </ol>
+        <p>
+          Lensball photography — sometimes called crystal ball photography — is a creative technique
+          where a solid glass sphere is used to refract and invert a scene. The ball functions like
+          a fisheye lens compressed into a small circle. Subjects like trees, architecture, and
+          landscapes bend inward, creating a miniaturized world inside the sphere. You shoot through
+          or around the ball with your camera, typically at close range with a longer focal length
+          to isolate the ball against a blurred background.
+        </p>
+        <p>
+          The technique works because the glass sphere bends light from all angles simultaneously —
+          the same physics that make a water droplet reflect a whole scene. The result is a
+          180-degree field of view compressed into the diameter of the ball, always flipped
+          upside-down.
+        </p>
+
         <PostImage
-          src="/images/field-notes/lensball.jpg"
-          alt="Lensball with landscape inverted inside crystal sphere"
+          src="/images/field-notes/lensball-on-fallen-log-pine-forest.jpg"
+          alt="Lensball resting on a fallen log with pine trees refracted inside the glass sphere"
+          caption="Changing the angle even slightly changes how much sky, tree line, and foreground appear inside the ball."
         />
+
+        <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
+          My First Lensball Photography Attempt
+        </h3>
+        <p>
+          I took the lensball out to a pine forest and placed it on a fallen log. The warm wood
+          gave the ball a natural resting point and kept the forest floor from dominating the frame.
+          The vertical pine trees created strong lines inside the sphere — which, inverted, read as
+          a clean pattern radiating from the bottom edge.
+        </p>
+        <p>
+          Getting the ball sharp while keeping a blurred background required more experimentation
+          than I expected. Too close and the background compressed into a smear. Too far and the
+          sphere lost its presence against the scene. The sweet spot — at least with the lens I had
+          — was around two to three feet from the ball at a moderate aperture like f/5.6 or f/8.
+        </p>
+
+        {/* Photo notes callout */}
+        <div className="border border-white/10 rounded px-4 py-4 bg-white/[0.02]">
+          <p className="text-white/50 text-xs font-semibold font-sans uppercase tracking-wide mb-2">
+            Photo Notes
+          </p>
+          <p className="text-white/45 text-sm font-sans leading-relaxed">
+            These photos are from my own early lensball experiments. I kept them in the article
+            because they show the real learning process: finding a clean background, keeping
+            fingerprints and fingers out of the frame, watching how much ground appears inside
+            the ball, and learning how dramatically the composition changes with small shifts in
+            camera height. The fallen log images worked best because the warm wood gave the
+            lensball a natural base and the vertical pine trees created strong lines inside the
+            sphere. The handheld images were useful too, but they made it much harder to avoid
+            fingers, glare, and distracting reflections.
+          </p>
+        </div>
+
+        <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
+          Common Lensball Photography Mistakes
+        </h3>
+
+        <p className="text-white/55">
+          <strong className="text-white/70">1. Including too much ground.</strong> When the ball
+          sits too low — directly on the ground or on a low surface — the forest floor fills a
+          large portion of the interior. In a forest setting, this means pine needles and dirt
+          dominate the composition rather than the trees or sky you were trying to capture.
+        </p>
+
+        <PostImage
+          src="/images/field-notes/lensball-pine-needles-close-up-refraction.jpg"
+          alt="Close-up lensball photo showing pine needles and forest floor around the refracted tree scene"
+          caption="One early lesson: if the ball sits too low, the forest floor can dominate the composition."
+        />
+
+        <p className="text-white/55">
+          <strong className="text-white/70">2. Capturing your fingers, hand, or stand.</strong>{' '}
+          Because the sphere picks up light from almost every angle, whatever is holding the ball
+          tends to appear somewhere in the frame. Holding it with two fingers from below looks
+          natural, but getting a clean shot where the fingers don&apos;t compete with the scene
+          inside the ball is harder than it sounds.
+        </p>
+
+        <PostImage
+          src="/images/field-notes/handheld-lensball-tree-canopy-example.jpg"
+          alt="Handheld lensball photograph showing tree canopy reflections and visible fingers"
+          caption="Holding the lensball can work, but fingers and reflections are hard to keep out of the frame."
+        />
+
+        <p className="text-white/55">
+          <strong className="text-white/70">3. Originality.</strong> After looking at hundreds of
+          lensball photos on Instagram, finding a composition that doesn&apos;t feel like a
+          repeat of what everyone else has done is genuinely difficult. The sphere is the star of
+          almost every shot — which means the challenge quickly becomes finding backgrounds,
+          surfaces, and lighting that make yours stand apart.
+        </p>
+
+        <p className="text-white/55">
+          <strong className="text-white/70">4. Focal length and aperture.</strong> Getting the
+          scene inside the ball sharp while keeping a smooth background blur requires
+          experimentation. A longer focal length compresses the background nicely but makes
+          precise focus harder at close range. A wider aperture increases background separation
+          but shrinks your focus plane to a sliver.
+        </p>
+
+        <p className="text-white/55">
+          <strong className="text-white/70">5. Smudges and fingerprints.</strong> Bring a
+          microfiber cloth. Any fingerprint on the glass surface will show up clearly in the
+          final image — especially when shooting in bright conditions. Clean the ball before
+          every shot.
+        </p>
+
+        <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
+          Lensball Safety Warning
+        </h3>
+        <p>
+          A lensball is a magnifying glass. In direct sunlight, it will concentrate light into a
+          focused beam intense enough to burn skin, start a fire, or damage a camera sensor.
+          Never leave a lensball sitting in direct sunlight unattended — on a car seat, a table,
+          or the ground. Treat it the same way you would treat a magnifying glass around paper.
+          When shooting in bright sun, keep your shooting time brief and never point the sphere
+          directly toward the sun.
+        </p>
+
+        <PostImage
+          src="/images/field-notes/lensball-snow-fence-sunlight-safety-example.jpg"
+          alt="Lensball held in bright winter sunlight with blue sky and fence reflected inside"
+          caption="Bright sunlight can make a lensball risky. Treat it like a magnifying glass and never leave it sitting in direct sun."
+        />
+
+        <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
+          Lensball Camera Settings — Starting Point
+        </h3>
+        <ul className="list-disc list-inside flex flex-col gap-2 text-white/55">
+          <li>
+            <strong className="text-white/70">Focal length:</strong> 50mm–200mm. Longer focal
+            lengths compress the background and give the ball more presence in the frame.
+          </li>
+          <li>
+            <strong className="text-white/70">Aperture:</strong> f/5.6–f/8 to keep the ball
+            sharp. Wider apertures can blur too much of the sphere itself.
+          </li>
+          <li>
+            <strong className="text-white/70">Focus:</strong> Manual focus on the front surface
+            of the sphere, or use autofocus with a center point aimed at the sphere interior.
+          </li>
+          <li>
+            <strong className="text-white/70">Distance:</strong> 1–3 feet from the ball. Closer
+            increases the ball&apos;s size relative to the background; farther shrinks it.
+          </li>
+        </ul>
+
         <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
           Tips for Beginners
         </h3>
         <ul className="list-disc list-inside flex flex-col gap-2 text-white/55">
-          <li>Use a macro or close-focus lens to get the scenery inside the ball sharp.</li>
-          <li>Try placing it on elevated surfaces or holding it at various heights to reduce ground in the frame.</li>
-          <li>Experiment — there&apos;s no right or wrong way and you might surprise yourself.</li>
+          <li>
+            Place the ball on an elevated natural surface — a rock, log, or fence post — to
+            reduce ground coverage inside the sphere.
+          </li>
+          <li>
+            Clean the ball before every shot with a microfiber cloth. Fingerprints are the
+            fastest way to ruin an otherwise clean image.
+          </li>
+          <li>
+            Look for strong vertical lines in the background: trees, fences, buildings. They
+            create satisfying patterns when compressed and inverted inside the sphere.
+          </li>
+          <li>
+            Experiment with camera height. Even a few inches up or down changes the
+            sky-to-ground ratio inside the ball dramatically.
+          </li>
+          <li>
+            Shoot in soft, overcast light when possible. Harsh sunlight creates glare spots
+            on the glass surface that are difficult to remove in editing.
+          </li>
         </ul>
+
+        <h3 className="text-white/60 font-sans text-sm font-semibold tracking-wide uppercase mt-2">
+          Lensball Photography Examples
+        </h3>
+        <p className="text-white/55">
+          Here are a few examples from my own lensball experiments. Some are more successful than
+          others, but each one helped me understand composition, focus, light, and reflection a
+          little better.
+        </p>
+
+        {/* Gallery grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <figure>
+            <div className="rounded overflow-hidden bg-[#111]">
+              <Image
+                src="/images/field-notes/lensball-forest-log-refraction-christopher-brenzel.jpg"
+                alt="Lensball on fallen log — forest reflection with shallow depth of field"
+                width={800}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+              Forest reflection inside the lensball, with the background softened by shallow depth of field.
+            </figcaption>
+          </figure>
+          <figure>
+            <div className="rounded overflow-hidden bg-[#111]">
+              <Image
+                src="/images/field-notes/lensball-on-fallen-log-pine-forest.jpg"
+                alt="Lensball on fallen log — slightly lower angle, more log and sky visible"
+                width={800}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+              A slightly lower angle changes the balance of trees, sky, and fallen log.
+            </figcaption>
+          </figure>
+          <figure>
+            <div className="rounded overflow-hidden bg-[#111]">
+              <Image
+                src="/images/field-notes/lensball-pine-needles-close-up-refraction.jpg"
+                alt="Lensball close-up on forest floor — pine needles dominate the interior"
+                width={800}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+              A close-up example where the forest floor becomes a major part of the image.
+            </figcaption>
+          </figure>
+          <figure>
+            <div className="rounded overflow-hidden bg-[#111]">
+              <Image
+                src="/images/field-notes/handheld-lensball-tree-canopy-example.jpg"
+                alt="Handheld lensball — fingers visible, tree canopy reflected"
+                width={800}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+              A handheld lensball shot showing how difficult it can be to hide fingers and reflections.
+            </figcaption>
+          </figure>
+        </div>
+        <figure>
+          <div className="rounded overflow-hidden bg-[#111]">
+            <Image
+              src="/images/field-notes/lensball-snow-fence-sunlight-safety-example.jpg"
+              alt="Lensball held in bright winter sunlight — fence and blue sky reflected"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
+            />
+          </div>
+          <figcaption className="mt-2 text-white/30 font-sans text-xs italic text-center">
+            A bright winter example and a reminder to be careful with direct sunlight.
+          </figcaption>
+        </figure>
+
+        {/* CTA */}
+        <div className="border border-white/10 rounded px-4 py-4 bg-white/[0.02]">
+          <p className="text-white/55 text-sm font-sans leading-relaxed">
+            If you want to try lensball photography yourself, a simple glass photography ball is
+            an inexpensive way to practice composition, focus, and creative nature photography.{' '}
+            <a
+              href="https://amzn.to/4fcseDj"
+              rel="sponsored nofollow"
+              target="_blank"
+              className="text-blue-300 hover:text-blue-200 transition-colors underline"
+            >
+              This is the one I&apos;m currently linking for beginners.
+            </a>
+          </p>
+        </div>
+
       </div>
     ),
   },
