@@ -38,7 +38,7 @@ export default function PrintsPage() {
         </h1>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl">
           Fine art prints of selected Kentucky nature images are now available to
-          order directly through my Pixieset print store — professional lab
+          order directly through my Pixieset print store; professional lab
           printing, multiple sizes, and shipping handled for you.
         </p>
       </section>
@@ -57,7 +57,7 @@ export default function PrintsPage() {
               <p className="text-white/40 font-sans text-sm leading-relaxed max-w-lg">
                 Browse the full Kentucky Nature collection and place your order
                 directly. Ordering, payment, and fulfillment are handled by
-                Pixieset — a professional photography print platform. If you run
+                Pixieset, a professional photography print platform. If you run
                 into any issues, feel free to{' '}
                 <Link href="/photography/contact" className="text-[#6fcf97] hover:text-[#9fe7b8] underline underline-offset-2 transition-colors">
                   get in touch
@@ -91,7 +91,7 @@ export default function PrintsPage() {
         </p>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-10">
           The print store covers standard sizes and personal use. For anything
-          outside of that — reach out directly.
+          outside of that, reach out directly.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -151,7 +151,7 @@ export default function PrintsPage() {
               </p>
               <p className="text-white/35 font-sans text-sm leading-relaxed">
                 Outdoor events, nature tours, field work, or other shoots where
-                you need a photographer on location. Based in Kentucky —
+                you need a photographer on location. Based in Kentucky,
                 available for travel.
               </p>
             </div>
@@ -206,7 +206,7 @@ export default function PrintsPage() {
         </p>
         <p className="text-white/30 font-sans text-sm leading-relaxed max-w-xl">
           If you are a photographer considering a print store or client gallery
-          platform, I use Pixieset — it handles ordering, fulfillment, and
+          platform; I use Pixieset - it handles ordering, fulfillment, and
           delivery cleanly without a lot of overhead.{' '}
           <a
             href="https://pixieset.com/ref/xmgzd3ILMAvz"
