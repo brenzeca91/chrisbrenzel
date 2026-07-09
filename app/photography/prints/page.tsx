@@ -138,8 +138,8 @@ export default function PrintsPage() {
           </a>
 
           {/* Event photography */}
-          <a
-            href="mailto:chris@chrisbrenzel.com?subject=Event photography inquiry"
+          <Link
+            href="/photography/lexington-ky-affordable-wedding-event-photographer"
             className="group flex flex-col gap-4 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
           >
             <div className="w-8 h-8 rounded-md bg-[#1a1a2e] flex items-center justify-center shrink-0">
@@ -150,13 +150,12 @@ export default function PrintsPage() {
                 Hire Chris to shoot
               </p>
               <p className="text-white/35 font-sans text-sm leading-relaxed">
-                Outdoor events, nature tours, field work, or other shoots where
-                you need a photographer on location. Based in Kentucky,
-                available for travel.
+                Small weddings, courthouse ceremonies, engagements, family
+                milestones, and personal events in and around Lexington, KY.
               </p>
             </div>
-            <p className="text-[#5b9bff] font-sans text-xs mt-auto">Get in touch &rarr;</p>
-          </a>
+            <p className="text-[#5b9bff] font-sans text-xs mt-auto">Learn more &rarr;</p>
+          </Link>
         </div>
 
         <p className="text-white/20 font-sans text-xs mt-6 leading-relaxed">

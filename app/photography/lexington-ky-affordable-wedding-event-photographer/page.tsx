@@ -1,0 +1,337 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight, ArrowUpRight, Camera, Check, ExternalLink, Heart, Info } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Affordable Lexington KY Wedding Photographer | Small Events Under $500',
+  description:
+    'Budget-friendly photography in Lexington, KY for small weddings, courthouse ceremonies, engagements, birth announcements, and personal events. Limited availability for simple event coverage.',
+}
+
+const goodFitEvents = [
+  'Courthouse weddings',
+  'Micro-weddings and elopements',
+  'Backyard ceremonies',
+  'Engagement photos',
+  'Proposal photos',
+  'Birth announcements',
+  'Fresh 48 / new baby photos',
+  'Family milestones',
+  'Outdoor portraits',
+  'Small personal celebrations',
+]
+
+const whatToExpect = [
+  'Natural light when possible',
+  'Real moments over heavy posing',
+  'Relaxed, low-pressure approach',
+  'Clear expectations before the event',
+  'Edited digital images delivered through an online gallery',
+  'Honest communication about what I can and cannot provide',
+]
+
+const fullWeddingNeeds = [
+  'Large weddings with 50+ guests',
+  'Full-day coverage (ceremony through reception)',
+  'Wedding party posing and timeline support',
+  'Reception coverage and dancing shots',
+  'Second shooter coordination',
+  'Printed albums and full wedding workflow',
+]
+
+export default function LexingtonEventPhotographyPage() {
+  return (
+    <main className="pt-14">
+
+      {/* Hero */}
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-10 md:pt-16 md:pb-14">
+        <p className="text-white/30 text-xs font-medium tracking-[0.2em] uppercase mb-5 font-sans">
+          Lexington, KY
+        </p>
+        <h1 className="text-[#f5f0eb] font-serif italic text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-5 text-balance max-w-4xl">
+          Affordable Wedding &amp; Personal Event Photography in Lexington, KY
+        </h1>
+        <p className="text-white/50 font-sans text-base md:text-lg leading-relaxed max-w-2xl mb-8">
+          Budget-friendly photography for small weddings, courthouse ceremonies,
+          engagements, birth announcements, family milestones, and simple personal
+          events.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="mailto:chris@chrisbrenzel.com?subject=Event photography inquiry - Lexington KY"
+            className="flex items-center gap-2 bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans font-semibold text-sm px-6 py-3 rounded transition-colors"
+          >
+            Ask About Availability
+            <ArrowRight className="w-4 h-4" />
+          </a>
+          <Link
+            href="/photography/gallery"
+            className="flex items-center gap-2 border border-[#222] hover:border-[#444] text-white/50 hover:text-[#f5f0eb] font-sans font-medium text-sm px-6 py-3 rounded transition-colors"
+          >
+            View Photography
+          </Link>
+        </div>
+        <p className="text-white/20 font-sans text-xs mt-5 leading-relaxed max-w-lg">
+          Limited availability. Small events only. Full wedding coverage is best
+          handled by a dedicated wedding photographer.
+        </p>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* Intro */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl">
+          <div>
+            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+              About Christopher
+            </p>
+            <p className="text-white/60 font-sans text-base leading-relaxed mb-4">
+              I am a Lexington-based photographer focused primarily on nature,
+              wildlife, macro, and landscape photography in Kentucky. My day-to-day
+              work is out in the field, not in a studio.
+            </p>
+            <p className="text-white/60 font-sans text-base leading-relaxed">
+              That said, I occasionally take on limited personal event work for
+              small, simple, lower-pressure occasions where a natural, candid
+              approach is a better fit than a formal wedding photography workflow.
+              If the event is relaxed and the expectations are clear, it can be a
+              good match.
+            </p>
+          </div>
+          <div className="border border-[#1a2a1a] bg-[#090f09] rounded-lg p-6">
+            <div className="flex items-start gap-3 mb-4">
+              <Info className="w-4 h-4 text-[#6fcf97] mt-0.5 shrink-0" />
+              <p className="text-white/50 font-sans text-xs font-semibold tracking-[0.1em] uppercase">
+                A budget-friendly option for simple events
+              </p>
+            </div>
+            <p className="text-white/45 font-sans text-sm leading-relaxed mb-3">
+              If you are searching for an affordable wedding photographer in
+              Lexington KY, cheap wedding photographers Lexington KY, or wedding
+              photos under $500 in Lexington KY, this may be worth a conversation.
+            </p>
+            <p className="text-white/45 font-sans text-sm leading-relaxed">
+              As a courthouse wedding photographer Lexington KY or Lexington KY
+              engagement photographer, I can offer a relaxed, natural approach at
+              a price point that full-service studios typically cannot. For small
+              personal events, a Lexington KY event photographer with a candid
+              style is often a better fit than a formal package.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* Good fit events */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+          This may be a good fit for
+        </p>
+        <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-10">
+          Small, simple occasions where natural and candid photography fits better
+          than a formal wedding studio workflow.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-4xl">
+          {goodFitEvents.map((event) => (
+            <div
+              key={event}
+              className="border border-[#1e2d1e] bg-[#090f09] rounded-lg px-4 py-3 text-center"
+            >
+              <p className="text-white/55 font-sans text-xs leading-relaxed">{event}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* What to expect */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl">
+          <div>
+            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+              What to expect
+            </p>
+            <ul className="flex flex-col gap-3">
+              {whatToExpect.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-[#6fcf97] mt-0.5 shrink-0" />
+                  <span className="text-white/55 font-sans text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Pricing */}
+          <div>
+            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+              Pricing &amp; availability
+            </p>
+            <p className="text-white/55 font-sans text-sm leading-relaxed mb-4">
+              Pricing depends on date, location, coverage time, and final image
+              needs. For small events, short sessions, courthouse ceremonies, and
+              simple personal milestones, limited budget-friendly options may be
+              available under $500.
+            </p>
+            <p className="text-white/40 font-sans text-sm leading-relaxed">
+              Availability is limited. I take on a small number of personal event
+              sessions per year alongside my nature photography work. Reach out
+              early if you have a date in mind.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* When to hire a dedicated wedding photographer */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+          When to hire a dedicated wedding photographer
+        </p>
+        <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-8">
+          I want to be straightforward: for larger, more complex weddings, a
+          full-time wedding photographer will serve you far better than I can.
+          That includes:
+        </p>
+        <ul className="flex flex-col gap-3 max-w-xl mb-8">
+          {fullWeddingNeeds.map((item) => (
+            <li key={item} className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/20 mt-2 shrink-0" />
+              <span className="text-white/45 font-sans text-sm leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="text-white/40 font-sans text-sm leading-relaxed max-w-xl">
+          If your event needs any of the above, please hire a professional whose
+          primary work is weddings. Two photographers in Lexington I can
+          personally recommend are listed below.
+        </p>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* Recommended pros */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+          For full wedding coverage, I recommend
+        </p>
+        <p className="text-white/50 font-sans text-sm leading-relaxed max-w-2xl mb-8">
+          These Lexington-area photographers specialize in full wedding coverage
+          and have the experience, workflow, and style to handle complex events well.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
+          <a
+            href="https://kevinandannaweddings.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col gap-3 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Heart className="w-4 h-4 text-[#5b9bff]" />
+                <p className="text-[#f5f0eb] font-sans font-semibold text-base group-hover:text-white transition-colors">
+                  Kevin and Anna Photography
+                </p>
+              </div>
+              <ExternalLink className="w-3.5 h-3.5 text-white/20 group-hover:text-white/40 transition-colors" />
+            </div>
+            <p className="text-white/35 font-sans text-sm leading-relaxed">
+              Dedicated wedding photographers with a full-service wedding
+              workflow, full-day coverage, and an editorial style.
+            </p>
+            <p className="text-[#5b9bff] font-sans text-xs">kevinandannaweddings.com</p>
+          </a>
+
+          <a
+            href="https://www.meghanbeth.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col gap-3 border border-[#222] hover:border-[#3a3a3a] rounded-lg p-6 transition-all hover:bg-[#0e0e0e]"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Heart className="w-4 h-4 text-[#5b9bff]" />
+                <p className="text-[#f5f0eb] font-sans font-semibold text-base group-hover:text-white transition-colors">
+                  Meghan Beth Photography
+                </p>
+              </div>
+              <ExternalLink className="w-3.5 h-3.5 text-white/20 group-hover:text-white/40 transition-colors" />
+            </div>
+            <p className="text-white/35 font-sans text-sm leading-relaxed">
+              Full wedding coverage, albums, and a warm, natural style suited
+              for couples looking for a polished, professional experience.
+            </p>
+            <p className="text-[#5b9bff] font-sans text-xs">meghanbeth.com</p>
+          </a>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* Inquiry */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
+          Ask about availability
+        </p>
+        <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-8">
+          If this sounds like a good fit, send a quick note with the following
+          details and I will get back to you within a few days.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl">
+          <ul className="flex flex-col gap-3">
+            {[
+              'Event date',
+              'Location in or near Lexington, KY',
+              'Type of event',
+              'Coverage length needed',
+              'Must-have photos or moments',
+              'Approximate budget',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <Camera className="w-4 h-4 text-white/20 mt-0.5 shrink-0" />
+                <span className="text-white/50 font-sans text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-col gap-4">
+            <a
+              href="mailto:chris@chrisbrenzel.com?subject=Event photography inquiry - Lexington KY"
+              className="flex items-center gap-2 bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans font-semibold text-sm px-6 py-3 rounded transition-colors self-start"
+            >
+              Email Chris
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+            <p className="text-white/20 font-sans text-xs leading-relaxed max-w-xs">
+              chris@chrisbrenzel.com. Response time is typically within a few
+              days. Not every date or event type will be a good fit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* Footer nav */}
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <div className="flex flex-wrap gap-6">
+          <Link href="/photography" className="text-white/30 hover:text-white/60 font-sans text-sm transition-colors">
+            Photography
+          </Link>
+          <Link href="/photography/gallery" className="text-white/30 hover:text-white/60 font-sans text-sm transition-colors">
+            Gallery
+          </Link>
+          <Link href="/photography/prints" className="text-white/30 hover:text-white/60 font-sans text-sm transition-colors">
+            Prints
+          </Link>
+          <Link href="/photography/contact" className="text-white/30 hover:text-white/60 font-sans text-sm transition-colors">
+            Contact
+          </Link>
+        </div>
+      </section>
+
+    </main>
+  )
+}
