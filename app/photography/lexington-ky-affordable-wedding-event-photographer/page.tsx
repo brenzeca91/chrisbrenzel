@@ -1,12 +1,9 @@
+'use client'
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, ArrowUpRight, Camera, Check, ExternalLink, Heart, Info } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Affordable Lexington KY Wedding Photographer | Small Events Under $500',
-  description:
-    'Budget-friendly photography in Lexington, KY for small weddings, courthouse ceremonies, engagements, birth announcements, and personal events. Limited availability for simple event coverage.',
-}
+import { ArrowRight, ArrowUpRight, Camera, Check, ChevronLeft, ChevronRight, ExternalLink, Heart, Info } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 const goodFitEvents = [
   'Courthouse weddings',
@@ -38,6 +35,80 @@ const fullWeddingNeeds = [
   'Second shooter coordination',
   'Printed albums and full wedding workflow',
 ]
+
+const carouselSlides = [
+  {
+    src: '/images/events/couple-sunset.jpg',
+    alt: 'Couple embracing at golden hour on a Kentucky farm, champagne in hand',
+  },
+  {
+    src: '/images/events/engagement-embrace.jpg',
+    alt: 'Engaged couple embracing in front of pink flowering trees',
+  },
+  {
+    src: '/images/events/siblings.jpg',
+    alt: 'Young child gently touching newborn sibling\'s head',
+  },
+  {
+    src: '/images/events/newborn-feet.jpg',
+    alt: 'Close-up of newborn baby feet',
+  },
+]
+
+function PhotoCarousel() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((c) => (c + 1) % carouselSlides.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const prev = () => setCurrent((c) => (c - 1 + carouselSlides.length) % carouselSlides.length)
+  const next = () => setCurrent((c) => (c + 1) % carouselSlides.length)
+
+  return (
+    <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '420px' }}>
+      {carouselSlides.map((slide, i) => (
+        <img
+          key={slide.src}
+          src={slide.src}
+          alt={slide.alt}
+          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700"
+          style={{ opacity: i === current ? 1 : 0 }}
+        />
+      ))}
+      {/* Prev / Next */}
+      <button
+        onClick={prev}
+        aria-label="Previous photo"
+        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center transition-colors"
+      >
+        <ChevronLeft className="w-5 h-5 text-white" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next photo"
+        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center transition-colors"
+      >
+        <ChevronRight className="w-5 h-5 text-white" />
+      </button>
+      {/* Dots */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+        {carouselSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className="w-1.5 h-1.5 rounded-full transition-colors"
+            style={{ background: i === current ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.3)' }}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function LexingtonEventPhotographyPage() {
   return (
@@ -77,19 +148,18 @@ export default function LexingtonEventPhotographyPage() {
         </p>
       </section>
 
-      {/* Hero image band — couple at sunset */}
+      {/* Hero image — champagne couple in pine avenue */}
       <section className="max-w-7xl mx-auto px-6 pb-0">
         <div
           className="relative rounded-lg overflow-hidden border border-[#1a1a1a]"
-          style={{ height: '360px' }}
+          style={{ height: '500px' }}
         >
           <img
-            src="/images/events/couple-sunset.jpg"
-            alt="Couple embracing at golden hour on a Kentucky farm, champagne in hand"
+            src="/images/events/couple-champagne.jpg"
+            alt="Couple laughing and popping champagne in a sunlit pine tree avenue during an engagement shoot"
             className="absolute inset-0 w-full h-full object-cover object-center"
-            style={{ transform: 'scaleY(1.43)', transformOrigin: 'center' }}
           />
-          <div className="absolute inset-0 bg-[#0a0f1e]/40" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[#0a0f1e]/20" aria-hidden="true" />
         </div>
       </section>
 
@@ -138,7 +208,7 @@ export default function LexingtonEventPhotographyPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
-      {/* Good fit events + engagement photo inline */}
+      {/* Good fit events */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
         <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
           This may be a good fit for
@@ -147,27 +217,15 @@ export default function LexingtonEventPhotographyPage() {
           Small, simple occasions where natural and candid photography fits better
           than a formal wedding studio workflow.
         </p>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {goodFitEvents.map((event) => (
-              <div
-                key={event}
-                className="border border-[#1e2d1e] bg-[#090f09] rounded-lg px-4 py-3 text-center"
-              >
-                <p className="text-white/55 font-sans text-xs leading-relaxed">{event}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Engagement embrace photo */}
-          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '280px' }}>
-            <img
-              src="/images/events/engagement-embrace.jpg"
-              alt="Engaged couple embracing in front of pink flowering trees"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-4xl">
+          {goodFitEvents.map((event) => (
+            <div
+              key={event}
+              className="border border-[#1e2d1e] bg-[#090f09] rounded-lg px-4 py-3 text-center"
+            >
+              <p className="text-white/55 font-sans text-xs leading-relaxed">{event}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -220,27 +278,12 @@ export default function LexingtonEventPhotographyPage() {
         </div>
       </section>
 
-      {/* Family/newborn photo strip */}
+      {/* Photo carousel */}
       <section className="max-w-7xl mx-auto px-6 pb-8">
-        <div className="grid grid-cols-2 gap-3">
-          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '220px' }}>
-            <img
-              src="/images/events/siblings.jpg"
-              alt="Young child gently touching newborn sibling's head"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
-          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '220px' }}>
-            <img
-              src="/images/events/newborn-feet.jpg"
-              alt="Close-up of newborn baby feet"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-        </div>
+        <PhotoCarousel />
       </section>
 
-      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+      <div className="max-w-7xl mx-auto px-6 mt-4"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* When to hire a dedicated wedding photographer */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
