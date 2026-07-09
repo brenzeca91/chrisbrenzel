@@ -1,9 +1,13 @@
-'use client'
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, ArrowUpRight, Camera, Check, ChevronLeft, ChevronRight, ExternalLink, Heart, Info } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { ArrowRight, ArrowUpRight, Camera, Check, ExternalLink, Heart, Info } from 'lucide-react'
+import { PhotoCarousel } from './carousel'
+
+export const metadata: Metadata = {
+  title: 'Affordable Wedding & Event Photographer in Lexington KY | Chris Brenzel',
+  description:
+    'Budget-friendly photography in Lexington, KY for courthouse weddings, micro-weddings, engagements, proposals, birth announcements, family milestones, and small personal events. Limited availability, with simple sessions sometimes available under $500.',
+}
 
 const goodFitEvents = [
   'Courthouse weddings',
@@ -36,83 +40,55 @@ const fullWeddingNeeds = [
   'Printed albums and full wedding workflow',
 ]
 
-const carouselSlides = [
+const coverageExamples = [
   {
-    src: '/images/events/couple-sunset.jpg',
-    alt: 'Couple embracing at golden hour on a Kentucky farm, champagne in hand',
+    label: 'Courthouse ceremony',
+    desc: 'Quick, relaxed coverage of the signing and moments after. Usually 1–2 hours.',
   },
   {
-    src: '/images/events/engagement-embrace.jpg',
-    alt: 'Engaged couple embracing in front of pink flowering trees',
+    label: 'Micro-wedding or elopement',
+    desc: 'Small ceremony with a handful of guests. Candid, natural approach with no formal posing workflow.',
   },
   {
-    src: '/images/events/siblings.jpg',
-    alt: 'Young child gently touching newborn sibling\'s head',
+    label: 'Engagement session',
+    desc: 'Outdoor session, natural light, relaxed walk-around. Great for birth announcements or save-the-dates.',
   },
   {
-    src: '/images/events/newborn-feet.jpg',
-    alt: 'Close-up of newborn baby feet',
+    label: 'Newborn / fresh 48',
+    desc: 'Hospital or home. Sibling introductions, tiny details, quiet moments.',
+  },
+  {
+    label: 'Family milestone',
+    desc: 'Anniversaries, adoption days, gender reveals, small outdoor celebrations.',
   },
 ]
 
-function PhotoCarousel() {
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((c) => (c + 1) % carouselSlides.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [])
-
-  const prev = () => setCurrent((c) => (c - 1 + carouselSlides.length) % carouselSlides.length)
-  const next = () => setCurrent((c) => (c + 1) % carouselSlides.length)
-
-  return (
-    <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a] bg-[#080808]">
-      {carouselSlides.map((slide, i) => (
-        <div
-          key={slide.src}
-          className="px-[25%] py-6"
-          style={{ display: i === current ? 'block' : 'none' }}
-        >
-          <img
-            src={slide.src}
-            alt={slide.alt}
-            className="w-full h-auto block rounded"
-          />
-        </div>
-      ))}
-      {/* Prev / Next */}
-      <button
-        onClick={prev}
-        aria-label="Previous photo"
-        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center transition-colors"
-      >
-        <ChevronLeft className="w-5 h-5 text-white" />
-      </button>
-      <button
-        onClick={next}
-        aria-label="Next photo"
-        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 flex items-center justify-center transition-colors"
-      >
-        <ChevronRight className="w-5 h-5 text-white" />
-      </button>
-      {/* Dots */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-        {carouselSlides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            aria-label={`Go to slide ${i + 1}`}
-            className="w-1.5 h-1.5 rounded-full transition-colors"
-            style={{ background: i === current ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.3)' }}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
+const faqItems = [
+  {
+    q: 'Can I get wedding photos under $500 in Lexington, KY?',
+    a: 'For very simple events — a courthouse ceremony, a short outdoor session, or a small backyard elopement — a session under $500 may be possible depending on date, location, and coverage length. Send me the details and I can give you an honest answer.',
+  },
+  {
+    q: 'Do you photograph courthouse weddings in Lexington?',
+    a: 'Yes. Courthouse weddings are one of the best fits for my approach — low-pressure, quick, and focused on real moments rather than a formal posed workflow. I have covered ceremonies at the Fayette County Courthouse and nearby locations.',
+  },
+  {
+    q: 'Are you a full-time wedding photographer?',
+    a: 'No. My primary work is nature, wildlife, macro, and landscape photography in Kentucky. I take on a small number of personal event sessions per year when the event is a good fit for a candid, natural approach. I am always upfront about this.',
+  },
+  {
+    q: 'What types of events do you cover?',
+    a: 'Small weddings, elopements, courthouse ceremonies, micro-weddings, engagement photos, proposal photos, birth announcements, fresh 48 sessions, family milestones, outdoor portraits, and small personal celebrations.',
+  },
+  {
+    q: 'What areas near Lexington do you cover?',
+    a: 'I am based in Lexington and regularly work throughout Central Kentucky including Nicholasville, Georgetown, Versailles, Richmond, Winchester, and surrounding Fayette County communities.',
+  },
+  {
+    q: 'When should I hire a dedicated wedding photographer instead?',
+    a: 'If you have a large guest count, need full-day coverage from getting ready through reception, want a second shooter, or are looking for printed albums and a full wedding workflow — a full-time wedding photographer is the right call. I can personally recommend Kevin and Anna Photography and Meghan Beth Photography in Lexington.',
+  },
+]
 
 export default function LexingtonEventPhotographyPage() {
   return (
@@ -129,7 +105,7 @@ export default function LexingtonEventPhotographyPage() {
         <p className="text-white/50 font-sans text-base md:text-lg leading-relaxed max-w-2xl mb-8">
           Budget-friendly photography for small weddings, courthouse ceremonies,
           engagements, birth announcements, family milestones, and simple personal
-          events.
+          events in Lexington and Central Kentucky.
         </p>
         <div className="flex flex-wrap gap-4">
           <a
@@ -167,7 +143,7 @@ export default function LexingtonEventPhotographyPage() {
           <div className="absolute inset-0 bg-[#0a0f1e]/20" aria-hidden="true" />
           <img
             src="/images/events/couple-champagne.jpg"
-            alt="Couple laughing and popping champagne in a sunlit pine tree avenue during an engagement shoot"
+            alt="Couple laughing and popping champagne in a sunlit pine tree avenue during an engagement shoot in Lexington KY"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </div>
@@ -187,13 +163,27 @@ export default function LexingtonEventPhotographyPage() {
               wildlife, macro, and landscape photography in Kentucky. My day-to-day
               work is out in the field, not in a studio or capturing portraits.
             </p>
-            <p className="text-white/60 font-sans text-base leading-relaxed">
+            <p className="text-white/60 font-sans text-base leading-relaxed mb-4">
               That said, I occasionally take on limited personal event work for
               small, simple, lower-pressure occasions where a natural, candid
               approach is a better fit than a formal wedding photography workflow.
               If the event is relaxed and the expectations are clear, it can be a
               good match.
             </p>
+            <div className="flex flex-wrap gap-4 mt-2">
+              <Link
+                href="/photography"
+                className="text-white/40 hover:text-white/70 font-sans text-sm transition-colors flex items-center gap-1"
+              >
+                Photography <ArrowUpRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/photography/gallery"
+                className="text-white/40 hover:text-white/70 font-sans text-sm transition-colors flex items-center gap-1"
+              >
+                Gallery <ArrowUpRight className="w-3 h-3" />
+              </Link>
+            </div>
           </div>
           <div className="border border-[#1a2a1a] bg-[#090f09] rounded-lg p-6">
             <div className="flex items-start gap-3 mb-4">
@@ -239,7 +229,7 @@ export default function LexingtonEventPhotographyPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+      <div className="max-w-7xl mx-auto px-6 mt-12 md:mt-14"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* What to expect + engagement ring photo */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
@@ -249,7 +239,7 @@ export default function LexingtonEventPhotographyPage() {
           <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '300px' }}>
             <img
               src="/images/events/engagement-ring.jpg"
-              alt="Close-up of an engagement ring on a couple's stacked hands"
+              alt="Close-up of an engagement ring on a couple's stacked hands — engagement photography in Lexington KY"
               className="w-full h-full object-cover object-center"
             />
           </div>
@@ -288,6 +278,30 @@ export default function LexingtonEventPhotographyPage() {
         </div>
       </section>
 
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* Simple coverage examples */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+          Simple coverage examples
+        </p>
+        <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-10">
+          Here are the types of sessions that tend to be a good fit for my approach
+          and price range.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-4xl">
+          {coverageExamples.map((example) => (
+            <div
+              key={example.label}
+              className="border border-[#1a1a1a] bg-[#090909] rounded-lg p-5"
+            >
+              <p className="text-[#f5f0eb] font-sans text-sm font-semibold mb-2">{example.label}</p>
+              <p className="text-white/40 font-sans text-xs leading-relaxed">{example.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Photo carousel */}
       <section className="max-w-7xl mx-auto px-6 pb-8">
         <PhotoCarousel />
@@ -318,10 +332,13 @@ export default function LexingtonEventPhotographyPage() {
           <br />
           <br />
           Wedding photographers who specialize in capturing people and events are
-          always worth the investment. Skip the cheap wedding photographers and
-          consider my recommendations below. These photographers in Lexington, KY
-          that I can personally recommend and either will do an incredible job
-          capturing your wedding.
+          always worth the investment. For full wedding-day coverage, I strongly
+          recommend working with a dedicated wedding photographer — it will make a
+          meaningful difference in your photos. See my{' '}
+          <a href="#top-recommendations" className="text-blue-300 underline hover:text-[#7ab2ff] transition-colors">
+            top recommendations
+          </a>{' '}
+          for photographers in Lexington, KY that I can personally vouch for.
         </p>
       </section>
 
@@ -507,6 +524,46 @@ export default function LexingtonEventPhotographyPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
+      {/* Service area */}
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+          Service area
+        </p>
+        <p className="text-white/50 font-sans text-sm leading-relaxed max-w-2xl">
+          Based in Lexington, KY and available throughout Central Kentucky including{' '}
+          <span className="text-white/70">Nicholasville</span>,{' '}
+          <span className="text-white/70">Georgetown</span>,{' '}
+          <span className="text-white/70">Versailles</span>,{' '}
+          <span className="text-white/70">Richmond</span>,{' '}
+          <span className="text-white/70">Winchester</span>, and surrounding Fayette County communities.
+          Travel outside Central Kentucky is possible for the right event — just ask.
+        </p>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
+      {/* FAQ */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
+        <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+          Frequently asked questions
+        </p>
+        <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl mb-10">
+          Common questions about affordable wedding and event photography in Lexington, KY.
+        </p>
+        <div className="flex flex-col gap-0 max-w-3xl divide-y divide-[#1a1a1a]">
+          {faqItems.map((item) => (
+            <div key={item.q} className="py-6">
+              <p className="text-[#f5f0eb] font-sans text-sm font-semibold mb-3 leading-snug">
+                {item.q}
+              </p>
+              <p className="text-white/45 font-sans text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+
       {/* Inquiry */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
         <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
@@ -544,6 +601,14 @@ export default function LexingtonEventPhotographyPage() {
               chris@chrisbrenzel.com. Response time is typically within a few
               days. Not every date or event type will be a good fit.
             </p>
+            <div className="flex gap-4 mt-2">
+              <Link href="/photography/prints" className="text-white/30 hover:text-white/60 font-sans text-sm transition-colors">
+                Prints
+              </Link>
+              <Link href="/photography/contact" className="text-white/30 hover:text-white/60 font-sans text-sm transition-colors">
+                Contact
+              </Link>
+            </div>
           </div>
         </div>
       </section>
