@@ -69,12 +69,12 @@ const faqItems = [
     a: 'For very simple events — a courthouse ceremony, a short outdoor session, or a small backyard elopement — a session under $500 may be possible depending on date, location, and coverage length. Send me the details and I can give you an honest answer.',
   },
   {
-    q: 'Do you photograph courthouse weddings in Lexington?',
-    a: 'Yes. Courthouse weddings are one of the best fits for my approach — low-pressure, quick, and focused on real moments rather than a formal posed workflow. I have covered ceremonies at the Fayette County Courthouse and nearby locations.',
+    q: 'How much do you charge for a wedding?',
+    a: 'For a wedding I typically charge $1,000 plus $500 to $2,000 depending on the agreed upon photo package and types of deliverables. Standard delivery includes 150 to 300 edited photos (color and b&w) available for digital download.',
   },
   {
     q: 'Are you a full-time wedding photographer?',
-    a: 'No. My primary work is nature, wildlife, macro, and landscape photography in Kentucky. I take on a small number of personal event sessions per year when the event is a good fit for a candid, natural approach. I am always upfront about this.',
+    a: 'No. My primary work is nature, wildlife, macro, and landscape photography in Kentucky. I take on a small number of personal event sessions per year, to support my other photography efforts such as travel expenses, buying lenses and equipment, and other overhead costs. When the event is a good fit for a candid, natural approach and the client has realistic expectations.',
   },
   {
     q: 'What types of events do you cover?',
