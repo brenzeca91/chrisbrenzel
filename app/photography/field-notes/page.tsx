@@ -123,8 +123,7 @@ export default function FieldNotesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => {
             const postHref = 'href' in post ? post.href : `/photography/field-notes/${post.slug}`
-            return (
-            <article
+            return <article
               key={post.slug}
               className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden hover:bg-[#141414] transition-all flex flex-col"
             >
@@ -164,7 +163,6 @@ export default function FieldNotesPage() {
                 </div>
               </div>
             </article>
-            )
           })}
         </div>
       </section>
