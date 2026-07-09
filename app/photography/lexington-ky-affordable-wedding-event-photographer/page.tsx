@@ -77,7 +77,23 @@ export default function LexingtonEventPhotographyPage() {
         </p>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
+      {/* Hero image band — couple at sunset */}
+      <section className="max-w-7xl mx-auto px-6 pb-0">
+        <div
+          className="relative rounded-lg overflow-hidden border border-[#1a1a1a]"
+          style={{ height: '360px' }}
+        >
+          <img
+            src="/images/events/couple-sunset.jpg"
+            alt="Couple embracing at golden hour on a Kentucky farm, champagne in hand"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ transform: 'scaleY(1.43)', transformOrigin: 'center' }}
+          />
+          <div className="absolute inset-0 bg-[#0a0f1e]/40" aria-hidden="true" />
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6 mt-8"><div className="h-px bg-[#1a1a1a]" /></div>
 
       {/* Intro */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
@@ -114,9 +130,7 @@ export default function LexingtonEventPhotographyPage() {
             <p className="text-white/45 font-sans text-sm leading-relaxed">
               As a courthouse wedding photographer Lexington KY or Lexington KY
               engagement photographer, I can offer a relaxed, natural approach at
-              a price point that full-service studios typically cannot. For small
-              personal events, a Lexington KY event photographer with a candid
-              style is often a better fit than a formal package.
+              a price point that full-service studios typically cannot.
             </p>
           </div>
         </div>
@@ -124,7 +138,7 @@ export default function LexingtonEventPhotographyPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
-      {/* Good fit events */}
+      {/* Good fit events + engagement photo inline */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
         <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
           This may be a good fit for
@@ -133,23 +147,45 @@ export default function LexingtonEventPhotographyPage() {
           Small, simple occasions where natural and candid photography fits better
           than a formal wedding studio workflow.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-4xl">
-          {goodFitEvents.map((event) => (
-            <div
-              key={event}
-              className="border border-[#1e2d1e] bg-[#090f09] rounded-lg px-4 py-3 text-center"
-            >
-              <p className="text-white/55 font-sans text-xs leading-relaxed">{event}</p>
-            </div>
-          ))}
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {goodFitEvents.map((event) => (
+              <div
+                key={event}
+                className="border border-[#1e2d1e] bg-[#090f09] rounded-lg px-4 py-3 text-center"
+              >
+                <p className="text-white/55 font-sans text-xs leading-relaxed">{event}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Engagement embrace photo */}
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '280px' }}>
+            <img
+              src="/images/events/engagement-embrace.jpg"
+              alt="Engaged couple embracing in front of pink flowering trees"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1a1a1a]" /></div>
 
-      {/* What to expect */}
+      {/* What to expect + engagement ring photo */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-5xl items-start">
+
+          {/* Ring close-up */}
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '300px' }}>
+            <img
+              src="/images/events/engagement-ring.jpg"
+              alt="Close-up of an engagement ring on a couple's stacked hands"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+
           <div>
             <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
               What to expect
@@ -180,6 +216,26 @@ export default function LexingtonEventPhotographyPage() {
               sessions per year alongside my nature photography work. Reach out
               early if you have a date in mind.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Family/newborn photo strip */}
+      <section className="max-w-7xl mx-auto px-6 pb-8">
+        <div className="grid grid-cols-2 gap-3">
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '220px' }}>
+            <img
+              src="/images/events/siblings.jpg"
+              alt="Young child gently touching newborn sibling's head"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '220px' }}>
+            <img
+              src="/images/events/newborn-feet.jpg"
+              alt="Close-up of newborn baby feet"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </div>
       </section>
