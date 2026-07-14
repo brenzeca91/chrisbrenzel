@@ -4,6 +4,17 @@ import { ArrowRight } from 'lucide-react'
 
 const posts = [
   {
+    title: 'What Is the Best Beginner Sony Camera for You? (Quiz)',
+    category: 'Gear',
+    date: 'July 14, 2026',
+    location: 'Lexington, KY',
+    excerpt:
+      'Answer 15 quick questions about your shooting style, budget, and subjects -- and get a personalized Sony camera recommendation with affiliate links and a full explanation.',
+    slug: 'best-beginner-sony-camera',
+    href: '/photography/best-beginner-sony-camera',
+    cover: '/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg',
+  },
+  {
     title: 'Lensrentals Review: Renting Gear for Wildlife Photography',
     category: 'Gear',
     date: 'July 9, 2026',
