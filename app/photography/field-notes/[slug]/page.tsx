@@ -1,6 +1,20 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+
+const postMeta: Record<string, { description: string; cover: string; date: string }> = {
+  'birding-at-bettman':        { description: 'Winter bird photography at Bettman Nature Preserve in Cincinnati — cardinals, blue jays, and chickadees against white snow, photographed with a rented Sony 200-600mm.', cover: '/images/field-notes/bettman.jpg', date: '2025-01-21' },
+  'capturing-backyard-birds':  { description: 'A hands-on review of the Sony FE 200-600mm for backyard bird photography in Lexington, KY — what worked, what surprised me, and whether the reach is worth it.', cover: '/images/field-notes/backyard-bird.jpg', date: '2024-12-10' },
+  'capturing-snowflakes':      { description: 'Photographing individual snowflakes on a cold Kentucky morning — setup, macro lens choices, and the challenge of shooting ice crystals before they melt.', cover: '/images/field-notes/snowflake.jpg', date: '2024-02-15' },
+  'solar-eclipse-part-2':      { description: 'Totality over Lexington, KY: solar filters off, shutter open. Massive solar flares visible around the moon\'s silhouette during the 2024 total solar eclipse.', cover: '/images/field-notes/eclipse-part2.jpg', date: '2024-04-12' },
+  'solar-eclipse-part-1':      { description: 'Preparing for the 2024 total solar eclipse — solar filters, camera settings, and a test shoot from Lexington, Kentucky.', cover: '/images/field-notes/eclipse-part1.jpg', date: '2024-04-08' },
+  'lensball-photography':      { description: 'A practical guide to lensball photography — how to compose a refracted scene, avoid common mistakes, and get sharp shots with a Sony mirrorless camera.', cover: '/images/field-notes/lensball.jpg', date: '2023-06-01' },
+  'exploring-frankfort':       { description: 'Street photography in Frankfort, Kentucky — the capital\'s natural graphic divides, textured facades, and quiet corners explored with a compact Sony.', cover: '/images/field-notes/frankfort.jpg', date: '2022-09-10' },
+  'macro-at-folly-beach':      { description: 'First macro lens outing at Folly Beach, SC — tiny shells, sand grains, sea glass, and the challenge of keeping wind-blown subjects sharp.', cover: '/images/field-notes/folly-beach.jpg', date: '2021-12-15' },
+}
+
+
 
 interface RelatedLink {
   href: string
@@ -786,6 +800,43 @@ const postData: Record<string, Post> = {
   },
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const post = postData[slug]
+  const meta = postMeta[slug]
+  if (!post || !meta) return {}
+
+  const title = `${post.title} | Christopher Brenzel`
+  const url = `https://www.chrisbrenzel.com/photography/field-notes/${slug}`
+  const imageUrl = `https://www.chrisbrenzel.com${meta.cover}`
+
+  return {
+    title,
+    description: meta.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.title,
+      description: meta.description,
+      url,
+      siteName: 'ChrisBrenzel.com',
+      type: 'article',
+      publishedTime: meta.date,
+      authors: ['Christopher Brenzel'],
+      images: [{ url: imageUrl, width: 1200, height: 800, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: meta.description,
+      images: [imageUrl],
+    },
+  }
+}
+
 export default async function FieldNotePost({
   params,
 }: {
@@ -810,8 +861,30 @@ export default async function FieldNotePost({
     )
   }
 
+  const meta = postMeta[slug]
+  const articleJsonLd = meta
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description: meta.description,
+        datePublished: meta.date,
+        author: { '@type': 'Person', name: 'Christopher Brenzel', url: 'https://www.chrisbrenzel.com' },
+        publisher: { '@type': 'Person', name: 'Christopher Brenzel', url: 'https://www.chrisbrenzel.com' },
+        image: `https://www.chrisbrenzel.com${meta.cover}`,
+        url: `https://www.chrisbrenzel.com/photography/field-notes/${slug}`,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.chrisbrenzel.com/photography/field-notes/${slug}` },
+      }
+    : null
+
   return (
     <main className="pt-14">
+      {articleJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+      )}
       {/* Hero cover image */}
       <div className="relative w-full aspect-[21/9] bg-[#111] overflow-hidden">
         <Image

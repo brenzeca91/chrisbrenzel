@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /photography/best-beginner-sony-camera/embed
+Disallow: /photography/privacy
+Disallow: /photography/terms
 
 Sitemap: https://www.chrisbrenzel.com/sitemap.xml

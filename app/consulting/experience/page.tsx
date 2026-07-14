@@ -1,3 +1,18 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Selected Experience | Christopher Brenzel',
+  description: 'Selected professional experience of Christopher Brenzel — preclinical CRO business development, gene editing commercialization, oncology research partnerships, and scientific sales at Hera BioLabs and beyond.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/consulting/experience' },
+  openGraph: {
+    title: 'Selected Experience | Christopher Brenzel',
+    description: 'Professional history in biotech business development, preclinical CRO strategy, and scientific partnerships.',
+    url: 'https://www.chrisbrenzel.com/consulting/experience',
+    siteName: 'ChrisBrenzel.com',
+    type: 'profile',
+  },
+}
+
 // Orgs with real logo image files
 const orgImageLogos: Record<string, { src: string; alt: string; bg: string; height: number }> = {
   'Hera BioLabs, Inc.': {
