@@ -121,7 +121,7 @@ export default function BestBeginnerSonyCameraPage() {
         <figure className="mt-8">
           <div className="rounded overflow-hidden bg-[#111] max-h-[420px] flex items-center justify-center">
             <Image
-              src="/images/sony-quiz/toddler-sony-a6000-enhanced.png"
+              src="/images/sony-quiz/toddler-sony-a6000.jpg"
               alt="A toddler holding a Sony A6000 mirrorless camera, grinning"
               width={840}
               height={1050}
@@ -202,7 +202,7 @@ export default function BestBeginnerSonyCameraPage() {
         <figure className="my-6">
           <div className="rounded overflow-hidden bg-[#111]">
             <Image
-              src="/images/sony-quiz/photographer-travel-alhambra-enhanced.png"
+              src="/images/sony-quiz/photographer-alhambra-spain-sony.jpg"
               alt="Photographer shooting inside the Alhambra palace in Spain with a compact Sony mirrorless camera"
               width={840}
               height={1050}
@@ -264,7 +264,7 @@ export default function BestBeginnerSonyCameraPage() {
         <figure className="my-6">
           <div className="rounded overflow-hidden bg-[#111]">
             <Image
-              src="/images/sony-quiz/photographer-autumn-forest-enhanced.png"
+              src="/images/sony-quiz/photographer-autumn-forest-stump.jpg"
               alt="Photographer crouching low in an autumn forest to photograph a weathered tree stump, golden foliage behind"
               width={840}
               height={560}
