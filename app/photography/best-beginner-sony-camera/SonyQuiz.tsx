@@ -477,13 +477,13 @@ export default function SonyQuiz() {
     }
   }
 
-  // scroll to result once it renders
+  // scroll to top of page once result renders so the recommendation is visible
   useEffect(() => {
-    if (step === 'result' && resultRef.current) {
+    if (step === 'result') {
       setTimeout(() => {
-        resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        window.scrollTo({ top: 0, behavior: 'smooth' })
         if (liveRef.current) liveRef.current.textContent = `Your result: ${result?.name}`
-      }, 100)
+      }, 50)
     }
   }, [step, result])
 
