@@ -9,7 +9,7 @@ const posts = [
     date: 'July 14, 2026',
     location: 'Lexington, KY',
     excerpt:
-      'Answer 15 quick questions about your shooting style, budget, and subjects -- and get a personalized Sony camera recommendation with affiliate links and a full explanation.',
+      'Answer 15 quick questions about your shooting style, budget, and subjects -- and get a personalized Sony camera recommendation.',
     slug: 'best-beginner-sony-camera',
     href: '/photography/best-beginner-sony-camera',
     cover: '/images/sony-quiz/photographer-alhambra-spain-sony.jpg',
