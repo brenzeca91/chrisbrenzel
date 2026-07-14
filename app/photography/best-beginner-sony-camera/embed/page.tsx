@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export default function SonyQuizEmbed() {
   return (
     <html lang="en" className="bg-[#0c0c0c]">
-      <body className="bg-[#0c0c0c] min-h-screen p-4 md:p-6">
+      <body className="bg-[#0c0c0c] min-h-screen p-4 md:p-6 pb-16">
         <SonyQuiz embedMode={true} />
         <p className="text-white/20 font-sans text-xs text-center mt-6">
           Quiz by{' '}
