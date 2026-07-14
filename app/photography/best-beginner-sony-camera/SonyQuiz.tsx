@@ -564,7 +564,11 @@ export default function SonyQuiz({ embedMode = false }: { embedMode?: boolean })
           </div>
         </div>
 
-        {!embedMode && (
+        {embedMode ? (
+          <div className="pb-8">
+            <ResultCard result={result} isHighlighted={true} />
+          </div>
+        ) : (
           <p className="text-white/35 font-sans text-xs mb-6">
             Full recommendation library below. All results are shown so you can compare paths.
           </p>
