@@ -60,6 +60,24 @@ const categories = [
 
 const fieldNotesPosts = [
   {
+    title: 'Which Sony Camera Is Right for You?',
+    category: 'Gear',
+    date: 'Jul 14, 2026',
+    excerpt: 'Answer 15 questions about your budget, subjects, and goals — and get a personalized Sony camera recommendation.',
+    image: '/images/sony-quiz/photographer-alhambra-spain-sony.jpg',
+    alt: 'Photographer shooting inside the Alhambra palace in Spain with a compact Sony mirrorless camera',
+    href: '/photography/best-beginner-sony-camera',
+  },
+  {
+    title: 'Renting Gear for Wildlife Photography',
+    category: 'Gear',
+    date: 'Jul 9, 2026',
+    excerpt: 'A firsthand look at renting the Sony 200-600mm through Lensrentals — shipping, condition, and whether it makes sense before buying.',
+    image: '/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg',
+    alt: 'Telephoto lens in a forest setting for bird and wildlife photography',
+    href: '/photography/lensrentals-review-wildlife-photography-gear',
+  },
+  {
     title: 'Birding at Bettman Nature Preserve',
     category: 'Wildlife',
     date: 'Jan 21, 2025',
@@ -67,24 +85,6 @@ const fieldNotesPosts = [
     image: '/images/field-notes/bettman.jpg',
     alt: 'Dark-eyed junco perched on bare winter branches',
     slug: 'birding-at-bettman',
-  },
-  {
-    title: 'Solar Eclipse — Part II',
-    category: 'Astrophotography',
-    date: 'Apr 12, 2024',
-    excerpt: 'The moment of totality: solar filters off, shutter open. Massive solar flares visible around the moon\'s silhouette.',
-    image: '/images/field-notes/eclipse-part2.jpg',
-    alt: 'Total solar eclipse at totality with solar corona and flares',
-    slug: 'solar-eclipse-part-2',
-  },
-  {
-    title: 'Macro Photography at Folly Beach',
-    category: 'Macro',
-    date: 'Dec 15, 2021',
-    excerpt: 'First outing with a macro lens. Tiny shells, sand grains, and the challenge of keeping wind-blown subjects in focus.',
-    image: '/images/field-notes/folly-beach.jpg',
-    alt: 'Macro close-up of a shell resting in sand at Folly Beach SC',
-    slug: 'macro-at-folly-beach',
   },
 ]
 
@@ -220,8 +220,8 @@ export default function PhotographyPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {fieldNotesPosts.map((post) => (
             <Link
-              key={post.slug}
-              href={`/photography/field-notes/${post.slug}`}
+              key={'href' in post ? post.href : post.slug}
+              href={'href' in post ? post.href! : `/photography/field-notes/${post.slug}`}
               className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden hover:bg-[#141414] transition-all"
             >
               <div className="aspect-video overflow-hidden border-b border-[#1a1a1a] bg-[#0c0c0c]">

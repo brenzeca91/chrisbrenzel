@@ -306,6 +306,22 @@ export default function BestBeginnerSonyCameraPage() {
           </li>
           <li>
             <Link
+              href="/photography/field-notes/capturing-backyard-birds"
+              className="text-[#6fcf97] hover:text-[#9fe7b8] font-sans text-sm transition-colors"
+            >
+              Capturing backyard birds with the Sony 200-600mm
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/photography/field-notes/birding-at-bettman"
+              className="text-[#6fcf97] hover:text-[#9fe7b8] font-sans text-sm transition-colors"
+            >
+              Birding at Bettman Nature Preserve
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/photography/field-notes"
               className="text-[#6fcf97] hover:text-[#9fe7b8] font-sans text-sm transition-colors"
             >

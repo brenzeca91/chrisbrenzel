@@ -438,29 +438,29 @@ export default function CameraBagPage() {
           More from the field
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
+            {[
             {
-              title: 'Wildlife Editing Workflow',
-              desc: 'How I process RAW wildlife images from capture to final export.',
-              href: '/photography/field-notes',
+              title: 'Capturing Backyard Birds',
+              desc: 'The Sony 200-600mm in practice — backyard feeders, songbirds, and what worked.',
+              href: '/photography/field-notes/capturing-backyard-birds',
               icon: <Camera className="w-5 h-5" />,
             },
             {
-              title: 'Best Bird Photography Locations in Kentucky',
-              desc: 'Parks, preserves, and trails worth exploring with a long lens.',
-              href: '/photography/field-notes',
+              title: 'Birding at Bettman Nature Preserve',
+              desc: 'Winter bird photography at a Cincinnati nature preserve with active feeders.',
+              href: '/photography/field-notes/birding-at-bettman',
               icon: <MapPin className="w-5 h-5" />,
             },
             {
-              title: 'Raven Run Photography Guide',
-              desc: 'A trail-by-trail breakdown of one of Lexington\'s best nature preserves.',
-              href: '/photography/field-notes',
+              title: 'Renting Gear for Wildlife Photography',
+              desc: 'A firsthand look at renting the Sony 200-600mm through Lensrentals.',
+              href: '/photography/lensrentals-review-wildlife-photography-gear',
               icon: <BookOpen className="w-5 h-5" />,
             },
             {
-              title: 'Fine Art Prints',
-              desc: 'Selected images available as fine-art prints, printed to order.',
-              href: '/photography/prints',
+              title: 'Best Beginner Sony Camera Quiz',
+              desc: 'Answer 15 questions to find the right Sony system for your style and budget.',
+              href: '/photography/best-beginner-sony-camera',
               icon: <Star className="w-5 h-5" />,
             },
             {
