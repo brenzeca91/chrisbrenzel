@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react'
+import { ChevronLeft, ChevronRight, RotateCcw, ExternalLink } from 'lucide-react'
 import {
   QUESTIONS,
   CAMERA_RESULTS,
@@ -387,7 +387,7 @@ function ResultCard({ result, isHighlighted }: { result: CameraResult; isHighlig
 
 // ---- Main Quiz Component ----
 
-export default function SonyQuiz() {
+export default function SonyQuiz({ embedMode = false }: { embedMode?: boolean }) {
   const [step, setStep] = useState<'intro' | 'quiz' | 'result'>('intro')
   const [currentQ, setCurrentQ] = useState(0)
   const [answers, setAnswers] = useState<QuizAnswers>({})
@@ -536,12 +536,24 @@ export default function SonyQuiz() {
             you buy.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a
-              href={`#${result.anchorId}`}
-              className="bg-[#6fcf97] hover:bg-[#9fe7b8] text-[#071a0e] font-sans font-semibold text-sm px-5 py-2.5 rounded transition-colors"
-            >
-              See the full recommendation
-            </a>
+            {embedMode ? (
+              <a
+                href={`https://www.chrisbrenzel.com/photography/best-beginner-sony-camera#${result.anchorId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#6fcf97] hover:bg-[#9fe7b8] text-[#071a0e] font-sans font-semibold text-sm px-5 py-2.5 rounded transition-colors inline-flex items-center gap-2"
+              >
+                See the full recommendation
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            ) : (
+              <a
+                href={`#${result.anchorId}`}
+                className="bg-[#6fcf97] hover:bg-[#9fe7b8] text-[#071a0e] font-sans font-semibold text-sm px-5 py-2.5 rounded transition-colors"
+              >
+                See the full recommendation
+              </a>
+            )}
             <button
               onClick={reset}
               className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/15 text-white/70 hover:text-white/90 font-sans text-sm px-5 py-2.5 rounded transition-colors"
@@ -552,9 +564,11 @@ export default function SonyQuiz() {
           </div>
         </div>
 
-        <p className="text-white/35 font-sans text-xs mb-6">
-          Full recommendation library below. All results are shown so you can compare paths.
-        </p>
+        {!embedMode && (
+          <p className="text-white/35 font-sans text-xs mb-6">
+            Full recommendation library below. All results are shown so you can compare paths.
+          </p>
+        )}
       </div>
     )
   }
