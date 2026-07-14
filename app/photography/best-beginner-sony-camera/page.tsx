@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { CAMERA_RESULTS, LAST_REVIEWED } from '@/lib/sony-quiz-data'
 import SonyQuiz, { ResultCard } from './SonyQuiz'
@@ -116,6 +117,22 @@ export default function BestBeginnerSonyCameraPage() {
         <p className="text-white/25 font-sans text-xs">
           Last reviewed {LAST_REVIEWED}. Model availability and pricing change frequently.
         </p>
+
+        <figure className="mt-8">
+          <div className="rounded overflow-hidden bg-[#111] max-h-[420px] flex items-center justify-center">
+            <Image
+              src="/images/sony-quiz/toddler-sony-a6000-enhanced.png"
+              alt="A toddler holding a Sony A6000 mirrorless camera, grinning"
+              width={840}
+              height={1050}
+              className="w-full h-full object-cover object-top"
+              style={{ maxHeight: '420px' }}
+            />
+          </div>
+          <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+            My daughter grabbed the A6000 before I could stop her. Even she knew it was the right size.
+          </figcaption>
+        </figure>
       </section>
 
       {/* Quiz */}
@@ -182,6 +199,21 @@ export default function BestBeginnerSonyCameraPage() {
           is the one I can discuss from real experience.
         </Body>
 
+        <figure className="my-6">
+          <div className="rounded overflow-hidden bg-[#111]">
+            <Image
+              src="/images/sony-quiz/photographer-travel-alhambra-enhanced.png"
+              alt="Photographer shooting inside the Alhambra palace in Spain with a compact Sony mirrorless camera"
+              width={840}
+              height={1050}
+              className="w-full h-auto"
+            />
+          </div>
+          <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+            Shooting inside the Alhambra, Granada -- the compact A6000 fit right in a daypack.
+          </figcaption>
+        </figure>
+
         <SectionHeading>Why not a different brand?</SectionHeading>
         <Body>
           Canon, Nikon, Fujifilm, Panasonic, OM System, and other manufacturers make excellent
@@ -228,6 +260,21 @@ export default function BestBeginnerSonyCameraPage() {
           used families when you are comfortable with used equipment and adjusts away from them
           when you want new gear with a full warranty.
         </Body>
+
+        <figure className="my-6">
+          <div className="rounded overflow-hidden bg-[#111]">
+            <Image
+              src="/images/sony-quiz/photographer-autumn-forest-enhanced.png"
+              alt="Photographer crouching low in an autumn forest to photograph a weathered tree stump, golden foliage behind"
+              width={840}
+              height={560}
+              className="w-full h-auto"
+            />
+          </div>
+          <figcaption className="mt-2 text-white/30 font-sans text-xs italic">
+            Getting low with a used Sony body in an autumn Kentucky forest -- a compact kit makes you more likely to bring it.
+          </figcaption>
+        </figure>
 
         <SectionHeading>A note about photography as a business</SectionHeading>
         <Body>
