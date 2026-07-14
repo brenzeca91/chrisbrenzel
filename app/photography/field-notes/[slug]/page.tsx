@@ -2,6 +2,56 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
+interface RelatedLink {
+  href: string
+  label: string
+  description: string
+  category: string
+}
+
+const relatedBySlug: Record<string, RelatedLink[]> = {
+  'birding-at-bettman': [
+    { href: '/photography/field-notes/capturing-backyard-birds', label: 'Capturing Backyard Birds', description: 'A review of the Sony 200-600mm and backyard feeder photography in Lexington, KY.', category: 'Wildlife' },
+    { href: '/photography/lensrentals-review-wildlife-photography-gear', label: 'Renting Gear for Wildlife Photography', description: 'Whether renting a telephoto lens before buying makes sense for bird and wildlife work.', category: 'Gear' },
+    { href: '/photography/camera-bag', label: "What's in My Camera Bag", description: 'The Sony gear I use for wildlife and nature photography.', category: 'Gear' },
+  ],
+  'capturing-backyard-birds': [
+    { href: '/photography/field-notes/birding-at-bettman', label: 'Birding at Bettman Nature Preserve', description: 'Winter bird photography at a Cincinnati nature preserve surrounded by feeders.', category: 'Wildlife' },
+    { href: '/photography/lensrentals-review-wildlife-photography-gear', label: 'Renting Gear for Wildlife Photography', description: 'A firsthand look at renting the Sony 200-600mm through Lensrentals.', category: 'Gear' },
+    { href: '/photography/best-beginner-sony-camera', label: 'Best Beginner Sony Camera Quiz', description: 'Find the right Sony system for your shooting style and budget.', category: 'Gear' },
+  ],
+  'capturing-snowflakes': [
+    { href: '/photography/field-notes/macro-at-folly-beach', label: 'Macro Photography at Folly Beach', description: 'First macro lens outing -- tiny shells, sand grains, and wind-blown subjects.', category: 'Macro' },
+    { href: '/photography/camera-bag', label: "What's in My Camera Bag", description: 'The Sony gear and macro lens I use for close-up nature photography.', category: 'Gear' },
+    { href: '/photography/gallery', label: 'Photography Gallery', description: 'Wildlife, macro, landscape, and astrophotography from Kentucky and beyond.', category: 'Portfolio' },
+  ],
+  'solar-eclipse-part-2': [
+    { href: '/photography/field-notes/solar-eclipse-part-1', label: 'Solar Eclipse — Part I', description: 'Setup, solar filters, and protecting the sensor for eclipse photography.', category: 'Astrophotography' },
+    { href: '/photography/camera-bag', label: "What's in My Camera Bag", description: 'The Sony Alpha 7 III and 300mm lens used to capture totality.', category: 'Gear' },
+    { href: '/photography/gallery', label: 'Photography Gallery', description: 'Astrophotography, wildlife, and nature photographs from Kentucky and beyond.', category: 'Portfolio' },
+  ],
+  'solar-eclipse-part-1': [
+    { href: '/photography/field-notes/solar-eclipse-part-2', label: 'Solar Eclipse — Part II', description: 'Totality: solar filters off, shutter open -- massive solar flares visible.', category: 'Astrophotography' },
+    { href: '/photography/camera-bag', label: "What's in My Camera Bag", description: 'The gear used to capture the 2024 eclipse.', category: 'Gear' },
+    { href: '/photography/gallery', label: 'Photography Gallery', description: 'Browse the full eclipse and nature photography portfolio.', category: 'Portfolio' },
+  ],
+  'lensball-photography': [
+    { href: '/photography/field-notes/macro-at-folly-beach', label: 'Macro Photography at Folly Beach', description: 'Another creative close-up challenge -- shells, sand grains, and depth of field.', category: 'Macro' },
+    { href: '/photography/field-notes/exploring-frankfort', label: 'Exploring Frankfort, KY', description: 'Street photography and natural graphic divides in Kentucky\'s capital.', category: 'Street' },
+    { href: '/photography/camera-bag', label: "What's in My Camera Bag", description: 'The Sony gear used for macro and creative photography.', category: 'Gear' },
+  ],
+  'exploring-frankfort': [
+    { href: '/photography/field-notes/lensball-photography', label: 'How to: Lensball Photography', description: 'Another creative experiment -- composition, refraction, and lessons learned.', category: 'How-To' },
+    { href: '/photography/gallery', label: 'Photography Gallery', description: 'Street, travel, and nature photography from Kentucky and beyond.', category: 'Portfolio' },
+    { href: '/photography/field-notes', label: 'All Field Notes', description: 'Photography outings, observations, and notes from the field.', category: 'Field Notes' },
+  ],
+  'macro-at-folly-beach': [
+    { href: '/photography/field-notes/capturing-snowflakes', label: 'Capturing Snowflakes', description: 'Another extreme macro challenge -- ice crystals before they melt.', category: 'Macro' },
+    { href: '/photography/field-notes/lensball-photography', label: 'How to: Lensball Photography', description: 'A creative close-up tool -- composition, refraction, and common mistakes.', category: 'How-To' },
+    { href: '/photography/best-beginner-sony-camera', label: 'Best Beginner Sony Camera Quiz', description: 'Find the Sony system that fits your shooting style -- including macro work.', category: 'Gear' },
+  ],
+}
+
 interface Post {
   title: string
   date: string
@@ -66,6 +116,11 @@ const postData: Record<string, Post> = {
           compensate for the lower light levels. Using a wider aperture and a slightly higher ISO was
           essential for capturing sharp images. Despite compensating for the low light, the long
           focal length of the lens I was using made far-away shots a bit blurrier than I was hoping.
+          If you are thinking about which Sony body to pair with a long lens,{' '}
+          <Link href="/photography/best-beginner-sony-camera" className="text-white/70 hover:text-[#6fcf97] underline underline-offset-2 transition-colors">
+            my Sony camera quiz
+          </Link>{' '}
+          covers the full-frame options worth considering.
         </p>
         <PostImage
           src="/images/field-notes/bettman-feeder-2.png"
@@ -149,7 +204,12 @@ const postData: Record<string, Post> = {
           <strong className="text-white/70">Lens thoughts:</strong> While fantastic for capturing
           birds, it is too large to function well as a handheld lens and was best suited for a
           tripod. There was a noticeable loss in clarity for birds far away in low light. More to
-          follow in the next post.
+          follow in the next post. If you are weighing whether to rent a long telephoto before
+          buying,{' '}
+          <Link href="/photography/lensrentals-review-wildlife-photography-gear" className="text-white/70 hover:text-[#6fcf97] underline underline-offset-2 transition-colors">
+            my Lensrentals review
+          </Link>{' '}
+          covers the process from a wildlife photography perspective.
         </p>
       </div>
     ),
@@ -824,6 +884,38 @@ export default async function FieldNotePost({
             <span />
           )}
         </nav>
+
+        {/* Continue Exploring */}
+        {relatedBySlug[slug] && (
+          <div className="mt-14">
+            <div className="h-px bg-[#1a1a1a] mb-10" />
+            <p className="text-white/25 font-sans text-xs font-medium tracking-[0.2em] uppercase mb-6">
+              Continue Exploring
+            </p>
+            <div className="flex flex-col gap-3">
+              {relatedBySlug[slug].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group flex flex-col gap-1 border border-[#1a1a1a] hover:border-[#333] rounded p-4 hover:bg-[#141414] transition-all"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-white/30 font-sans text-[10px] tracking-[0.15em] uppercase">
+                      {item.category}
+                    </p>
+                    <ArrowRight className="w-3 h-3 text-white/20 group-hover:text-white/50 transition-colors shrink-0" />
+                  </div>
+                  <p className="text-[#f5f0eb] font-serif text-base font-medium leading-snug group-hover:text-white transition-colors">
+                    {item.label}
+                  </p>
+                  <p className="text-white/35 font-sans text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </article>
     </main>
   )

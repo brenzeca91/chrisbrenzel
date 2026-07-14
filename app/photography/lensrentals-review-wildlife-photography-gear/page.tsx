@@ -337,7 +337,15 @@ export default function LensrentalsReviewPage() {
           For me, yes. Lensrentals is worth it because it lets photographers try better gear
           without immediately committing to a major purchase. It is especially useful for wildlife
           photography, bird photography, travel photography, macro photography, and creative
-          specialty lenses that you may not use often enough to buy.
+          specialty lenses that you may not use often enough to buy. I used a rented 200-600mm for{' '}
+          <Link href="/photography/field-notes/capturing-backyard-birds" className="text-[#6fcf97] hover:text-[#9fe7b8] underline underline-offset-2 transition-colors">
+            backyard bird photography
+          </Link>{' '}
+          and again at{' '}
+          <Link href="/photography/field-notes/birding-at-bettman" className="text-[#6fcf97] hover:text-[#9fe7b8] underline underline-offset-2 transition-colors">
+            Bettman Nature Preserve
+          </Link>{' '}
+          before deciding whether to buy.
         </BodyText>
 
         <BodyText>
@@ -378,11 +386,12 @@ export default function LensrentalsReviewPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             {[
+              { href: '/photography/field-notes/capturing-backyard-birds', label: 'Capturing Backyard Birds' },
+              { href: '/photography/field-notes/birding-at-bettman', label: 'Birding at Bettman Nature Preserve' },
+              { href: '/photography/best-beginner-sony-camera', label: 'Best Beginner Sony Camera Quiz' },
               { href: '/photography/camera-bag', label: "What's in My Camera Bag" },
               { href: '/photography/gallery', label: 'Wildlife Photography Gallery' },
               { href: '/photography/field-notes', label: 'Field Notes' },
-              { href: '/photography', label: 'Photography' },
-              { href: '/photography/prints', label: 'Print Store' },
             ].map(({ href, label }) => (
               <Link
                 key={href}
