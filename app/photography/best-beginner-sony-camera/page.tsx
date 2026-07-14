@@ -135,8 +135,7 @@ export default function BestBeginnerSonyCameraPage() {
         </h2>
         <p className="text-white/40 font-sans text-sm leading-relaxed mb-8">
           Every recommendation is shown below. Complete the quiz above to highlight your best match
-          and scroll directly to it. Each section remains in the page HTML so it is fully
-          accessible and crawlable without the quiz.
+          and scroll directly to it.
         </p>
         <div className="space-y-6">
           {CAMERA_RESULTS.map((result) => (
