@@ -45,7 +45,7 @@ function Divider() {
 const FAQ = [
   {
     q: 'Is the Sony A6000 still worth buying in 2026?',
-    a: "Yes, if your budget is tight and you can find a clean used body. The A6000 lacks modern autofocus, in-body stabilization, and current video tools, but it produces good images and teaches the fundamentals. It is where Chris started. If you can stretch to a used A6100 or A6400, the improved subject tracking is usually worth the extra cost.",
+    a: "Yes, if your budget is tight and you can find a clean used body. The A6000 lacks modern autofocus, in-body stabilization, and current video tools, but it produces good images and teaches the fundamentals. It is where I started. If you can stretch to a used A6100 or A6400, the improved subject tracking is usually worth the extra cost.",
   },
   {
     q: 'Should I start with APS-C or full frame?',
@@ -69,7 +69,7 @@ const FAQ = [
   },
   {
     q: 'Does a bigger camera make someone look more professional?',
-    a: "This is a subjective topic. Chris has personally felt more confident arriving to paid work with a larger full-frame body, and occasionally sensed that clients associated larger gear with professional capability. That perception is not proof of skill or image quality. A compact Sony can produce professional work. If client-facing confidence is part of your reason for upgrading, that is a legitimate factor -- just do not let it override practical system decisions.",
+    a: "This is a subjective topic. I have personally felt more confident arriving to paid work with a larger full-frame body, and occasionally sensed that clients associated larger gear with professional capability. That perception is not proof of skill or image quality. A compact Sony can produce professional work. If client-facing confidence is part of your reason for upgrading, that is a legitimate factor -- just do not let it override practical system decisions.",
   },
   {
     q: 'Should I buy new or used?',
@@ -269,7 +269,7 @@ export default function BestBeginnerSonyCameraPage() {
               href="/photography/camera-bag"
               className="text-[#6fcf97] hover:text-[#9fe7b8] font-sans text-sm transition-colors"
             >
-              What is in Chris&apos;s camera bag
+              What is in my camera bag
             </Link>
           </li>
           <li>
@@ -300,12 +300,10 @@ export default function BestBeginnerSonyCameraPage() {
 
         <div className="bg-white/5 border border-white/10 rounded p-4">
           <p className="text-white/30 font-sans text-xs leading-relaxed">
-            <span className="text-white/50 font-semibold">Disclosure.</span> Recommendations on
-            this page are based on firsthand Sony ownership and research. Chris has personally owned
-            and used Sony APS-C and full-frame cameras. Some links may be affiliate links that
-            generate a small commission at no additional cost to you. Camera prices and model
-            availability change frequently -- always verify current pricing before purchasing.
-            Last reviewed {LAST_REVIEWED}.
+            <span className="text-white/50 font-semibold">Note.</span> Recommendations on this
+            page are based on my own Sony ownership and research. I have personally owned and used
+            Sony APS-C and full-frame cameras. Camera prices and model availability change
+            frequently -- always verify current pricing before purchasing. Last reviewed {LAST_REVIEWED}.
           </p>
         </div>
       </section>

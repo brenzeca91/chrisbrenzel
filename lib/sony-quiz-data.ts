@@ -27,7 +27,7 @@ export const QUESTIONS: QuizQuestion[] = [
     id: 1,
     question: 'Which best describes your photography experience?',
     type: 'single',
-    note: "Starting with a smaller camera is not a lesser choice. Chris carried an A6000 through Spain, Italy, beach trips, and family outings because it was compact enough to bring along.",
+    note: "Starting with a smaller camera is not a lesser choice. I carried an A6000 through Spain, Italy, beach trips, and family outings because it was compact enough to bring along.",
     answers: [
       { label: 'My phone or a basic compact camera is all I have used', scores: { BAS: 5, APS: 2, VID: 1 } },
       { label: 'I used to own a camera and want to start again', scores: { BAS: 3, APS: 3, FFV: 2 } },
@@ -127,7 +127,7 @@ export const QUESTIONS: QuizQuestion[] = [
     question: 'How important are heavy cropping, fine detail, and large prints?',
     type: 'slider',
     sliderLabels: ['Rarely crop', 'Small adjustments', 'Regularly reframe', 'Wildlife / large prints', 'Maximum detail priority'],
-    note: "Cropping was the limitation that pushed Chris from the A6000 toward a 42 MP full-frame body for wildlife and macro work.",
+    note: "Cropping was the limitation that pushed me from the A6000 toward a 42 MP full-frame body for wildlife and macro work.",
     answers: [
       { label: 'I rarely expect to crop', scores: { BAS: 4, CFF: 2 } },
       { label: 'I might make small adjustments', scores: { BAS: 2, APS: 2, FFV: 2, ALL: 2 } },
@@ -220,7 +220,7 @@ export const QUESTIONS: QuizQuestion[] = [
     id: 15,
     question: 'Which purchase would you regret most?',
     type: 'single',
-    note: "Client perception should be framed as Chris's subjective experience: larger gear made him feel more credible, but equipment size is not proof of skill.",
+    note: "Client perception is subjective: larger gear made me feel more credible in paid work, but equipment size is not proof of skill.",
     answers: [
       { label: 'Spending far more than I needed', scores: { BAS: 8, FFV: 3 } },
       { label: 'Buying equipment too heavy to carry regularly', scores: { BAS: 7, APS: 5, CFF: 7 } },
@@ -253,7 +253,7 @@ export interface CameraResult {
   headline: string
   eyebrow: string
   shortVerdict: string
-  chrisPerspective: string
+  myPerspective: string
   bestFor: string[]
   whySelected: string[]
   whatToKnow: string[]
@@ -276,7 +276,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: true,
     shortVerdict:
       'The A6000 remains a practical entry into Sony photography when the budget is tight and used equipment is acceptable. It gives a beginner real control over exposure, interchangeable lenses, an electronic viewfinder, and image quality that can still produce excellent photographs. Its biggest advantage is not a specification: it is small enough to bring along. A camera that lives in a closet because it feels too large is not a bargain.',
-    chrisPerspective:
+    myPerspective:
       "This is where I started. With a small prime lens, the A6000 felt natural for street and travel photography rather than like I was walking around with a large professional rig. I took it to Spain, Italy, the beach, and family outings. A portrait lens made it useful for family photographs, and the inexpensive Sony 55-210mm gave me my first real telephoto capability. That small kit allowed me to learn what I actually enjoyed photographing before spending heavily.",
     bestFor: [
       'Travel and street photography',
@@ -316,7 +316,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: true,
     shortVerdict:
       'Choose this path when the A6000 philosophy appeals to you but you want a more modern autofocus experience. A used A6100 or A6400 can preserve the compact APS-C advantage while reducing one of the main frustrations beginners encounter: missed focus on moving people, pets, and animals. It is often the sweet spot between buying the absolute cheapest body and paying for a current flagship APS-C model.',
-    chrisPerspective:
+    myPerspective:
       "My A6000 taught me how valuable the compact Sony format can be. If I were beginning again with a little more budget, I would place more value on improved subject tracking earlier. Better autofocus does not replace technique, but it can make the learning process less discouraging when children, pets, or birds refuse to stay still.",
     bestFor: [
       'Families with active children and pets',
@@ -356,7 +356,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: false,
     shortVerdict:
       'The A6700 is the strongest recommendation for someone who wants a genuinely capable modern camera while keeping the advantages of APS-C. It is small enough for travel and hiking, offers sophisticated subject recognition, and provides useful apparent reach with telephoto lenses. For many hobbyists, it is not a temporary beginner camera -- it can be the complete system.',
-    chrisPerspective:
+    myPerspective:
       "My early Sony experience showed me how much easier it is to carry a compact body in public and on trips. The A6700 preserves that strength while addressing many of the autofocus and video limitations that separate an older A6000 from a modern hybrid camera. For a hiker or birder, that balance can matter more than owning the largest possible sensor.",
     bestFor: [
       'Birding and wildlife on a weight-conscious kit',
@@ -396,7 +396,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: true,
     shortVerdict:
       'A used A7 III can be the most rational entry into Sony full frame. It is old enough to be more affordable, but established enough that lenses, accessories, tutorials, and used-market support are abundant. It is especially compelling when you already have access to full-frame lenses or know that professional work is part of the plan.',
-    chrisPerspective:
+    myPerspective:
       "One reason I eventually preferred a larger full-frame Sony was not purely technical. This may be superficial, but I felt more confident arriving with a larger camera, and I sometimes sensed that clients associated a larger body and lens with professional capability. That perception does not make the photographs better, but confidence and client expectations are real parts of paid work.",
     bestFor: [
       'Portraits and family work',
@@ -436,7 +436,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: true,
     shortVerdict:
       'The used A7R III is a focused recommendation rather than a universal beginner choice. Its 42 MP class resolution provides noticeably more room to crop and preserve fine detail than a typical 24 MP body, while used pricing can make it accessible to a serious hobbyist. It is a strong answer when resolution -- not simply owning full frame -- is the actual goal.',
-    chrisPerspective:
+    myPerspective:
       "This mirrors my own transition. I kept finding myself at the limit when cropping A6000 photographs, particularly as wildlife and macro became more important. I wanted more retained detail and a fuller path into better lenses, so a 42 MP full-frame Sony made sense. The larger files and heavier system were tradeoffs I accepted for a specific reason.",
     bestFor: [
       'Wildlife and bird photographs that need cropping room',
@@ -476,7 +476,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: false,
     shortVerdict:
       'The compact A7C family is for someone who wants full-frame image quality and lens compatibility but still cares deeply about carrying the camera. The A7C II is the broader 33 MP choice. The A7CR is the compact high-resolution branch for users who prioritize cropping and detail and can accept the higher price and larger files.',
-    chrisPerspective:
+    myPerspective:
       "The part of my A6000 experience I would never dismiss is how comfortable it felt for travel and street photography. A compact body attracts less attention and is easier to bring on a long day. The A7C family carries that idea into full frame, although the lens still determines whether the complete kit stays compact.",
     bestFor: [
       'Travel and street photography',
@@ -516,7 +516,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: false,
     shortVerdict:
       'The A7 V is the recommendation for someone who is no longer only experimenting. It is a general-purpose full-frame body built to handle a wide range of paid and personal work without forcing the user into a highly specialized resolution or cinema camera. The older A7 IV remains the value alternative when the budget should go toward lenses, lighting, audio, or a backup body instead.',
-    chrisPerspective:
+    myPerspective:
       "If someone knows from the beginning that clients are part of the plan, I think it is reasonable to choose equipment with growth in mind. My own move into a larger Sony system gave me more cropping room, access to better full-frame lens options, and greater confidence in client-facing situations. The important part is having that intention before building an entire kit -- not buying a large camera because it looks professional.",
     bestFor: [
       'New professionals and intentional side businesses',
@@ -556,7 +556,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: false,
     shortVerdict:
       'The A7R family is not simply the expensive answer. It is the resolution-first answer. The A7R V remains a compelling value when discounted or purchased used, while the A7R VI is the current high-resolution model for buyers who also value its newer speed and processing. Both make the most sense when the visitor can describe how extra resolution will change the work.',
-    chrisPerspective:
+    myPerspective:
       "My own high-resolution upgrade came from repeatedly hitting the crop limit of a lower-resolution APS-C body. Wildlife does not always stand where you want it, and macro work rewards detail. Moving to 42 MP gave me more freedom, but it also created larger files and increased the importance of focus, shutter speed, lens quality, and editing discipline. More megapixels reveal mistakes as readily as they reveal detail.",
     bestFor: [
       'Wildlife and bird cropping',
@@ -596,7 +596,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: false,
     shortVerdict:
       'Video should not be one generic checkbox. A creator filming tutorials at home needs different equipment from someone making short films or shooting interviews on location. The ZV-E10 II is the accessible video-first branch. The A6700 is the hybrid choice when still photography matters. The FX30 is the cinema-oriented branch when video is the job rather than an occasional feature.',
-    chrisPerspective:
+    myPerspective:
       "The most important lesson here is to budget beyond the body. A camera on a tripod at home can benefit more from a good microphone, controlled lighting, and dependable power than from a more expensive sensor. Location work adds stabilization, weather, batteries, storage, monitoring, and portable audio. The quiz should recommend the workflow, not only the camera.",
     bestFor: [
       'Tripod-based tutorials and vlogs',
@@ -636,7 +636,7 @@ export const CAMERA_RESULTS: CameraResult[] = [
     usedBody: false,
     shortVerdict:
       'The A1 II should be a difficult result to earn. It combines the qualities that are normally tradeoffs -- high resolution, very fast shooting, advanced autofocus, and professional hybrid capability -- but the body price is only the beginning. It belongs with users whose work, revenue, access requirements, or failure cost can justify it. The original A1 may be the more rational value option for a used-friendly professional.',
-    chrisPerspective:
+    myPerspective:
       "A flagship camera can create confidence and remove technical bottlenecks, but it cannot create clients, fieldcraft, timing, composition, or business discipline. I would recommend beginning with the A1 path only when someone is intentionally building professional work and already understands the lens and support costs. For a hobbyist, spending flagship money can add pressure that makes photography less enjoyable rather than more enjoyable.",
     bestFor: [
       'Professional wildlife and bird photography',

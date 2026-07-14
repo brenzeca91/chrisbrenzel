@@ -305,10 +305,10 @@ function ResultCard({ result, isHighlighted }: { result: CameraResult; isHighlig
 
         <div className="border-t border-white/10 pt-6">
           <h3 className="text-[#f5f0eb] font-sans text-sm font-semibold mb-2">
-            Chris&apos;s perspective
+            My perspective
           </h3>
           <p className="text-white/50 font-sans text-sm leading-relaxed italic mb-6">
-            {result.chrisPerspective}
+            {result.myPerspective}
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
