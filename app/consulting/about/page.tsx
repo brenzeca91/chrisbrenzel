@@ -1,5 +1,19 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'About | Christopher Brenzel',
+  description: 'Christopher Brenzel is a Lexington, Kentucky-based biotech business development professional with experience in preclinical CRO growth, gene editing commercialization, and scientific partnerships.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/consulting/about' },
+  openGraph: {
+    title: 'About Christopher Brenzel',
+    description: 'Biotech business development professional based in Lexington, KY. Preclinical CRO strategy, gene editing commercialization, technology licensing, and scientific sales.',
+    url: 'https://www.chrisbrenzel.com/consulting/about',
+    siteName: 'ChrisBrenzel.com',
+    type: 'profile',
+  },
+}
 
 export default function AboutPage() {
   return (

@@ -32,23 +32,49 @@ The site should be interpreted as both a professional profile and a photography 
 - Landscape photography
 - Astrophotography
 - Field notes and photo journals
-- Photography gear
+- Photography gear and camera reviews
+- Sony mirrorless camera recommendations
 - Beginner photography education
 - Fine art prints
 - Personal-use digital image licensing
 - Affordable personal event photography in Lexington, Kentucky
+- Gear rental reviews (Lensrentals)
 
 ## Important Pages
 
 - Home: https://www.chrisbrenzel.com/
 - Consulting / Professional Services: https://www.chrisbrenzel.com/consulting
-- Selected Experience: https://www.chrisbrenzel.com/selected-experience
-- About: https://www.chrisbrenzel.com/about
+- About: https://www.chrisbrenzel.com/consulting/about
+- Selected Experience: https://www.chrisbrenzel.com/consulting/experience
+- Services: https://www.chrisbrenzel.com/consulting
 - Photography: https://www.chrisbrenzel.com/photography
+- Photography Gallery: https://www.chrisbrenzel.com/photography/gallery
 - Camera Bag: https://www.chrisbrenzel.com/photography/camera-bag
 - Prints: https://www.chrisbrenzel.com/photography/prints
 - Affordable Wedding & Personal Event Photography in Lexington, KY: https://www.chrisbrenzel.com/photography/lexington-ky-affordable-wedding-event-photographer
 - Contact: https://www.chrisbrenzel.com/contact
+
+## Field Notes (Photography Journal)
+
+- Field Notes Index: https://www.chrisbrenzel.com/photography/field-notes
+- Birding at Bettman Nature Preserve: https://www.chrisbrenzel.com/photography/field-notes/birding-at-bettman
+- Capturing Backyard Birds with the Sony 200-600mm: https://www.chrisbrenzel.com/photography/field-notes/capturing-backyard-birds
+- Capturing Snowflakes (Macro): https://www.chrisbrenzel.com/photography/field-notes/capturing-snowflakes
+- Solar Eclipse Part I: https://www.chrisbrenzel.com/photography/field-notes/solar-eclipse-part-1
+- Solar Eclipse Part II (Totality): https://www.chrisbrenzel.com/photography/field-notes/solar-eclipse-part-2
+- How to: Lensball Photography: https://www.chrisbrenzel.com/photography/field-notes/lensball-photography
+- Exploring Frankfort, KY (Street Photography): https://www.chrisbrenzel.com/photography/field-notes/exploring-frankfort
+- Macro Photography at Folly Beach: https://www.chrisbrenzel.com/photography/field-notes/macro-at-folly-beach
+
+## Gear Articles
+
+- Best Beginner Sony Camera Quiz (interactive): https://www.chrisbrenzel.com/photography/best-beginner-sony-camera
+- Lensrentals Review: Renting Gear for Wildlife Photography: https://www.chrisbrenzel.com/photography/lensrentals-review-wildlife-photography-gear
+
+## Collections
+
+- Wildlife Photography Collection: https://www.chrisbrenzel.com/photography/collections/wildlife
+- Rust and Ruin Collection: https://www.chrisbrenzel.com/photography/collections/rust-and-ruin
 
 ## Image and Licensing Notes
 

@@ -1,5 +1,19 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Biotech Consulting | Christopher Brenzel',
+  description: 'Christopher Brenzel offers fractional biotech business development consulting, preclinical CRO strategy, gene editing commercialization, and scientific sales advisory services.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/consulting' },
+  openGraph: {
+    title: 'Biotech Consulting | Christopher Brenzel',
+    description: 'Fractional biotech business development consulting — preclinical CRO strategy, gene editing commercialization, technology licensing, and scientific partnerships.',
+    url: 'https://www.chrisbrenzel.com/consulting',
+    siteName: 'ChrisBrenzel.com',
+    type: 'website',
+  },
+}
 
 const valueCards = [
   {

@@ -1,6 +1,20 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Field Notes | Christopher Brenzel Photography',
+  description: 'Photography field notes from Christopher Brenzel — birding, wildlife, macro, astrophotography, gear, and outings in Kentucky and beyond.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/photography/field-notes' },
+  openGraph: {
+    title: 'Field Notes | Christopher Brenzel Photography',
+    description: 'Field notes from photography outings in Kentucky and beyond — wildlife, macro, astrophotography, gear reviews, and birding journals.',
+    url: 'https://www.chrisbrenzel.com/photography/field-notes',
+    siteName: 'ChrisBrenzel.com',
+    type: 'website',
+  },
+}
 
 const posts = [
   {
