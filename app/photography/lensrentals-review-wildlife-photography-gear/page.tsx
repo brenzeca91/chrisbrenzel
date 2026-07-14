@@ -7,10 +7,21 @@ export const metadata: Metadata = {
   title: 'Lensrentals Review: Why I Rent Wildlife Photography Gear Before Buying | Chris Brenzel',
   description:
     'A beginner-friendly Lensrentals review for wildlife and nature photographers. Learn why renting camera lenses before buying can save money and help you choose better gear.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/photography/lensrentals-review-wildlife-photography-gear' },
   openGraph: {
     title: 'Why I Rent Camera Lenses Before Buying Them',
     description:
       'Renting wildlife photography gear has helped me test expensive lenses, avoid bad purchases, and find gear I actually love using in the field.',
+    url: 'https://www.chrisbrenzel.com/photography/lensrentals-review-wildlife-photography-gear',
+    siteName: 'ChrisBrenzel.com',
+    type: 'article',
+    images: [{ url: 'https://www.chrisbrenzel.com/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg', width: 1200, height: 800, alt: 'Telephoto lens rented for wildlife photography in a forest' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lensrentals Review: Wildlife Photography Gear | Chris Brenzel',
+    description: 'Why I rent camera lenses before buying them -- a firsthand Lensrentals review for wildlife photographers.',
+    images: ['https://www.chrisbrenzel.com/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg'],
   },
 }
 
@@ -46,9 +57,26 @@ function CTAButton({ label = 'Rent Camera Gear Through Lensrentals' }: { label?:
   )
 }
 
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Lensrentals Review: Why I Rent Wildlife Photography Gear Before Buying',
+  description: 'A beginner-friendly Lensrentals review for wildlife and nature photographers. Learn why renting camera lenses before buying can save money and help you choose better gear.',
+  datePublished: '2026-07-09',
+  author: { '@type': 'Person', name: 'Christopher Brenzel', url: 'https://www.chrisbrenzel.com' },
+  publisher: { '@type': 'Person', name: 'Christopher Brenzel', url: 'https://www.chrisbrenzel.com' },
+  image: 'https://www.chrisbrenzel.com/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg',
+  url: 'https://www.chrisbrenzel.com/photography/lensrentals-review-wildlife-photography-gear',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.chrisbrenzel.com/photography/lensrentals-review-wildlife-photography-gear' },
+}
+
 export default function LensrentalsReviewPage() {
   return (
     <main className="pt-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Hero */}
       <section className="max-w-3xl mx-auto px-6 pt-14 pb-6">
         <p className="text-[#6fcf97] font-sans text-xs font-semibold uppercase tracking-widest mb-4">

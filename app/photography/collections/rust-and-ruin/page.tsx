@@ -18,9 +18,21 @@ const photos = [
   { src: '/images/collections/rust-and-ruin/rr-13.jpg', title: 'Stone Archway Storeroom', caption: 'Vaulted ceiling, forgotten interior' },
 ]
 
-export const metadata = {
-  title: 'Rust & Ruin — Christopher Brenzel Photography',
-  description: 'A collection of nature reclaiming abandoned structures — ivy, rust, broken glass, and weathered stone.',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Rust & Ruin — Nature Reclaiming Abandoned Structures | Christopher Brenzel',
+  description: 'A photography collection of nature reclaiming what was built — ivy pressing through mortar, rust blooming on iron, broken glass, and weathered stone.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/photography/collections/rust-and-ruin' },
+  openGraph: {
+    title: 'Rust & Ruin Photography Collection | Christopher Brenzel',
+    description: 'Nature reclaiming abandoned structures — ivy, rust, broken glass, and weathered stone photographed across Kentucky and beyond.',
+    url: 'https://www.chrisbrenzel.com/photography/collections/rust-and-ruin',
+    siteName: 'ChrisBrenzel.com',
+    type: 'website',
+    images: [{ url: 'https://www.chrisbrenzel.com/images/collections/rust-and-ruin/rr-6.jpg', width: 1200, height: 800, alt: 'Autumn ivy on fire-escape facade' }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Rust & Ruin Photography | Christopher Brenzel', images: ['https://www.chrisbrenzel.com/images/collections/rust-and-ruin/rr-6.jpg'] },
 }
 
 export default function RustAndRuinPage() {

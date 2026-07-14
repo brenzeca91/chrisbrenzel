@@ -1,7 +1,23 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { SelectedWorksSlider } from '@/components/photography/selected-works-slider'
 import { CollectionSlider } from '@/components/photography/collection-slider'
+
+export const metadata: Metadata = {
+  title: 'Nature Photography | Christopher Brenzel',
+  description: 'Self-taught nature photographer based in Lexington, Kentucky. Wildlife, macro, astrophotography, and landscape photography from Kentucky and beyond.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/photography' },
+  openGraph: {
+    title: 'Nature Photography | Christopher Brenzel',
+    description: 'Wildlife, macro, astrophotography, and landscape photography from Lexington, Kentucky and beyond.',
+    url: 'https://www.chrisbrenzel.com/photography',
+    siteName: 'ChrisBrenzel.com',
+    type: 'website',
+    images: [{ url: 'https://www.chrisbrenzel.com/og-image.png', width: 1200, height: 630, alt: 'Christopher Brenzel Photography' }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Nature Photography | Christopher Brenzel', images: ['https://www.chrisbrenzel.com/og-image.png'] },
+}
 
 const rustAndRuinPreview = [
   { src: '/images/collections/rust-and-ruin/rr-6.jpg',  title: 'Autumn Ivy on Fire-Escape Facade' },

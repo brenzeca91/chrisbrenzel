@@ -11,9 +11,21 @@ const photos = [
   { src: '/images/collections/wildlife/wl-12.jpg',              title: 'Slug on Fallen Oak Leaf',   caption: 'Brown against autumn pink' },
 ]
 
-export const metadata = {
-  title: 'Wildlife — Christopher Brenzel Photography',
-  description: 'Birds, reptiles, and small creatures photographed across Kentucky and beyond.',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Wildlife Photography Collection | Christopher Brenzel',
+  description: 'Birds, reptiles, and small creatures photographed across Kentucky and beyond — herons, finches, anoles, snails, and more.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/photography/collections/wildlife' },
+  openGraph: {
+    title: 'Wildlife Photography Collection | Christopher Brenzel',
+    description: 'Birds, reptiles, and small creatures photographed across Kentucky and beyond.',
+    url: 'https://www.chrisbrenzel.com/photography/collections/wildlife',
+    siteName: 'ChrisBrenzel.com',
+    type: 'website',
+    images: [{ url: 'https://www.chrisbrenzel.com/images/gallery/photo-5.jpg', width: 1200, height: 800, alt: 'Great Blue Heron by Christopher Brenzel' }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Wildlife Photography | Christopher Brenzel', images: ['https://www.chrisbrenzel.com/images/gallery/photo-5.jpg'] },
 }
 
 export default function WildlifePage() {
