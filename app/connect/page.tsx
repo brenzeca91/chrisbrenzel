@@ -6,106 +6,46 @@ import {
   BriefcaseBusiness,
   Camera,
   Download,
-  Instagram,
-  Linkedin,
-  Mail,
   MapPin,
-  Phone,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Connect with Christopher Brenzel',
   description:
-    'Save Christopher Brenzel’s contact information and explore his biotech consulting and nature photography work.',
-  alternates: {
-    canonical: 'https://www.chrisbrenzel.com/connect',
-  },
-  robots: {
-    index: false,
-    follow: true,
-  },
+    'Choose Christopher Brenzel’s professional or nature photography contact card.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/connect' },
+  robots: { index: false, follow: true },
 }
 
-export const dynamic = 'force-dynamic'
-
-const baseQuickLinks = [
+const paths = [
   {
-    label: 'Email',
-    detail: 'chris@chrisbrenzel.com',
-    href: 'mailto:chris@chrisbrenzel.com?subject=Great%20connecting%20with%20you',
-    icon: Mail,
-    external: false,
-  },
-  {
-    label: 'LinkedIn',
-    detail: 'Connect professionally',
-    href: 'https://www.linkedin.com/in/christopherbrenzel',
-    icon: Linkedin,
-    external: true,
-  },
-  {
-    label: 'Instagram',
-    detail: '@lexingtonkyphotos',
-    href: 'https://www.instagram.com/lexingtonkyphotos/',
-    icon: Instagram,
-    external: true,
-  },
-]
-
-function formatPhoneNumber(value: string) {
-  const digits = value.replace(/\D/g, '')
-  const localDigits =
-    digits.length === 11 && digits.startsWith('1') ? digits.slice(1) : digits
-
-  if (localDigits.length !== 10) return value
-
-  return `${localDigits.slice(0, 3)}-${localDigits.slice(3, 6)}-${localDigits.slice(6)}`
-}
-
-function phoneHref(value: string) {
-  const digits = value.replace(/\D/g, '')
-  return digits ? `tel:+${digits}` : ''
-}
-
-const workLinks = [
-  {
-    eyebrow: 'Professional',
-    title: 'Biotech consulting',
-    description: 'Business development, preclinical strategy, and scientific partnerships.',
-    href: '/consulting',
+    label: 'Professional',
+    title: 'Biotech & research',
+    description:
+      'Preclinical strategy, scientific partnerships, business development, and professional experience.',
+    href: '/connect/p',
     icon: BriefcaseBusiness,
-    accent: 'text-[#79a9ff]',
+    iconClass: 'text-blue-300',
+    hoverClass: 'hover:border-blue-400/35 hover:bg-blue-400/[0.07]',
   },
   {
-    eyebrow: 'Creative',
-    title: 'Nature photography',
-    description: 'Wildlife, birds, macro, landscapes, and field notes from Kentucky and beyond.',
-    href: '/photography',
+    label: 'Nature photography',
+    title: 'Wildlife & field work',
+    description:
+      'Wildlife, birds, macro, landscapes, field notes, prints, and photography inquiries.',
+    href: '/connect/n',
     icon: Camera,
-    accent: 'text-[#d6c6ad]',
+    iconClass: 'text-[#d9c5a4]',
+    hoverClass: 'hover:border-[#c8aa7a]/40 hover:bg-[#c8aa7a]/[0.07]',
   },
 ]
 
 export default function ConnectPage() {
-  const contactPhone = process.env.CONTACT_PHONE?.trim()
-  const quickLinks = contactPhone
-    ? [
-        {
-          label: 'Phone',
-          detail: formatPhoneNumber(contactPhone),
-          href: phoneHref(contactPhone),
-          icon: Phone,
-          external: false,
-        },
-        ...baseQuickLinks,
-      ]
-    : baseQuickLinks
-
   return (
     <main className="relative min-h-[100svh] overflow-hidden bg-[#080d18] text-white">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.20),transparent_34%),radial-gradient(circle_at_85%_90%,rgba(193,166,126,0.13),transparent_34%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.20),transparent_34%),radial-gradient(circle_at_85%_90%,rgba(193,166,126,0.15),transparent_36%)]"
       />
       <div
         aria-hidden="true"
@@ -114,13 +54,13 @@ export default function ConnectPage() {
 
       <div className="relative mx-auto flex min-h-[100svh] w-full max-w-md flex-col px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-[max(1.5rem,env(safe-area-inset-top))] sm:justify-center sm:py-10">
         <section className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0d1423]/90 shadow-2xl shadow-black/40 backdrop-blur-xl">
-          <div className="relative px-6 pb-6 pt-7 text-center sm:px-8">
+          <div className="px-6 pb-6 pt-7 text-center sm:px-8">
             <div className="mb-6 flex items-center justify-center gap-2">
               <span className="h-px w-7 bg-blue-400/60" />
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-white/45">
                 chrisbrenzel.com
               </p>
-              <span className="h-px w-7 bg-blue-400/60" />
+              <span className="h-px w-7 bg-[#c1a67e]/60" />
             </div>
 
             <div className="relative mx-auto mb-5 h-28 w-28">
@@ -141,88 +81,56 @@ export default function ConnectPage() {
               Christopher Brenzel
             </h1>
             <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-white/58">
-              Biotech business development
-              <span className="mx-2 text-blue-400/70">•</span>
-              Nature photographer
+              How would you like to connect?
             </p>
             <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-white/38">
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
               Lexington, Kentucky
             </p>
-
-            <a
-              href="/christopher-brenzel.vcf"
-              download
-              className="mt-7 flex min-h-14 w-full items-center justify-center gap-2.5 rounded-2xl bg-[#f7f3ed] px-5 text-sm font-semibold text-[#0a1020] shadow-lg shadow-black/20 transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1423] active:scale-[0.99]"
-            >
-              <Download className="h-5 w-5" aria-hidden="true" />
-              Save to contacts
-            </a>
-            <p className="mt-2.5 text-[0.68rem] text-white/30">
-              Downloads a contact card to your phone
-            </p>
           </div>
 
           <div className="border-t border-white/[0.07] px-4 py-4 sm:px-5">
-            <div className="grid grid-cols-2 gap-3">
-              {quickLinks.map(({ label, detail, href, icon: Icon, external }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={external ? '_blank' : undefined}
-                  rel={external ? 'noopener noreferrer' : undefined}
-                  className="group min-w-0 rounded-2xl border border-white/[0.08] bg-white/[0.035] p-4 transition hover:border-blue-400/30 hover:bg-white/[0.065] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-                >
-                  <div className="mb-3 flex items-center justify-between">
-                    <Icon className="h-5 w-5 text-blue-300/80" aria-hidden="true" />
-                    <ArrowUpRight
-                      className="h-4 w-4 text-white/20 transition group-hover:text-white/50"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <span className="block text-sm font-medium text-white/90">{label}</span>
-                  <span className="mt-1 block truncate text-[0.68rem] text-white/35">
-                    {detail}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="border-t border-white/[0.07] px-4 py-4 sm:px-5">
-            <p className="px-1 pb-3 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-white/28">
-              Explore my work
-            </p>
-            <div className="space-y-2">
-              {workLinks.map(
-                ({ eyebrow, title, description, href, icon: Icon, accent }) => (
+            <div className="space-y-3">
+              {paths.map(
+                ({ label, title, description, href, icon: Icon, iconClass, hoverClass }) => (
                   <Link
-                    key={title}
+                    key={href}
                     href={href}
-                    className="group flex items-center gap-4 rounded-2xl px-3 py-3.5 transition hover:bg-white/[0.045] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                    className={`group flex items-center gap-4 rounded-2xl border border-white/[0.08] bg-white/[0.035] p-4 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 ${hoverClass}`}
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04]">
-                      <Icon className={`h-5 w-5 ${accent}`} aria-hidden="true" />
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.045]">
+                      <Icon className={`h-5 w-5 ${iconClass}`} aria-hidden="true" />
                     </span>
                     <span className="min-w-0 flex-1 text-left">
-                      <span className="block text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-white/28">
-                        {eyebrow}
+                      <span className="block text-[0.6rem] font-semibold uppercase tracking-[0.17em] text-white/34">
+                        {label}
                       </span>
-                      <span className="mt-0.5 block text-sm font-medium text-white/88">
+                      <span className="mt-0.5 block text-sm font-semibold text-white/90">
                         {title}
                       </span>
-                      <span className="mt-1 block text-xs leading-5 text-white/38">
+                      <span className="mt-1 block text-xs leading-5 text-white/42">
                         {description}
                       </span>
                     </span>
                     <ArrowUpRight
-                      className="h-4 w-4 shrink-0 text-white/20 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white/55"
+                      className="h-4 w-4 shrink-0 text-white/22 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white/60"
                       aria-hidden="true"
                     />
                   </Link>
                 ),
               )}
             </div>
+          </div>
+
+          <div className="border-t border-white/[0.07] px-5 py-5">
+            <a
+              href="/christopher-brenzel.vcf"
+              download
+              className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#f7f3ed] px-5 text-sm font-semibold text-[#0a1020] transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.99]"
+            >
+              <Download className="h-4.5 w-4.5" aria-hidden="true" />
+              Save general contact
+            </a>
           </div>
 
           <div className="border-t border-white/[0.07] px-6 py-4 text-center">
