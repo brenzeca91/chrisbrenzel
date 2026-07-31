@@ -25,7 +25,9 @@ const nextConfig = {
       // Solar Eclipse Part I (2024-04-08)
       { source: '/2024/04/08/solar-eclipse-part-1', destination: '/photography/field-notes/solar-eclipse-part-1', permanent: true },
 
-      // Lensball Photography (2023-06-01)
+      // Lensball Photography (2023-12-12)
+      { source: '/2023/12/12/lensball-photography', destination: '/photography/field-notes/lensball-photography', permanent: true },
+      // Also cover the incorrect date variant that was previously published
       { source: '/2023/06/01/lensball-photography', destination: '/photography/field-notes/lensball-photography', permanent: true },
 
       // Exploring Frankfort (2022-09-10)
