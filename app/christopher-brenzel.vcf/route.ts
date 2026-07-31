@@ -1,3 +1,4 @@
+// Contact details are supplied through the production environment.
 export const dynamic = 'force-dynamic'
 
 function escapeVCardValue(value: string) {
