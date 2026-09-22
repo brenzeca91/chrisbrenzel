@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { ShoppingBag, ArrowUpRight } from 'lucide-react'
 
@@ -76,8 +77,26 @@ const allPhotos = [
 const categories = ['All', 'Wildlife', 'Landscapes', 'Macro', 'Eclipse & Astrophotography', 'Rust & Ruin', 'Travel', 'People']
 
 export default function GalleryPage() {
+  return (
+    <Suspense fallback={null}>
+      <GalleryContent />
+    </Suspense>
+  )
+}
+
+function GalleryContent() {
+  const searchParams = useSearchParams()
   const [active, setActive] = useState('All')
   const [lightbox, setLightbox] = useState<number | null>(null)
+
+  useEffect(() => {
+    const categoryParam = searchParams.get('category')
+    if (!categoryParam) return
+    const match = categories.find(
+      (cat) => cat.toLowerCase() === categoryParam.toLowerCase()
+    )
+    if (match) setActive(match)
+  }, [searchParams])
 
   const filtered = active === 'All' ? allPhotos : allPhotos.filter((p) => p.category === active)
 

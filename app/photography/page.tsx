@@ -141,6 +141,31 @@ export default function PhotographyPage() {
         </div>
       </section>
 
+      {/* Booking CTA */}
+      <section className="max-w-7xl mx-auto px-6 py-14 md:py-16">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border border-[#1a2a1a] bg-[#090f09] rounded-lg p-8 md:p-10">
+          <div>
+            <p className="text-blue-300 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
+              Sessions
+            </p>
+            <h2 className="text-[#f5f0eb] font-serif italic text-2xl md:text-3xl font-medium mb-3 text-balance">
+              Planning engagement or family photographs?
+            </h2>
+            <p className="text-white/50 font-sans text-sm md:text-base leading-relaxed max-w-lg">
+              Relaxed, candid sessions for couples and families in Lexington and
+              Central Kentucky.
+            </p>
+          </div>
+          <Link
+            href="/photography/contact/session"
+            className="flex items-center gap-2 bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans font-semibold text-sm px-6 py-3 rounded transition-colors shrink-0 self-start md:self-auto"
+          >
+            Book a Session
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
       {/* Selected works slider */}
       <SelectedWorksSlider />
 

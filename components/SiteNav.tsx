@@ -83,6 +83,16 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
               </li>
             )
           })}
+          {!isConsulting && (
+            <li>
+              <Link
+                href="/photography/contact/session"
+                className="bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans text-sm font-semibold px-4 py-2 rounded transition-colors"
+              >
+                Book a Session
+              </Link>
+            </li>
+          )}
         </ul>
 
         {/* Mobile menu toggle */}
@@ -118,6 +128,17 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
                 </Link>
               </li>
             ))}
+            {!isConsulting && (
+              <li>
+                <Link
+                  href="/photography/contact/session"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans text-sm font-semibold px-4 py-2 rounded transition-colors mt-1"
+                >
+                  Book a Session
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       )}
