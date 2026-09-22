@@ -13,7 +13,7 @@ type Review = {
 
 const reviews: Review[] = [
   {
-    name: 'Gagan K.',
+    name: 'G.K.',
     rating: 5,
     service: 'Portrait Photography',
     quote:
@@ -21,7 +21,7 @@ const reviews: Review[] = [
     date: 'Sep 20, 2026',
   },
   {
-    name: 'Kirk B.',
+    name: 'K.B.',
     rating: 5,
     service: 'Photography Lessons',
     quote:
@@ -29,7 +29,7 @@ const reviews: Review[] = [
     date: 'Sep 19, 2026',
   },
   {
-    name: 'Maggie H.',
+    name: 'M.H.',
     rating: 5,
     service: 'Portrait Photography',
     quote: 'Great experience, Chris was a pleasure to work with!',
