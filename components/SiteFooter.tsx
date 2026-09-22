@@ -110,10 +110,18 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
                   : 'text-white/25 hover:text-white/50'
               }`}
             >
-              {isConsulting ? 'Photography' : 'Professional'}
+              {isConsulting ? 'Photography' : 'Consulting'}
             </Link>
+            {isConsulting && (
+              <Link
+                href="/consulting/experience"
+                className="font-sans text-xs transition-colors text-[#4a6380] hover:text-[#8fa3bb]"
+              >
+                Experience
+              </Link>
+            )}
             <Link
-              href="/photography/contact"
+              href={isConsulting ? '/consulting/contact' : '/photography/contact'}
               className={`font-sans text-xs transition-colors ${
                 isConsulting
                   ? 'text-[#4a6380] hover:text-[#8fa3bb]'
