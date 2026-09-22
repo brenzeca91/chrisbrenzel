@@ -23,7 +23,7 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
                 isConsulting ? 'text-white' : 'text-[#f5f0eb]'
               }`}
             >
-              Christopher Brenzel
+              {isConsulting ? 'Christopher Brenzel' : 'Chris Brenzel Photography LLC'}
             </p>
             <p
               className={`font-sans text-sm mb-1 ${
@@ -81,7 +81,8 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
               isConsulting ? 'text-[#4a6380]' : 'text-white/25'
             }`}
           >
-            &copy; {new Date().getFullYear()} Christopher Brenzel.{' '}
+            &copy; {new Date().getFullYear()}{' '}
+            {isConsulting ? 'Christopher Brenzel' : 'Chris Brenzel Photography LLC'}.{' '}
             <Link
               href="/photography/terms"
               className={`underline underline-offset-2 transition-colors ${
