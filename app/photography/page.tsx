@@ -1,106 +1,64 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import { SelectedWorksSlider } from '@/components/photography/selected-works-slider'
-import { CollectionSlider } from '@/components/photography/collection-slider'
+import { ArrowRight, Heart, Users, Baby, Gift, PartyPopper, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Nature Photography | Christopher Brenzel',
-  description: 'Self-taught nature photographer based in Lexington, Kentucky. Wildlife, macro, astrophotography, and landscape photography from Kentucky and beyond.',
+  title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
+  description:
+    'Relaxed, candid photography for families, couples, engagements, newborns, and small events in Lexington and Central Kentucky.',
   alternates: { canonical: 'https://www.chrisbrenzel.com/photography' },
   openGraph: {
-    title: 'Nature Photography | Christopher Brenzel',
-    description: 'Wildlife, macro, astrophotography, and landscape photography from Lexington, Kentucky and beyond.',
+    title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
+    description:
+      'Relaxed, candid photography for families, couples, engagements, newborns, and small events in Lexington and Central Kentucky.',
     url: 'https://www.chrisbrenzel.com/photography',
     siteName: 'ChrisBrenzel.com',
     type: 'website',
     images: [{ url: 'https://www.chrisbrenzel.com/og-image.png', width: 1200, height: 630, alt: 'Christopher Brenzel Photography' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Nature Photography | Christopher Brenzel', images: ['https://www.chrisbrenzel.com/og-image.png'] },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
+    images: ['https://www.chrisbrenzel.com/og-image.png'],
+  },
 }
 
-const rustAndRuinPreview = [
-  { src: '/images/collections/rust-and-ruin/rr-6.jpg',  title: 'Autumn Ivy on Fire-Escape Facade' },
-  { src: '/images/collections/rust-and-ruin/rr-8.jpg',  title: 'Rusted Machinery Gears' },
-  { src: '/images/collections/rust-and-ruin/rr-3.jpg',  title: 'Broken Greenhouse Glass' },
-  { src: '/images/collections/rust-and-ruin/rr-7.jpg',  title: 'Abandoned Brick Porch' },
-  { src: '/images/collections/rust-and-ruin/rr-5.jpg',  title: 'Looking Up Through a Stone Tower' },
+const goodFitFor = [
+  'Engagement sessions',
+  'Couples portraits',
+  'Family portraits',
+  'Parent-and-child sessions',
+  'Newborn and birth-announcement photographs',
+  'Proposals',
+  'Courthouse ceremonies',
+  'Elopements',
+  'Small personal celebrations',
+  'Outdoor portraits',
 ]
 
-const wildlifePreview = [
-  { src: '/images/gallery/photo-5.jpg',                 title: 'Great Blue Heron' },
-  { src: '/images/collections/wildlife/wl-2.jpg',       title: 'Green Anole' },
-  { src: '/images/collections/wildlife/wl-5.jpg',       title: 'House Finch' },
-  { src: '/images/collections/wildlife/wl-4.jpg',       title: 'Garden Snail' },
-  { src: '/images/collections/wildlife/wl-12.jpg',      title: 'Slug on Fallen Oak Leaf' },
+const howItWorks = [
+  { n: '1', title: 'Tell me what you are planning.' },
+  { n: '2', title: 'Choose a location and approach.' },
+  { n: '3', title: 'Relax and be present while I provide direction when helpful.' },
+  { n: '4', title: 'Receive edited images through an online gallery.' },
 ]
 
-const categories = [
+const faqItems = [
   {
-    label: 'Wildlife',
-    href: '/photography/gallery?category=wildlife',
-    image: '/images/collections/wildlife/wl-1.jpg',
-    alt: 'Mourning dove perched on a bare winter branch',
+    q: 'What types of sessions do you photograph?',
+    a: 'I photograph engagement sessions, couples portraits, family portraits, newborn and birth-announcement photographs, proposals, courthouse ceremonies, elopements, and other small personal celebrations.',
   },
   {
-    label: 'Macro',
-    href: '/photography/gallery?category=macro',
-    image: '/images/field-notes/folly-beach.jpg',
-    alt: 'Macro photograph of shells and sand grains at Folly Beach',
+    q: 'Where do sessions take place?',
+    a: 'Most sessions take place outdoors or at a location that has personal meaning to you — a park, a neighborhood, private property, or somewhere else in Central Kentucky. If you have a location in mind, mention it in your inquiry.',
   },
   {
-    label: 'Eclipses',
-    href: '/photography/gallery?category=eclipses',
-    image: '/images/field-notes/eclipse-part2.jpg',
-    alt: 'Total solar eclipse at totality with solar flares visible',
+    q: 'How far in advance should I book?',
+    a: 'Earlier is better, especially for weekends, fall color, and spring blooms. Send an inquiry even if your plans are still flexible and I will work with you on timing.',
   },
   {
-    label: 'Rust & Ruin',
-    href: '/photography/collections/rust-and-ruin',
-    image: '/images/collections/rust-and-ruin/rr-3.jpg',
-    alt: 'Ivy growing through a broken greenhouse window',
-  },
-  {
-    label: 'Travel',
-    href: '/photography/gallery?category=travel',
-    image: '/images/field-notes/frankfort.jpg',
-    alt: 'Ivy growing on a wall with broken window in Frankfort, KY',
-  },
-  {
-    label: 'Astrophotography',
-    href: '/photography/gallery?category=astrophotography',
-    image: '/images/field-notes/eclipse-part1.jpg',
-    alt: 'Partial solar eclipse through a solar filter',
-  },
-]
-
-const fieldNotesPosts = [
-  {
-    title: 'Which Sony Camera Is Right for You?',
-    category: 'Gear',
-    date: 'Jul 14, 2026',
-    excerpt: 'Answer 15 questions about your budget, subjects, and goals — and get a personalized Sony camera recommendation.',
-    image: '/images/sony-quiz/photographer-alhambra-spain-sony.jpg',
-    alt: 'Photographer shooting inside the Alhambra palace in Spain with a compact Sony mirrorless camera',
-    href: '/photography/best-beginner-sony-camera',
-  },
-  {
-    title: 'Renting Gear for Wildlife Photography',
-    category: 'Gear',
-    date: 'Jul 9, 2026',
-    excerpt: 'A firsthand look at renting the Sony 200-600mm through Lensrentals — shipping, condition, and whether it makes sense before buying.',
-    image: '/images/field-notes/lensrentals-telephoto-bird-photography-forest.jpg',
-    alt: 'Telephoto lens in a forest setting for bird and wildlife photography',
-    href: '/photography/lensrentals-review-wildlife-photography-gear',
-  },
-  {
-    title: 'Birding at Bettman Nature Preserve',
-    category: 'Wildlife',
-    date: 'Jan 21, 2025',
-    excerpt: 'Winter bird photography at a nature preserve surrounded by feeders — bright plumage against white snow and bare branches.',
-    image: '/images/field-notes/bettman.jpg',
-    alt: 'Dark-eyed junco perched on bare winter branches',
-    slug: 'birding-at-bettman',
+    q: 'Do you photograph full weddings?',
+    a: 'My focus is engagements, families, and smaller personal sessions. For large full-day weddings, I am happy to recommend a dedicated wedding specialist who focuses on complete wedding-day coverage.',
   },
 ]
 
@@ -111,49 +69,275 @@ export default function PhotographyPage() {
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/photography-hero.jpg')" }}
+          style={{ backgroundImage: "url('/images/events/couple-sunset.jpg')" }}
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/40 to-[#0c0c0c]/20"
+          className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/50 to-[#0c0c0c]/20"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 md:pb-20 w-full">
-          <p className="text-white/50 text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
-            Nature Photography
+          <p className="text-blue-300 text-xs font-semibold tracking-[0.2em] uppercase mb-6 font-sans">
+            Lexington, Kentucky &middot; Central Kentucky
           </p>
-          <h1 className="text-[#f5f0eb] font-serif italic text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-6 text-balance">
-            Slowing down.
-            <br />
-            Paying attention.
+          <h1 className="text-[#f5f0eb] font-serif italic text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6 text-balance max-w-4xl">
+            Portrait, Family &amp; Event Photographer in Lexington, KY
           </h1>
-          <p className="text-white/70 font-sans text-base md:text-lg leading-relaxed max-w-xl mb-4">
-            Wildlife, macro details, landscapes, weather, eclipses, and field notes
-            from Kentucky and beyond.
+          <p className="text-white/70 font-sans text-base md:text-lg leading-relaxed max-w-2xl mb-8">
+            Relaxed, candid photography for the people and moments that matter—engagements,
+            families, newborns, milestones, and intimate events in Lexington and Central Kentucky.
           </p>
-          <p className="text-white/55 font-sans text-sm leading-relaxed max-w-lg">
-            Photography gives Christopher a way to slow down, pay attention, and
-            document the natural world. This section collects visual work, learning
-            experiments, and field observations.
-          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/photography/contact/session"
+              className="flex items-center gap-2 bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans font-semibold text-sm px-6 py-3 rounded transition-colors"
+            >
+              Book a Session
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/photography/gallery?category=people"
+              className="flex items-center gap-2 border border-white/30 hover:border-white/60 text-white/80 hover:text-white font-sans font-medium text-sm px-6 py-3 rounded transition-colors"
+            >
+              View People Portfolio
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Booking CTA */}
-      <section className="max-w-7xl mx-auto px-6 py-14 md:py-16">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border border-[#1a2a1a] bg-[#090f09] rounded-lg p-8 md:p-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Engagements and couples */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '320px' }}>
+            <img
+              src="/images/events/engagement-embrace.jpg"
+              alt="Engaged couple embracing outdoors during a candid engagement session near Lexington, KY"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div className="lg:col-span-2">
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+              Engagements and couples
+            </p>
+            <p className="text-white/60 font-sans text-base leading-relaxed max-w-2xl">
+              Engagement sessions should feel like time spent together, not a long list of poses.
+              I provide gentle direction while documenting the way you naturally interact, whether
+              you are planning save-the-dates, celebrating a proposal, or simply preserving this
+              season of your relationship.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Families */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+          <div className="lg:col-span-2 lg:order-1">
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+              Families
+            </p>
+            <p className="text-white/60 font-sans text-base leading-relaxed max-w-2xl">
+              Family sessions are relaxed, flexible, and built around connection. I photograph
+              families outdoors and in meaningful locations, creating a gallery that includes both
+              beautiful portraits and the small moments you will want to remember later.
+            </p>
+          </div>
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a] lg:order-2" style={{ height: '320px' }}>
+            <img
+              src="/images/events/siblings.jpg"
+              alt="Siblings photographed together outdoors during a relaxed family session in Central Kentucky"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Newborns and milestones */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a]" style={{ height: '320px' }}>
+            <img
+              src="/images/events/newborn-feet.jpg"
+              alt="Close-up of a newborn baby's feet during a birth-announcement photography session"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div className="lg:col-span-2">
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+              Newborns and milestones
+            </p>
+            <p className="text-white/60 font-sans text-base leading-relaxed max-w-2xl">
+              For newborns, birth announcements, and family milestones, I focus on natural
+              interactions, quiet details, and the relationships that make the moment meaningful.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Small events and elopements */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+          <div className="lg:col-span-2 lg:order-1">
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+              Small events and elopements
+            </p>
+            <p className="text-white/60 font-sans text-base leading-relaxed max-w-2xl">
+              For courthouse ceremonies, proposals, backyard celebrations, and intimate events, I
+              offer simple, candid coverage with clear expectations before the day begins.
+            </p>
+          </div>
+          <div className="relative rounded-lg overflow-hidden border border-[#1a1a1a] lg:order-2" style={{ height: '320px' }}>
+            <img
+              src="/images/events/couple-champagne.jpg"
+              alt="Couple celebrating with champagne during a small backyard event in Kentucky"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Good fit for */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-8 font-sans">
+          Good fit for
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-5xl">
+          {goodFitFor.map((label) => (
+            <div
+              key={label}
+              className="flex items-center gap-2.5 border border-[#1a1a1a] bg-[#0a0a0a] rounded-lg px-4 py-3"
+            >
+              <Heart className="w-3.5 h-3.5 text-[#5b9bff] shrink-0" />
+              <span className="text-white/60 font-sans text-xs leading-relaxed">{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* How it works */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-8 font-sans">
+          How it works
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {howItWorks.map((step) => (
+            <div key={step.n} className="border border-[#1a1a1a] bg-[#090909] rounded-lg p-6">
+              <p className="text-[#5b9bff] font-serif italic text-3xl mb-4">{step.n}</p>
+              <p className="text-[#f5f0eb] font-sans text-sm leading-relaxed">{step.title}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Service area */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-[#5b9bff] shrink-0 mt-0.5" />
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase font-sans">
+              Serving Central Kentucky
+            </p>
+          </div>
+          <div className="lg:col-span-2">
+            <p className="text-white/60 font-sans text-base leading-relaxed max-w-2xl">
+              Based in Lexington, I photograph sessions throughout{' '}
+              <span className="text-white/80">Lexington</span>,{' '}
+              <span className="text-white/80">Nicholasville</span>,{' '}
+              <span className="text-white/80">Georgetown</span>,{' '}
+              <span className="text-white/80">Versailles</span>,{' '}
+              <span className="text-white/80">Richmond</span>,{' '}
+              <span className="text-white/80">Winchester</span>, and nearby Central Kentucky
+              communities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* FAQ */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-8 font-sans">
+          Frequently asked questions
+        </p>
+        <div className="flex flex-col gap-0 max-w-3xl divide-y divide-[#1a1a1a]">
+          {faqItems.map((item) => (
+            <div key={item.q} className="py-6">
+              <p className="text-[#f5f0eb] font-sans text-sm font-semibold mb-3 leading-snug">
+                {item.q}
+              </p>
+              <p className="text-white/45 font-sans text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Nature photography cross-link */}
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <p className="text-white/30 font-sans text-sm leading-relaxed">
+          Looking for wildlife, landscape, or fine-art nature photography instead? Visit the{' '}
+          <Link
+            href="/nature-photography"
+            className="text-white/50 hover:text-[#f5f0eb] underline underline-offset-2 transition-colors"
+          >
+            nature photography portfolio
+          </Link>
+          .
+        </p>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Final CTA */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border border-[#17233d] bg-[#070c17] rounded-lg p-8 md:p-12">
           <div>
-            <p className="text-blue-300 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
-              Sessions
+            <p className="text-blue-300 text-sm font-semibold tracking-[0.2em] uppercase mb-3 font-sans">
+              Get started
             </p>
             <h2 className="text-[#f5f0eb] font-serif italic text-2xl md:text-3xl font-medium mb-3 text-balance">
-              Planning engagement or family photographs?
+              Ready to plan your session?
             </h2>
             <p className="text-white/50 font-sans text-sm md:text-base leading-relaxed max-w-lg">
-              Relaxed, candid sessions for couples and families in Lexington and
-              Central Kentucky.
+              Tell me what you are celebrating and we can figure out the right approach together.
             </p>
           </div>
           <Link
@@ -163,164 +347,6 @@ export default function PhotographyPage() {
             Book a Session
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
-      </section>
-
-      {/* Selected works slider */}
-      <SelectedWorksSlider />
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Browse by subject */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-8 font-sans">
-          Browse by subject
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {categories.map((cat) => (
-            <Link
-              key={cat.label}
-              href={cat.href}
-              className="group relative overflow-hidden rounded aspect-square border border-[#222] hover:border-[#444] transition-all"
-              aria-label={`Browse ${cat.label} photos`}
-            >
-              {/* Real photo background */}
-              <img
-                src={cat.image}
-                alt={cat.alt}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              {/* Dark gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              {/* Label */}
-              <span className="absolute bottom-3 left-3 right-3 text-[#f5f0eb] font-sans text-sm font-medium z-10 group-hover:text-white transition-colors">
-                {cat.label}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Rust & Ruin collection preview */}
-      <CollectionSlider
-        title="Rust & Ruin"
-        subtitle="Nature & Decay"
-        description="Nature reclaiming what was built — ivy pressing through mortar, rust blooming on iron, glass cracking under the weight of vines."
-        href="/photography/collections/rust-and-ruin"
-        photos={rustAndRuinPreview}
-        accentColor="#e8d5c0"
-      />
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Wildlife collection preview */}
-      <CollectionSlider
-        title="Wildlife"
-        subtitle="Birds & Creatures"
-        description="Birds, reptiles, and small creatures caught in an unguarded moment — still long enough to be seen, close enough to be known."
-        href="/photography/collections/wildlife"
-        photos={wildlifePreview}
-        accentColor="#c8dfc8"
-      />
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Field notes teaser */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
-              Field Notes
-            </p>
-            <h2 className="text-[#f5f0eb] font-serif italic text-3xl md:text-4xl font-medium text-balance">
-              Writing from the field
-            </h2>
-          </div>
-          <Link
-            href="/photography/field-notes"
-            className="flex items-center gap-2 text-white/40 hover:text-white/70 font-sans text-sm transition-colors"
-          >
-            All posts <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {fieldNotesPosts.map((post) => (
-            <Link
-              key={'href' in post ? post.href : post.slug}
-              href={'href' in post ? post.href! : `/photography/field-notes/${post.slug}`}
-              className="group border border-[#1a1a1a] hover:border-[#333] rounded overflow-hidden hover:bg-[#141414] transition-all"
-            >
-              <div className="aspect-video overflow-hidden border-b border-[#1a1a1a] bg-[#0c0c0c]">
-                <img
-                  src={post.image}
-                  alt={post.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <p className="text-white/30 font-sans text-[10px] tracking-[0.15em] uppercase">
-                    {post.category}
-                  </p>
-                  <p className="text-white/25 font-sans text-xs">{post.date}</p>
-                </div>
-                <h3 className="text-[#f5f0eb] font-serif text-lg font-medium mb-3 group-hover:text-white transition-colors leading-snug">
-                  {post.title}
-                </h3>
-                <p className="text-white/40 font-sans text-sm leading-relaxed">{post.excerpt}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Prints CTA */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div className="w-full md:w-[28%] shrink-0 rounded overflow-hidden border border-[#1a1a1a]">
-            <img
-              src="/images/mockups/mockup-living-room.png"
-              alt="Kite Day — Father and Son print displayed in a minimal living room"
-              className="w-full h-auto block"
-            />
-          </div>
-          <div>
-            <p className="text-white/25 text-xs font-medium tracking-[0.2em] uppercase mb-3 font-sans">
-              Prints by Inquiry
-            </p>
-            <h2 className="text-[#f5f0eb] font-serif italic text-2xl md:text-3xl font-medium mb-4 text-balance">
-              Bring a photograph home.
-            </h2>
-            <p className="text-white/50 font-sans text-sm leading-relaxed max-w-md mb-6">
-              Select images from this collection are available as fine-art prints. Each is printed to order — reach out to discuss sizing, framing, and availability.
-            </p>
-            <Link
-              href="/photography/prints"
-              className="inline-flex items-center gap-2 text-[#f5f0eb] hover:text-white font-sans text-sm border border-[#333] hover:border-[#555] px-5 py-2.5 rounded transition-all"
-            >
-              View prints <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
         </div>
       </section>
     </main>

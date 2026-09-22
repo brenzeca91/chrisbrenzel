@@ -123,6 +123,16 @@ export default function SiteFooter({ mode }: { mode: FooterMode }) {
               Contact
             </Link>
             <Link
+              href="/photography/camera-bag"
+              className={`font-sans text-xs transition-colors ${
+                isConsulting
+                  ? 'text-[#4a6380] hover:text-[#8fa3bb]'
+                  : 'text-white/25 hover:text-white/50'
+              }`}
+            >
+              Camera Bag
+            </Link>
+            <Link
               href="/photography/terms"
               className={`font-sans text-xs transition-colors ${
                 isConsulting

@@ -14,11 +14,10 @@ const consultingLinks = [
 
 const photographyLinks = [
   { label: 'Photography', href: '/photography' },
+  { label: 'Nature Photography', href: '/nature-photography' },
   { label: 'Gallery', href: '/photography/gallery' },
-  { label: 'Field Notes', href: '/photography/field-notes' },
-  { label: 'Camera Bag', href: '/photography/camera-bag' },
   { label: 'Prints', href: '/photography/prints' },
-  { label: 'Contact', href: '/photography/contact' },
+  { label: 'Field Notes', href: '/photography/field-notes' },
 ]
 
 type NavMode = 'consulting' | 'photography'

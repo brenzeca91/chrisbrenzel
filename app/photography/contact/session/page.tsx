@@ -7,9 +7,9 @@ import { ArrowRight, Mail } from 'lucide-react'
 const sessionTypes = [
   'Engagement or couples session',
   'Family session',
-  'Birth announcement or milestone',
+  'Newborn or birth announcement',
   'Proposal',
-  'Small personal event',
+  'Small event or elopement',
   'Other',
 ]
 
@@ -228,7 +228,7 @@ export default function SessionBookingPage() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="rounded px-4 py-3 font-sans text-sm outline-none transition-colors resize-none bg-[#141414] border border-[#222] text-[#f5f0eb] placeholder:text-[#333] focus:border-[#444]"
-                    placeholder="Tell me anything that would help me understand the session—your preferred style, important people or moments, location ideas, accessibility needs, or questions about pricing."
+                    placeholder="Tell me what you are planning, what photographs you have in mind, and any questions you have about location, timing, or pricing."
                   />
                 </div>
 
