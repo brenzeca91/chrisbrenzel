@@ -1,7 +1,29 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, Mail, ShoppingBag } from 'lucide-react'
 import { PrintsMockupCarousel } from '@/components/photography/prints-mockup-carousel'
+
+export const metadata: Metadata = {
+  title: 'Fine-Art Nature Prints from Kentucky | Chris Brenzel',
+  description:
+    'Order fine-art nature photography prints from Kentucky and beyond, professionally printed and shipped through the Pixieset print store.',
+  alternates: { canonical: 'https://www.chrisbrenzel.com/photography/prints' },
+  openGraph: {
+    title: 'Fine-Art Nature Prints from Kentucky | Chris Brenzel',
+    description:
+      'Order fine-art nature photography prints from Kentucky and beyond, professionally printed and shipped through the Pixieset print store.',
+    url: 'https://www.chrisbrenzel.com/photography/prints',
+    siteName: 'ChrisBrenzel.com',
+    type: 'website',
+    images: [{ url: 'https://www.chrisbrenzel.com/og-image.png', width: 1200, height: 630, alt: 'Christopher Brenzel Photography Prints' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fine-Art Nature Prints from Kentucky | Chris Brenzel',
+    images: ['https://www.chrisbrenzel.com/og-image.png'],
+  },
+}
 
 export default function PrintsPage() {
   return (
@@ -34,7 +56,7 @@ export default function PrintsPage() {
           Prints
         </p>
         <h1 className="text-[#f5f0eb] font-serif italic text-4xl md:text-5xl font-medium leading-tight mb-3 text-balance">
-          Order prints online.
+          Fine-art prints from Kentucky and beyond
         </h1>
         <p className="text-white/50 font-sans text-base leading-relaxed max-w-2xl">
           Fine art prints of selected images are now available to order directly

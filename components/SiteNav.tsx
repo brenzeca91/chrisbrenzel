@@ -2,23 +2,22 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { useState, useRef, useEffect, Fragment } from 'react'
+import { Menu, X, ChevronDown } from 'lucide-react'
+import { consultingServices } from '@/lib/consulting-services'
 
 const consultingLinks = [
-  { label: 'Professional', href: '/consulting' },
+  { label: 'Consulting', href: '/consulting' },
   { label: 'Experience', href: '/consulting/experience' },
   { label: 'About', href: '/consulting/about' },
-  { label: 'Contact', href: '/consulting/contact' },
 ]
 
 const photographyLinks = [
   { label: 'Photography', href: '/photography' },
+  { label: 'Nature Photography', href: '/nature-photography' },
   { label: 'Gallery', href: '/photography/gallery' },
-  { label: 'Field Notes', href: '/photography/field-notes' },
-  { label: 'Camera Bag', href: '/photography/camera-bag' },
   { label: 'Prints', href: '/photography/prints' },
-  { label: 'Contact', href: '/photography/contact' },
+  { label: 'Field Notes', href: '/photography/field-notes' },
 ]
 
 type NavMode = 'consulting' | 'photography'
@@ -26,9 +25,30 @@ type NavMode = 'consulting' | 'photography'
 export default function SiteNav({ mode }: { mode: NavMode }) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const servicesRef = useRef<HTMLLIElement>(null)
   const links = mode === 'consulting' ? consultingLinks : photographyLinks
 
   const isConsulting = mode === 'consulting'
+
+  useEffect(() => {
+    if (!servicesOpen) return
+    const handleClick = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false)
+      }
+    }
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setServicesOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    document.addEventListener('keydown', handleKey)
+    return () => {
+      document.removeEventListener('mousedown', handleClick)
+      document.removeEventListener('keydown', handleKey)
+    }
+  }, [servicesOpen])
 
   return (
     <nav
@@ -55,34 +75,98 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
             isConsulting ? 'text-blue-400' : 'text-white/40'
           }`}
         >
-          {mode === 'consulting' ? 'professional' : mode}
+          {mode === 'consulting' ? 'consulting' : mode}
         </span>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
-          {links.map((link) => {
+          {links.map((link, i) => {
             const active = pathname === link.href
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`nav-link ${
-                    isConsulting ? 'consulting-nav-link' : 'photo-nav-link'
-                  } font-sans text-sm font-medium transition-colors ${
-                    active
-                      ? isConsulting
-                        ? 'text-blue-400'
-                        : 'text-white'
-                      : isConsulting
-                      ? 'text-[#8fa3bb] hover:text-white'
-                      : 'text-white/50 hover:text-[#f5f0eb]'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
+            const linkEl = (
+              <Link
+                href={link.href}
+                className={`nav-link ${
+                  isConsulting ? 'consulting-nav-link' : 'photo-nav-link'
+                } font-sans text-sm font-medium transition-colors ${
+                  active
+                    ? isConsulting
+                      ? 'text-blue-400'
+                      : 'text-white'
+                    : isConsulting
+                    ? 'text-[#8fa3bb] hover:text-white'
+                    : 'text-white/50 hover:text-[#f5f0eb]'
+                }`}
+              >
+                {link.label}
+              </Link>
             )
+            // Insert the Services dropdown right after the first consulting link
+            if (isConsulting && i === 0) {
+              return (
+                <>
+                  <li key={link.href}>{linkEl}</li>
+                  <li key="services" ref={servicesRef} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setServicesOpen((v) => !v)}
+                      aria-haspopup="menu"
+                      aria-expanded={servicesOpen}
+                      className={`nav-link consulting-nav-link flex items-center gap-1 font-sans text-sm font-medium transition-colors ${
+                        pathname.startsWith('/consulting/') &&
+                        consultingServices.some((s) => pathname === `/consulting/${s.slug}`)
+                          ? 'text-blue-400'
+                          : 'text-[#8fa3bb] hover:text-white'
+                      }`}
+                    >
+                      Services
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {servicesOpen && (
+                      <ul
+                        role="menu"
+                        className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-72 bg-[#0d1530] border border-[#1e2d4a] rounded-lg shadow-xl py-2 z-50"
+                      >
+                        {consultingServices.map((service) => (
+                          <li key={service.slug} role="none">
+                            <Link
+                              role="menuitem"
+                              href={`/consulting/${service.slug}`}
+                              onClick={() => setServicesOpen(false)}
+                              className="block px-4 py-2.5 font-sans text-sm text-[#8fa3bb] hover:text-white hover:bg-[#111a33] transition-colors"
+                            >
+                              {service.navLabel}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                </>
+              )
+            }
+            return <li key={link.href}>{linkEl}</li>
           })}
+          {isConsulting ? (
+            <li>
+              <Link
+                href="/consulting/contact"
+                className="bg-blue-600 hover:bg-blue-500 text-white font-sans text-sm font-semibold px-4 py-2 rounded transition-colors"
+              >
+                Discuss a Project
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link
+                href="/photography/contact/session"
+                className="bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans text-sm font-semibold px-4 py-2 rounded transition-colors"
+              >
+                Book a Session
+              </Link>
+            </li>
+          )}
         </ul>
 
         {/* Mobile menu toggle */}
@@ -103,21 +187,72 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
           }`}
         >
           <ul className="flex flex-col gap-4">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`font-sans text-base font-medium ${
-                    isConsulting
-                      ? 'text-[#8fa3bb] hover:text-white'
-                      : 'text-white/60 hover:text-[#f5f0eb]'
-                  } transition-colors`}
-                >
-                  {link.label}
-                </Link>
-              </li>
+            {links.map((link, i) => (
+              <Fragment key={link.href}>
+                <li>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`font-sans text-base font-medium ${
+                      isConsulting
+                        ? 'text-[#8fa3bb] hover:text-white'
+                        : 'text-white/60 hover:text-[#f5f0eb]'
+                    } transition-colors`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+                {isConsulting && i === 0 && (
+                  <li key="mobile-services">
+                    <button
+                      type="button"
+                      onClick={() => setMobileServicesOpen((v) => !v)}
+                      aria-expanded={mobileServicesOpen}
+                      className="flex items-center gap-1.5 font-sans text-base font-medium text-[#8fa3bb] hover:text-white transition-colors"
+                    >
+                      Services
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {mobileServicesOpen && (
+                      <ul className="flex flex-col gap-3 mt-3 pl-4 border-l border-[#1e2d4a]">
+                        {consultingServices.map((service) => (
+                          <li key={service.slug}>
+                            <Link
+                              href={`/consulting/${service.slug}`}
+                              onClick={() => setOpen(false)}
+                              className="font-sans text-sm text-[#6b8aaa] hover:text-white transition-colors"
+                            >
+                              {service.navLabel}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                )}
+              </Fragment>
             ))}
+            <li>
+              {isConsulting ? (
+                <Link
+                  href="/consulting/contact"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex bg-blue-600 hover:bg-blue-500 text-white font-sans text-sm font-semibold px-4 py-2 rounded transition-colors mt-1"
+                >
+                  Discuss a Project
+                </Link>
+              ) : (
+                <Link
+                  href="/photography/contact/session"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex bg-[#5b9bff] hover:bg-[#7ab2ff] text-[#050d1f] font-sans text-sm font-semibold px-4 py-2 rounded transition-colors mt-1"
+                >
+                  Book a Session
+                </Link>
+              )}
+            </li>
           </ul>
         </div>
       )}

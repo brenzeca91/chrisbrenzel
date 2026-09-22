@@ -77,6 +77,8 @@ const nextConfig = {
       { source: '/portfolio',           destination: '/photography/gallery',   permanent: true },
       { source: '/gallery',             destination: '/photography/gallery',   permanent: true },
       { source: '/photography-gallery', destination: '/photography/gallery',   permanent: true },
+      { source: '/photography-home',            destination: '/nature-photography', permanent: true },
+      { source: '/photography-home/:rest*',     destination: '/nature-photography', permanent: true },
       { source: '/selected-experience', destination: '/consulting/experience', permanent: true },
       { source: '/experience',          destination: '/consulting/experience', permanent: true },
 

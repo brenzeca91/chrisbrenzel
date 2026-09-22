@@ -1,114 +1,94 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { SITE_URL, consultingServices } from '@/lib/consulting-services'
 
 export const metadata: Metadata = {
-  title: 'Biotech Consulting | Christopher Brenzel',
-  description: 'Christopher Brenzel offers fractional biotech business development consulting, preclinical CRO strategy, gene editing commercialization, and scientific sales advisory services.',
-  alternates: { canonical: 'https://www.chrisbrenzel.com/consulting' },
+  title: 'Biotech Consulting | CRSPZ Scientific Consulting — Chris Brenzel',
+  description:
+    'CRSPZ Scientific Consulting, led by Christopher Brenzel, provides preclinical program management, drug development strategy, fractional biotech leadership, scientific sales enablement, and technology commercialization.',
+  alternates: { canonical: `${SITE_URL}/consulting` },
   openGraph: {
-    title: 'Biotech Consulting | Christopher Brenzel',
-    description: 'Fractional biotech business development consulting — preclinical CRO strategy, gene editing commercialization, technology licensing, and scientific partnerships.',
-    url: 'https://www.chrisbrenzel.com/consulting',
+    title: 'CRSPZ Scientific Consulting | Christopher Brenzel',
+    description:
+      'Independent biotech consulting — preclinical program management, drug development strategy, fractional commercial leadership, scientific sales enablement, and technology commercialization.',
+    url: `${SITE_URL}/consulting`,
     siteName: 'ChrisBrenzel.com',
     type: 'website',
   },
 }
 
-const valueCards = [
-  {
-    number: '01',
-    title: 'Preclinical & Translational Research Support',
-    desc: 'Experience supporting scientific discussions and project development around oncology models, patient-derived xenografts, genetically engineered rodents, cell line engineering, toxicology, pharmacology, and translational research platforms.',
-  },
-  {
-    number: '02',
-    title: 'Scientific Communication & Stakeholder Coordination',
-    desc: 'Comfortable translating complex technical capabilities into clear communication for scientists, commercial teams, external partners, clients, and internal leadership. Strong fit for roles that require careful follow-up, documentation, and cross-functional coordination.',
-  },
-  {
-    number: '03',
-    title: 'Business Development & Partnership Strategy',
-    desc: 'Background in account development, strategic partnerships, proposal development, contract coordination, licensing discussions, market positioning, revenue forecasting, and pipeline management within biotech and preclinical research service organizations.',
-  },
-  {
-    number: '04',
-    title: 'Gene Editing, Model Systems & Emerging Personalized Medicine',
-    desc: 'Experience with CRISPR/Cas9, Cas-CLOVER, piggyBac transposon technologies, transgenic model creation, cell line engineering, and preclinical model systems. Currently pursuing graduate study in Pharmacogenomics and Personalized Healthcare.',
-  },
-]
-
-const roleAreas = [
-  'Preclinical or translational drug development',
-  'Scientific project or program management',
-  'Research operations or research administration',
-  'Clinical research coordination or translational research support',
-  'Business development or alliance management in biotech, pharma, CROs, or research services',
-  'Scientific partnerships, vendor management, or research outsourcing',
-  'Pharmacogenomics, genomic medicine, and personalized healthcare implementation',
-  'Technical sales enablement, product strategy, or market development for scientific platforms',
-]
-
 const strengths = [
-  'Scientific communication',
-  'Cross-functional project coordination',
-  'Client-facing research support',
   'Preclinical CRO services',
   'Translational oncology',
   'Gene editing technologies',
   'PDX and xenograft models',
   'Genetically engineered mouse and rat models',
   'Proposal development',
-  'Contract and purchasing workflow support',
-  'Budget tracking and research administration',
+  'Contract and licensing negotiation',
   'Strategic partnerships',
   'Key account development',
   'Technical sales enablement',
-  'Documentation and SOP-minded execution',
+  'Fundraising and investor readiness',
+  'Technology and IP commercialization',
 ]
 
-export default function ProfessionalPage() {
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${SITE_URL}/consulting/#service`,
+      name: 'CRSPZ Scientific Consulting',
+      description:
+        'Independent biotech consultancy led by Christopher Brenzel, providing preclinical program management, drug development strategy, fractional commercial leadership, scientific sales enablement, and technology commercialization.',
+      url: `${SITE_URL}/consulting`,
+      founder: { '@id': `${SITE_URL}/#person` },
+      areaServed: 'US',
+      serviceType: consultingServices.map((s) => s.cardTitle),
+    },
+  ],
+}
+
+export default function ConsultingPage() {
   return (
     <main className="pt-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
           <div>
             <p className="text-blue-400 text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
-              Professional Focus
+              CRSPZ Scientific Consulting
             </p>
             <h1 className="text-white font-sans font-semibold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 text-balance">
-              Preclinical &amp; Translational
+              Biotech strategy for
               <br />
-              <span className="font-light text-[#8fa3bb]">Drug Development</span>
+              <span className="font-light text-[#8fa3bb]">preclinical and translational teams</span>
             </h1>
             <p className="text-[#8fa3bb] font-sans text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-              I work at the intersection of scientific communication, preclinical research services,
-              business development, and translational strategy. My background includes gene editing
-              technologies, oncology model systems, client-facing research coordination, proposal
-              development, strategic partnerships, and cross-functional project execution.
+              I help emerging biotech companies, CROs, and technology-transfer teams move
+              research forward — coordinating preclinical programs, sharpening development
+              strategy, and building the commercial capabilities that turn scientific work
+              into partnerships, funding, and growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/consulting/experience"
+                href="/consulting/contact"
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-sans font-medium text-sm px-6 py-3 rounded transition-colors"
               >
-                View Experience
+                Discuss a Project
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <a
-                href="/CV-Christopher-Brenzel.pdf"
-                download
+              <Link
+                href="/consulting/experience"
                 className="inline-flex items-center gap-2 border border-[#1e2d4a] hover:border-[#3b82f6] text-[#8fa3bb] hover:text-white font-sans font-medium text-sm px-6 py-3 rounded transition-colors"
               >
-                Download CV
-              </a>
-              <Link
-                href="/consulting/contact"
-                className="inline-flex items-center gap-2 text-[#6b8aaa] hover:text-[#8fa3bb] font-sans font-medium text-sm px-6 py-3 transition-colors"
-              >
-                Contact Christopher
+                View Experience
               </Link>
             </div>
           </div>
@@ -126,7 +106,7 @@ export default function ProfessionalPage() {
               </div>
               <div className="absolute -bottom-4 -left-4 bg-[#0d1530] border border-[#1e2d4a] rounded-xl px-4 py-2.5">
                 <p className="text-white font-sans text-sm font-medium">Christopher Brenzel</p>
-                <p className="text-[#6b8aaa] font-sans text-xs mt-0.5">Preclinical &amp; Translational Drug Development</p>
+                <p className="text-[#6b8aaa] font-sans text-xs mt-0.5">CRSPZ Scientific Consulting</p>
               </div>
             </div>
           </div>
@@ -136,50 +116,32 @@ export default function ProfessionalPage() {
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1e2d4a]" /></div>
 
-      {/* Section 1 — Professional Direction */}
+      {/* Services */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-6 font-sans">
-          Professional Direction
+          Consulting Services
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
-          <h2 className="text-white font-sans font-semibold text-3xl md:text-4xl leading-tight text-balance">
-            Focused on roles where science and strategy move together.
-          </h2>
-          <div className="space-y-4 text-[#8fa3bb] font-sans text-base leading-relaxed">
-            <p>
-              I am focused on roles where scientific communication, project coordination, and commercial
-              strategy help move research programs forward. My experience has centered on preclinical CRO
-              services, gene editing technologies, translational oncology, genetically engineered mouse and
-              rat models, PDX model systems, and client-facing research support.
-            </p>
-            <p>
-              I am especially interested in opportunities connected to preclinical and translational drug
-              development, clinical research support, pharmacogenomics, precision medicine, scientific
-              partnerships, research operations, business development, alliance management, or technical
-              program and project management.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1e2d4a]" /></div>
-
-      {/* Section 2 — Where I Add Value */}
-      <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-        <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-12 font-sans">
-          Where I Add Value
-        </p>
+        <h2 className="text-white font-sans font-semibold text-3xl md:text-4xl leading-tight text-balance mb-12 max-w-2xl">
+          Five ways to work together, depending on where your program stands.
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {valueCards.map((card) => (
-            <div
-              key={card.number}
-              className="border border-[#1e2d4a] rounded p-8 hover:border-[#2a3d5a] hover:bg-[#0d1530] transition-all"
+          {consultingServices.map((service) => (
+            <Link
+              key={service.slug}
+              href={`/consulting/${service.slug}`}
+              className="group border border-[#1e2d4a] rounded p-8 hover:border-[#2a3d5a] hover:bg-[#0d1530] transition-all flex flex-col"
             >
-              <p className="text-blue-500/40 font-mono text-xs tracking-[0.2em] mb-4">{card.number}</p>
-              <h3 className="text-white font-sans font-semibold text-base mb-3 leading-snug">{card.title}</h3>
-              <p className="text-[#6b8aaa] font-sans text-sm leading-relaxed">{card.desc}</p>
-            </div>
+              <h3 className="text-white font-sans font-semibold text-lg mb-3 leading-snug text-balance">
+                {service.cardTitle}
+              </h3>
+              <p className="text-[#6b8aaa] font-sans text-sm leading-relaxed mb-6 flex-1">
+                {service.cardDescription}
+              </p>
+              <span className="inline-flex items-center gap-2 text-blue-400 group-hover:text-blue-300 font-sans text-sm font-medium transition-colors">
+                {service.linkLabel}
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
           ))}
         </div>
       </section>
@@ -204,7 +166,7 @@ export default function ProfessionalPage() {
             <strong className="block text-white font-semibold text-2xl md:text-3xl mb-2">
               Scientific understanding. Clear communication. Careful execution.
             </strong>
-            The combination that keeps complex research projects organized and moving forward.
+            The combination that keeps complex research programs organized and moving forward.
           </p>
         </div>
       </section>
@@ -212,19 +174,21 @@ export default function ProfessionalPage() {
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1e2d4a]" /></div>
 
-      {/* Section 3 — Roles and Environments */}
+      {/* Who this is for */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
-          <div>
-            <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-4 font-sans">
-              Roles &amp; Environments
-            </p>
-            <h2 className="text-white font-sans font-semibold text-2xl md:text-3xl leading-tight text-balance">
-              Looking for full-time opportunities where I can contribute meaningfully.
-            </h2>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+          <h2 className="text-white font-sans font-semibold text-2xl md:text-3xl leading-tight text-balance">
+            Who this is for
+          </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {roleAreas.map((area) => (
+            {[
+              'Emerging and virtual biotech companies',
+              'Preclinical CROs and scientific-service providers',
+              'Academic technology-transfer teams and inventors',
+              'Gene editing and model-system technology developers',
+              'Founders who need fractional commercial leadership',
+              'Teams preparing for fundraising or partnership conversations',
+            ].map((area) => (
               <li key={area} className="flex items-start gap-3">
                 <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0" />
                 <span className="text-[#8fa3bb] font-sans text-sm leading-relaxed">{area}</span>
@@ -237,7 +201,7 @@ export default function ProfessionalPage() {
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1e2d4a]" /></div>
 
-      {/* Section 4 — Selected Strengths */}
+      {/* Selected Strengths */}
       <section className="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <p className="text-[#4a6380] text-xs font-medium tracking-[0.2em] uppercase mb-10 font-sans">
           Selected Strengths
@@ -254,19 +218,6 @@ export default function ProfessionalPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-[#1e2d4a]" /></div>
-
-      {/* Section 5 — Consulting note (understated) */}
-      <section className="max-w-7xl mx-auto px-6 py-14">
-        <p className="text-[#4a6380] font-sans text-sm leading-relaxed max-w-2xl">
-          I am primarily focused on full-time professional opportunities, but I may also consider
-          selective project-based or advisory work when there is a clear fit around preclinical
-          research services, scientific communication, proposal support, partnership strategy, or
-          gene editing and model system commercialization.
-        </p>
-      </section>
-
       {/* Final CTA */}
       <section className="bg-[#0d1530] border-t border-b border-[#1e2d4a]">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
@@ -274,38 +225,30 @@ export default function ProfessionalPage() {
             Get in Touch
           </p>
           <h2 className="text-white font-sans font-semibold text-3xl md:text-4xl mb-4 text-balance max-w-xl">
-            Open to the right professional opportunity.
+            Let&apos;s talk about your program.
           </h2>
           <p className="text-[#8fa3bb] font-sans text-base leading-relaxed max-w-xl mb-10">
-            I am interested in roles where scientific understanding, communication, organization, and
-            relationship-building can support meaningful research. If my background seems relevant to
-            your team or organization, I would be glad to connect.
+            If any of these services sound relevant to where your company or technology
+            stands, I would be glad to talk through the details and scope of a potential
+            engagement.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/consulting/experience"
+              href="/consulting/contact"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-sans font-medium text-sm px-6 py-3 rounded transition-colors"
             >
-              View Selected Experience
+              Discuss a Project
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href="/CV-Christopher-Brenzel.pdf"
-              download
-              className="inline-flex items-center gap-2 border border-[#1e2d4a] hover:border-[#3b82f6] text-[#8fa3bb] hover:text-white font-sans font-medium text-sm px-6 py-3 rounded transition-colors"
-            >
-              Download CV
-            </a>
             <Link
-              href="/consulting/contact"
+              href="/consulting/experience"
               className="inline-flex items-center gap-2 border border-[#1e2d4a] hover:border-[#3b82f6] text-[#8fa3bb] hover:text-white font-sans font-medium text-sm px-6 py-3 rounded transition-colors"
             >
-              Contact Christopher
+              View Selected Experience
             </Link>
           </div>
         </div>
       </section>
-
     </main>
   )
 }

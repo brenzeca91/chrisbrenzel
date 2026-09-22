@@ -1,10 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowRight, Mail, Linkedin } from 'lucide-react'
+import { consultingServices } from '@/lib/consulting-services'
+
+const inquiryOptions = [
+  'General inquiry',
+  ...consultingServices.map((s) => s.cardTitle),
+  'Speaking / other',
+]
 
 export default function ConsultingContactPage() {
+  return (
+    <Suspense fallback={null}>
+      <ConsultingContactForm />
+    </Suspense>
+  )
+}
+
+function ConsultingContactForm() {
+  const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
@@ -12,9 +29,18 @@ export default function ConsultingContactPage() {
     name: '',
     email: '',
     organization: '',
-    inquiryType: 'Consulting',
+    inquiryType: 'General inquiry',
     message: '',
   })
+
+  useEffect(() => {
+    const serviceSlug = searchParams.get('service')
+    if (!serviceSlug) return
+    const service = consultingServices.find((s) => s.slug === serviceSlug)
+    if (service) {
+      setForm((f) => ({ ...f, inquiryType: service.cardTitle }))
+    }
+  }, [searchParams])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -177,10 +203,9 @@ export default function ConsultingContactPage() {
                       onChange={(e) => setForm({ ...form, inquiryType: e.target.value })}
                       className="rounded px-4 py-3 font-sans text-sm outline-none transition-colors bg-[#0d1530] border border-[#1e2d4a] text-white focus:border-blue-500"
                     >
-                      <option>Consulting</option>
-                      <option>Advisory / fractional BD</option>
-                      <option>Partnership strategy</option>
-                      <option>Speaking / other</option>
+                      {inquiryOptions.map((option) => (
+                        <option key={option}>{option}</option>
+                      ))}
                     </select>
                   </div>
 
