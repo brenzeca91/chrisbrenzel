@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Heart, Users, Baby, Gift, PartyPopper, MapPin } from 'lucide-react'
+import { ReviewsSlider } from '@/components/photography/reviews-slider'
 
 export const metadata: Metadata = {
   title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
@@ -235,6 +236,13 @@ export default function PhotographyPage() {
           ))}
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Client reviews */}
+      <ReviewsSlider />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px bg-[#222]" />
