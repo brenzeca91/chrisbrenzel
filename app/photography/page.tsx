@@ -112,6 +112,13 @@ export default function PhotographyPage() {
         <div className="h-px bg-[#222]" />
       </div>
 
+      {/* Client reviews */}
+      <ReviewsSlider />
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
       {/* Engagements and couples */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
@@ -236,13 +243,6 @@ export default function PhotographyPage() {
           ))}
         </div>
       </section>
-
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Client reviews */}
-      <ReviewsSlider />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px bg-[#222]" />
