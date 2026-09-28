@@ -15,6 +15,9 @@ const consultingLinks = [
 const photographyLinks = [
   { label: 'Photography', href: '/photography' },
   { label: 'Nature Photography', href: '/nature-photography' },
+]
+
+const photographyMoreLinks = [
   { label: 'Gallery', href: '/photography/gallery' },
   { label: 'Prints', href: '/photography/prints' },
   { label: 'Field Notes', href: '/photography/field-notes' },
@@ -27,20 +30,30 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
+  const [mobileMoreOpen, setMobileMoreOpen] = useState(false)
   const servicesRef = useRef<HTMLLIElement>(null)
+  const moreRef = useRef<HTMLLIElement>(null)
   const links = mode === 'consulting' ? consultingLinks : photographyLinks
 
   const isConsulting = mode === 'consulting'
+  const moreLinksActive = photographyMoreLinks.some((l) => pathname.startsWith(l.href))
 
   useEffect(() => {
-    if (!servicesOpen) return
+    if (!servicesOpen && !moreOpen) return
     const handleClick = (e: MouseEvent) => {
       if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
         setServicesOpen(false)
       }
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false)
+      }
     }
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setServicesOpen(false)
+      if (e.key === 'Escape') {
+        setServicesOpen(false)
+        setMoreOpen(false)
+      }
     }
     document.addEventListener('mousedown', handleClick)
     document.addEventListener('keydown', handleKey)
@@ -48,7 +61,7 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
       document.removeEventListener('mousedown', handleClick)
       document.removeEventListener('keydown', handleKey)
     }
-  }, [servicesOpen])
+  }, [servicesOpen, moreOpen])
 
   return (
     <nav
@@ -146,6 +159,49 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
                 </>
               )
             }
+            // Insert the More dropdown right after the last photography link
+            if (!isConsulting && i === links.length - 1) {
+              return (
+                <>
+                  <li key={link.href}>{linkEl}</li>
+                  <li key="more" ref={moreRef} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setMoreOpen((v) => !v)}
+                      aria-haspopup="menu"
+                      aria-expanded={moreOpen}
+                      className={`nav-link photo-nav-link flex items-center gap-1 font-sans text-sm font-medium transition-colors ${
+                        moreLinksActive ? 'text-white' : 'text-white/50 hover:text-[#f5f0eb]'
+                      }`}
+                    >
+                      More
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform ${moreOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {moreOpen && (
+                      <ul
+                        role="menu"
+                        className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-56 bg-[#0c0c0c] border border-[#222] rounded-lg shadow-xl py-2 z-50"
+                      >
+                        {photographyMoreLinks.map((moreLink) => (
+                          <li key={moreLink.href} role="none">
+                            <Link
+                              role="menuitem"
+                              href={moreLink.href}
+                              onClick={() => setMoreOpen(false)}
+                              className="block px-4 py-2.5 font-sans text-sm text-white/50 hover:text-[#f5f0eb] hover:bg-[#161616] transition-colors"
+                            >
+                              {moreLink.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                </>
+              )
+            }
             return <li key={link.href}>{linkEl}</li>
           })}
           {isConsulting ? (
@@ -225,6 +281,36 @@ export default function SiteNav({ mode }: { mode: NavMode }) {
                               className="font-sans text-sm text-[#6b8aaa] hover:text-white transition-colors"
                             >
                               {service.navLabel}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                )}
+                {!isConsulting && i === links.length - 1 && (
+                  <li key="mobile-more">
+                    <button
+                      type="button"
+                      onClick={() => setMobileMoreOpen((v) => !v)}
+                      aria-expanded={mobileMoreOpen}
+                      className="flex items-center gap-1.5 font-sans text-base font-medium text-white/60 hover:text-[#f5f0eb] transition-colors"
+                    >
+                      More
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${mobileMoreOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {mobileMoreOpen && (
+                      <ul className="flex flex-col gap-3 mt-3 pl-4 border-l border-[#222]">
+                        {photographyMoreLinks.map((moreLink) => (
+                          <li key={moreLink.href}>
+                            <Link
+                              href={moreLink.href}
+                              onClick={() => setOpen(false)}
+                              className="font-sans text-sm text-white/40 hover:text-[#f5f0eb] transition-colors"
+                            >
+                              {moreLink.label}
                             </Link>
                           </li>
                         ))}
