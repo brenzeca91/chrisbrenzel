@@ -112,13 +112,6 @@ export default function PhotographyPage() {
         <div className="h-px bg-[#222]" />
       </div>
 
-      {/* Client reviews */}
-      <ReviewsSlider />
-
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
       {/* Fall family sessions callout */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="relative overflow-hidden rounded-lg border border-[#f0a94e]/30 bg-gradient-to-br from-[#f0a94e] via-[#e8894a] to-[#c65d3a]">
@@ -157,6 +150,13 @@ export default function PhotographyPage() {
           </div>
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Client reviews */}
+      <ReviewsSlider />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px bg-[#222]" />
