@@ -112,6 +112,56 @@ export default function PhotographyPage() {
         <div className="h-px bg-[#222]" />
       </div>
 
+      {/* Client reviews */}
+      <ReviewsSlider />
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
+      {/* Fall family sessions callout */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="relative overflow-hidden rounded-lg border border-[#f0a94e]/30 bg-gradient-to-br from-[#f0a94e] via-[#e8894a] to-[#c65d3a]">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+            <div className="relative h-64 md:h-full min-h-[280px] order-2 md:order-1">
+              <img
+                src="/images/photography/fall-family-session-callout.jpg"
+                alt="Toddler smiling while sitting in golden fall leaves during a family portrait session near Lexington, KY"
+                className="w-full h-full object-cover object-center"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-[#e8894a]/0 via-transparent to-[#c65d3a]/40 md:bg-gradient-to-l md:from-[#e8894a]/0 md:to-[#c65d3a]/50"
+                aria-hidden="true"
+              />
+            </div>
+            <div className="order-1 md:order-2 p-8 md:p-12">
+              <p className="text-[#fff4e6] text-xs font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
+                Fall Sessions &middot; Limited Dates
+              </p>
+              <h2 className="text-[#2b1508] font-serif italic text-3xl md:text-4xl font-medium leading-tight mb-4 text-balance">
+                Fall Family Sessions Are Here
+              </h2>
+              <p className="text-[#3a1f0f] font-sans text-sm md:text-base leading-relaxed mb-8 max-w-md">
+                Golden leaves, warm light, and cool evenings—fall is one of the best times of year
+                for family portraits in Kentucky. Dates are booking quickly, so reach out soon to
+                claim yours.
+              </p>
+              <Link
+                href="/photography/contact/session"
+                className="inline-flex items-center gap-2 bg-[#2b1508] hover:bg-[#3a1f0f] text-[#fff4e6] font-sans font-semibold text-sm px-6 py-3 rounded transition-colors"
+              >
+                Schedule Now
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-[#222]" />
+      </div>
+
       {/* Engagements and couples */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
@@ -236,13 +286,6 @@ export default function PhotographyPage() {
           ))}
         </div>
       </section>
-
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-[#222]" />
-      </div>
-
-      {/* Client reviews */}
-      <ReviewsSlider />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px bg-[#222]" />
