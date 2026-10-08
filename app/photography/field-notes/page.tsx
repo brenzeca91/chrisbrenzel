@@ -18,6 +18,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: 'LightCraft vs Lightroom - Does This Free Photo Editor Actually Work?',
+    category: 'Editing',
+    date: 'October 8, 2026',
+    location: 'Editing workflow',
+    excerpt: 'Five real-photo tests comparing speed, presets, subject masking, RAW rendering, and JPEG exports in LightCraft and Lightroom.',
+    slug: 'lightcraft-vs-lightroom',
+    href: '/photography/lightcraft-vs-lightroom',
+    cover: '/images/lightcraft-vs-lightroom/balloon-lightcraft-adjusted.jpg',
+  },
+  {
     title: 'What Is the Best Beginner Sony Camera for You? (Quiz)',
     category: 'Gear',
     date: 'July 14, 2026',
