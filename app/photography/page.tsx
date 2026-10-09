@@ -63,9 +63,72 @@ const faqItems = [
   },
 ]
 
+const SITE_URL = 'https://www.chrisbrenzel.com'
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${SITE_URL}/photography#business`,
+      name: 'Chris Brenzel Photography LLC',
+      description:
+        'Portrait, family, engagement, newborn, and small-event photography in Lexington and Central Kentucky.',
+      url: `${SITE_URL}/photography`,
+      telephone: '+1-859-967-9672',
+      image: `${SITE_URL}/og-image.png`,
+      founder: { '@id': `${SITE_URL}/#person` },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Lexington',
+        addressRegion: 'KY',
+        postalCode: '40509',
+        addressCountry: 'US',
+      },
+      areaServed: [
+        'Lexington, KY',
+        'Nicholasville, KY',
+        'Georgetown, KY',
+        'Versailles, KY',
+        'Richmond, KY',
+        'Winchester, KY',
+        'Central Kentucky',
+      ].map((name) => ({ '@type': 'City', name })),
+      knowsAbout: [
+        'Family photography',
+        'Engagement photography',
+        'Newborn photography',
+        'Senior portraits',
+        'Elopement photography',
+      ],
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/photography#webpage`,
+      url: `${SITE_URL}/photography`,
+      name: 'Portrait, Family & Event Photographer in Lexington, KY',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/photography#business` },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${SITE_URL}/photography#faq`,
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    },
+  ],
+}
+
 export default function PhotographyPage() {
   return (
     <main className="pt-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
         <div
