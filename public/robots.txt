@@ -3,5 +3,7 @@ Allow: /
 Disallow: /photography/best-beginner-sony-camera/embed
 Disallow: /photography/privacy
 Disallow: /photography/terms
+Disallow: /admin
+Disallow: /api/
 
 Sitemap: https://www.chrisbrenzel.com/sitemap.xml

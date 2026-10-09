@@ -13,6 +13,21 @@ type Review = {
 
 const reviews: Review[] = [
   {
+    name: 'K.P.',
+    rating: 5,
+    service: 'Portrait Photography',
+    quote: 'The photos are beautiful! I love the setting and the lighting. Thank you so much!',
+    date: 'Sep 28, 2026',
+  },
+  {
+    name: 'H.L.',
+    rating: 5,
+    service: 'Photography Lessons',
+    quote:
+      'Chris was great to work with & very knowledgeable. He taught me so much during my first session. I decided to continue classes with him. I highly recommend him. He is easy going, personable and he really has a passion to help you gain knowledge. If your looking for a great teacher hes your guy.',
+    date: 'Oct 1, 2026',
+  },
+  {
     name: 'G.K.',
     rating: 5,
     service: 'Portrait Photography',

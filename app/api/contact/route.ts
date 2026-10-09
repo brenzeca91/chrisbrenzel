@@ -1,65 +1,169 @@
-import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
+import { and, eq, gte } from 'drizzle-orm'
+import { db } from '@/lib/db'
+import { leads, type Lead } from '@/lib/db/schema'
+import { sendLeadEmail, type LeadEmailInput } from '@/lib/leads/email'
+import { contactSchema, normalizeTouch, type ContactInput } from '@/lib/leads/validation'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+export const runtime = 'nodejs'
+
+const DUPLICATE_WINDOW_MS = 10 * 60 * 1000
+
+async function saveLead(data: ContactInput): Promise<{ lead: Lead; duplicate: boolean }> {
+  // Same person re-sending the same message (page reload, double submit from a
+  // second tab) is treated as the same inquiry.
+  const [recent] = await db
+    .select()
+    .from(leads)
+    .where(
+      and(
+        eq(leads.email, data.email),
+        eq(leads.message, data.message),
+        gte(leads.createdAt, new Date(Date.now() - DUPLICATE_WINDOW_MS)),
+      ),
+    )
+    .limit(1)
+  if (recent) return { lead: recent, duplicate: true }
+
+  const first = normalizeTouch(data.attribution?.first)
+  const last = normalizeTouch(data.attribution?.last)
+
+  const [inserted] = await db
+    .insert(leads)
+    .values({
+      submissionId: data.submissionId,
+      formSource: data.source,
+      name: data.name,
+      email: data.email,
+      organization: data.organization,
+      inquiryType: data.inquiryType,
+      preferredDate: data.date,
+      location: data.location,
+      guestCount: data.guestCount,
+      message: data.message,
+      firstSource: first.source,
+      firstMedium: first.medium,
+      firstCampaign: first.campaign,
+      firstContent: first.content,
+      firstTerm: first.term,
+      firstTouchAt: first.touchAt,
+      firstLandingPath: first.landingPath,
+      lastSource: last.source,
+      lastMedium: last.medium,
+      lastCampaign: last.campaign,
+      lastContent: last.content,
+      lastTerm: last.term,
+      lastTouchAt: last.touchAt,
+      lastLandingPath: last.landingPath,
+    })
+    .onConflictDoNothing({ target: leads.submissionId })
+    .returning()
+  if (inserted) return { lead: inserted, duplicate: false }
+
+  const [existing] = await db
+    .select()
+    .from(leads)
+    .where(eq(leads.submissionId, data.submissionId))
+    .limit(1)
+  if (!existing) throw new Error('Lead not found after submission conflict')
+  return { lead: existing, duplicate: true }
+}
+
+function emailInputFromLead(lead: Lead): LeadEmailInput {
+  return {
+    source: lead.formSource,
+    name: lead.name,
+    email: lead.email,
+    organization: lead.organization,
+    inquiryType: lead.inquiryType,
+    preferredDate: lead.preferredDate,
+    location: lead.location,
+    guestCount: lead.guestCount,
+    message: lead.message,
+    trafficSource: lead.lastSource ?? lead.firstSource,
+    trafficMedium: lead.lastMedium ?? lead.firstMedium,
+    trafficCampaign: lead.lastCampaign ?? lead.firstCampaign,
+    landingPath: lead.lastLandingPath ?? lead.firstLandingPath,
+    savedToDashboard: true,
+  }
+}
+
+function emailInputFromData(data: ContactInput): LeadEmailInput {
+  const touch = normalizeTouch(data.attribution?.last ?? data.attribution?.first)
+  return {
+    source: data.source,
+    name: data.name,
+    email: data.email,
+    organization: data.organization,
+    inquiryType: data.inquiryType,
+    preferredDate: data.date,
+    location: data.location,
+    guestCount: data.guestCount,
+    message: data.message,
+    trafficSource: touch.source,
+    trafficMedium: touch.medium,
+    trafficCampaign: touch.campaign,
+    landingPath: touch.landingPath,
+    savedToDashboard: false,
+  }
+}
 
 export async function POST(req: NextRequest) {
+  let raw: unknown
   try {
-    const body = await req.json()
-    const { name, email, message, inquiryType, organization, source, date, location, guestCount } = body
-
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
-    }
-
-    const isPhotography = source === 'photography' || source === 'photography-session'
-    const isSession = source === 'photography-session'
-
-    const subjectLine = isSession
-      ? `Session inquiry — ${inquiryType} from ${name}`
-      : isPhotography
-      ? `Photography inquiry — ${inquiryType} from ${name}`
-      : `Professional inquiry — ${inquiryType} from ${name}${organization ? ` (${organization})` : ''}`
-
-    const htmlBody = `
-      <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#111">
-        <h2 style="border-bottom:1px solid #eee;padding-bottom:12px;margin-bottom:20px">
-          ${isSession ? 'Session inquiry' : isPhotography ? 'Photography inquiry' : 'Professional inquiry'} — ${inquiryType}
-        </h2>
-        <table style="width:100%;border-collapse:collapse">
-          <tr><td style="padding:6px 0;color:#666;width:120px">Name</td><td style="padding:6px 0"><strong>${name}</strong></td></tr>
-          <tr><td style="padding:6px 0;color:#666">Email</td><td style="padding:6px 0"><a href="mailto:${email}">${email}</a></td></tr>
-          <tr><td style="padding:6px 0;color:#666">Inquiry type</td><td style="padding:6px 0">${inquiryType}</td></tr>
-          ${date ? `<tr><td style="padding:6px 0;color:#666">Preferred date</td><td style="padding:6px 0">${date}</td></tr>` : ''}
-          ${location ? `<tr><td style="padding:6px 0;color:#666">Location</td><td style="padding:6px 0">${location}</td></tr>` : ''}
-          ${guestCount ? `<tr><td style="padding:6px 0;color:#666">Number of people</td><td style="padding:6px 0">${guestCount}</td></tr>` : ''}
-          ${organization ? `<tr><td style="padding:6px 0;color:#666">Organization</td><td style="padding:6px 0">${organization}</td></tr>` : ''}
-        </table>
-        <div style="margin-top:24px;padding:16px;background:#f9f9f9;border-radius:6px;white-space:pre-wrap;line-height:1.6">
-          ${message.replace(/\n/g, '<br/>')}
-        </div>
-        <p style="margin-top:24px;font-size:12px;color:#999">
-          Sent via chrisbrenzel.com ${isSession ? 'photography session booking' : isPhotography ? 'photography' : 'professional'} contact form
-        </p>
-      </div>
-    `
-
-    const { error } = await resend.emails.send({
-      from: 'Contact Form <noreply@chrisbrenzel.com>',
-      to: 'chris@chrisbrenzel.com',
-      replyTo: email,
-      subject: subjectLine,
-      html: htmlBody,
-    })
-
-    if (error) {
-      console.error('[v0] Resend error:', error)
-      return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
-    }
-
-    return NextResponse.json({ success: true })
-  } catch (err) {
-    console.error('[v0] Contact route error:', err)
-    return NextResponse.json({ error: 'Server error' }, { status: 500 })
+    raw = await req.json()
+  } catch {
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
+
+  const parsed = contactSchema.safeParse(raw)
+  if (!parsed.success) {
+    return NextResponse.json({ error: 'Please check the form and try again.' }, { status: 400 })
+  }
+  const data = parsed.data
+
+  // Real visitors never see or fill the hidden field. Answer like a success so
+  // bots get no signal, but store nothing and report no lead.
+  if (data.website) {
+    return NextResponse.json({ success: true, leadId: null })
+  }
+
+  let saved: { lead: Lead; duplicate: boolean }
+  try {
+    saved = await saveLead(data)
+  } catch (err) {
+    console.error('[contact] Failed to save lead:', err)
+    // Keep the original behaviour as a fallback: if the database is down the
+    // inquiry must still reach the inbox.
+    const sent = await sendLeadEmail(emailInputFromData(data))
+    if (!sent.ok) {
+      console.error('[contact] Fallback email failed:', sent.error)
+      return NextResponse.json({ error: 'Server error' }, { status: 500 })
+    }
+    return NextResponse.json({ success: true, leadId: null })
+  }
+
+  const { lead, duplicate } = saved
+
+  // A duplicate only re-sends when the first attempt never reached the inbox.
+  if (!lead.notifiedAt) {
+    const sent = await sendLeadEmail(emailInputFromLead(lead))
+    try {
+      await db
+        .update(leads)
+        .set(
+          sent.ok
+            ? { notifiedAt: new Date(), notificationError: null }
+            : { notificationError: sent.error.slice(0, 500) },
+        )
+        .where(eq(leads.id, lead.id))
+    } catch (err) {
+      console.error('[contact] Failed to record notification result:', err)
+    }
+    if (!sent.ok) {
+      console.error('[contact] Notification email failed:', sent.error)
+    }
+  }
+
+  return NextResponse.json({ success: true, leadId: lead.id, duplicate })
 }

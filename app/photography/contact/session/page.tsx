@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Mail } from 'lucide-react'
+import { HoneypotField, useLeadForm } from '@/lib/use-lead-form'
 
 const sessionTypes = [
   'Engagement or couples session',
@@ -14,9 +15,8 @@ const sessionTypes = [
 ]
 
 export default function SessionBookingPage() {
-  const [submitted, setSubmitted] = useState(false)
-  const [sending, setSending] = useState(false)
-  const [error, setError] = useState('')
+  const { submitted, sending, error, submit, onFormFocus, honeypotRef } =
+    useLeadForm('photography-session')
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -27,23 +27,9 @@ export default function SessionBookingPage() {
     message: '',
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setSending(true)
-    setError('')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'photography-session' }),
-      })
-      if (!res.ok) throw new Error('Failed to send')
-      setSubmitted(true)
-    } catch {
-      setError('Something went wrong — please email chris@chrisbrenzel.com directly.')
-    } finally {
-      setSending(false)
-    }
+    submit(form)
   }
 
   return (
@@ -126,7 +112,12 @@ export default function SessionBookingPage() {
                 </Link>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6 max-w-lg">
+              <form
+                onSubmit={handleSubmit}
+                onFocus={onFormFocus}
+                className="relative flex flex-col gap-6 max-w-lg"
+              >
+                <HoneypotField inputRef={honeypotRef} />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label htmlFor="name" className="font-sans text-xs font-medium tracking-wide text-white/35">

@@ -6,12 +6,12 @@ import { ReviewsSlider } from '@/components/photography/reviews-slider'
 export const metadata: Metadata = {
   title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
   description:
-    'Relaxed, candid photography for families, couples, engagements, newborns, and small events in Lexington and Central Kentucky.',
+    'Professional photographer offering services photographing families, engagements, milestones, newborns, senior photos, and more in Lexington and Central Kentucky.',
   alternates: { canonical: 'https://www.chrisbrenzel.com/photography' },
   openGraph: {
     title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
     description:
-      'Relaxed, candid photography for families, couples, engagements, newborns, and small events in Lexington and Central Kentucky.',
+      'Professional photographer offering services photographing families, engagements, milestones, newborns, senior photos, and more in Lexington and Central Kentucky.',
     url: 'https://www.chrisbrenzel.com/photography',
     siteName: 'ChrisBrenzel.com',
     type: 'website',
@@ -87,8 +87,8 @@ export default function PhotographyPage() {
             Portrait, Family &amp; Event Photographer in Lexington, KY
           </h1>
           <p className="text-white/70 font-sans text-base md:text-lg leading-relaxed max-w-2xl mb-8">
-            Relaxed, candid photography for the people and moments that matter—engagements,
-            families, newborns, milestones, and intimate events in Lexington and Central Kentucky.
+            Professional photographer offering services photographing families, engagements,
+            milestones, newborns, senior photos, and more in Lexington and Central Kentucky.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -118,15 +118,11 @@ export default function PhotographyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 items-center">
             <div className="relative h-64 md:h-full min-h-[280px] order-2 md:order-1">
               <img
-                src="/images/photography/fall-family-session-callout.jpg"
-                alt="Toddler smiling while sitting in golden fall leaves during a family portrait session near Lexington, KY"
-                className="w-full h-full object-cover object-center"
-              />
-              <div
-                className="absolute inset-0 bg-gradient-to-r from-[#e8894a]/0 via-transparent to-[#c65d3a]/40 md:bg-gradient-to-l md:from-[#e8894a]/0 md:to-[#c65d3a]/50"
-                aria-hidden="true"
-              />
-            </div>
+  src="/images/photography/fall-session-callout-sisters.jpg"
+  alt="Two smiling sisters in light blue tops sitting on fallen leaves during a fall portrait session near Lexington, KY"
+  className="w-full h-full object-cover object-center"
+  />
+  </div>
             <div className="order-1 md:order-2 p-8 md:p-12">
               <p className="text-[#fff4e6] text-xs font-semibold tracking-[0.2em] uppercase mb-4 font-sans">
                 Fall Sessions &middot; Limited Dates
@@ -138,6 +134,10 @@ export default function PhotographyPage() {
                 Golden leaves, warm light, and cool evenings—fall is one of the best times of year
                 for family portraits in Kentucky. Dates are booking quickly, so reach out soon to
                 claim yours.
+              </p>
+              <p className="text-[#2b1508] font-sans mb-8 flex items-baseline gap-2 flex-wrap">
+                <span className="font-serif text-4xl md:text-5xl font-semibold">$150</span>
+                <span className="text-sm md:text-base font-semibold">/ 1 hour photo session</span>
               </p>
               <Link
                 href="/photography/contact/session"
