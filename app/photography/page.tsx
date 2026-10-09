@@ -6,12 +6,12 @@ import { ReviewsSlider } from '@/components/photography/reviews-slider'
 export const metadata: Metadata = {
   title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
   description:
-    'Relaxed, candid photography for families, couples, engagements, newborns, and small events in Lexington and Central Kentucky.',
+    'Professional photographer offering services photographing families, engagements, milestones, newborns, senior photos, and more in Lexington and Central Kentucky.',
   alternates: { canonical: 'https://www.chrisbrenzel.com/photography' },
   openGraph: {
     title: 'Portrait, Family & Event Photographer in Lexington, KY | Chris Brenzel',
     description:
-      'Relaxed, candid photography for families, couples, engagements, newborns, and small events in Lexington and Central Kentucky.',
+      'Professional photographer offering services photographing families, engagements, milestones, newborns, senior photos, and more in Lexington and Central Kentucky.',
     url: 'https://www.chrisbrenzel.com/photography',
     siteName: 'ChrisBrenzel.com',
     type: 'website',
@@ -87,8 +87,8 @@ export default function PhotographyPage() {
             Portrait, Family &amp; Event Photographer in Lexington, KY
           </h1>
           <p className="text-white/70 font-sans text-base md:text-lg leading-relaxed max-w-2xl mb-8">
-            Relaxed, candid photography for the people and moments that matter—engagements,
-            families, newborns, milestones, and intimate events in Lexington and Central Kentucky.
+            Professional photographer offering services photographing families, engagements,
+            milestones, newborns, senior photos, and more in Lexington and Central Kentucky.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -138,6 +138,10 @@ export default function PhotographyPage() {
                 Golden leaves, warm light, and cool evenings—fall is one of the best times of year
                 for family portraits in Kentucky. Dates are booking quickly, so reach out soon to
                 claim yours.
+              </p>
+              <p className="text-[#2b1508] font-sans mb-8 flex items-baseline gap-2 flex-wrap">
+                <span className="font-serif text-4xl md:text-5xl font-semibold">$150</span>
+                <span className="text-sm md:text-base font-semibold">/ 1 hour photo session</span>
               </p>
               <Link
                 href="/photography/contact/session"
