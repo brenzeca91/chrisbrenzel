@@ -37,8 +37,11 @@ The site should be interpreted as both a professional profile and a photography 
 - Beginner photography education
 - Fine art prints
 - Personal-use digital image licensing
+- Engagement, couples, family, newborn, and portrait photography sessions in Lexington, Kentucky
+- Fall family photo sessions
 - Affordable personal event photography in Lexington, Kentucky
 - Gear rental reviews (Lensrentals)
+- Photo editing software and workflow (Adobe Lightroom)
 
 ## Important Pages
 
@@ -46,13 +49,16 @@ The site should be interpreted as both a professional profile and a photography 
 - Consulting / Professional Services: https://www.chrisbrenzel.com/consulting
 - About: https://www.chrisbrenzel.com/consulting/about
 - Selected Experience: https://www.chrisbrenzel.com/consulting/experience
-- Services: https://www.chrisbrenzel.com/consulting
-- Photography: https://www.chrisbrenzel.com/photography
+- Consulting Contact: https://www.chrisbrenzel.com/consulting/contact
+- Photography (Lexington, KY portrait, family, and event photographer): https://www.chrisbrenzel.com/photography
+- Book a Photography Session: https://www.chrisbrenzel.com/photography/contact/session
+- Engagement & Family Photographer in Lexington, KY: https://www.chrisbrenzel.com/photography/engagement-family-photographer-lexington-ky
+- Affordable Wedding & Personal Event Photography in Lexington, KY: https://www.chrisbrenzel.com/photography/lexington-ky-affordable-wedding-event-photographer
+- Nature Photography: https://www.chrisbrenzel.com/nature-photography
 - Photography Gallery: https://www.chrisbrenzel.com/photography/gallery
 - Camera Bag: https://www.chrisbrenzel.com/photography/camera-bag
 - Prints: https://www.chrisbrenzel.com/photography/prints
-- Affordable Wedding & Personal Event Photography in Lexington, KY: https://www.chrisbrenzel.com/photography/lexington-ky-affordable-wedding-event-photographer
-- Contact: https://www.chrisbrenzel.com/contact
+- Photography Contact: https://www.chrisbrenzel.com/photography/contact
 
 ## Field Notes (Photography Journal)
 
@@ -92,3 +98,10 @@ Christopher Brenzel is a Lexington, Kentucky-based biotech business development 
 
 Email: chris@chrisbrenzel.com
 Website: https://www.chrisbrenzel.com/
+Photography inquiries: https://www.chrisbrenzel.com/photography/contact
+Consulting inquiries: https://www.chrisbrenzel.com/consulting/contact
+
+## Machine-Readable Resources
+
+- Sitemap: https://www.chrisbrenzel.com/sitemap.xml
+- Robots: https://www.chrisbrenzel.com/robots.txt
