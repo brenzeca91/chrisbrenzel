@@ -13,6 +13,13 @@ type Review = {
 
 const reviews: Review[] = [
   {
+    name: 'K.P.',
+    rating: 5,
+    service: 'Portrait Photography',
+    quote: 'The photos are beautiful! I love the setting and the lighting. Thank you so much!',
+    date: 'Sep 28, 2026',
+  },
+  {
     name: 'H.L.',
     rating: 5,
     service: 'Photography Lessons',
