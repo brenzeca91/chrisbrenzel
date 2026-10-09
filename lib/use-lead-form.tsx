@@ -99,7 +99,17 @@ export function useLeadForm(formSource: LeadFormSource) {
 // Hidden from people and assistive tech; bots that fill every field trip it.
 export function HoneypotField({ inputRef }: { inputRef: RefObject<HTMLInputElement | null> }) {
   return (
-    <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+    <div
+      aria-hidden="true"
+      style={{
+        position: 'absolute',
+        left: '-9999px',
+        top: 'auto',
+        width: 1,
+        height: 1,
+        overflow: 'hidden',
+      }}
+    >
       <label htmlFor="website">Website</label>
       <input
         ref={inputRef}
