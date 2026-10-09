@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { ArrowRight, Mail } from 'lucide-react'
 import { HoneypotField, useLeadForm } from '@/lib/use-lead-form'
 
@@ -15,8 +16,15 @@ const sessionTypes = [
 ]
 
 export default function SessionBookingPage() {
+  const router = useRouter()
   const { submitted, sending, error, submit, onFormFocus, honeypotRef } =
     useLeadForm('photography-session')
+
+  // Only navigate once the server has accepted the inquiry.
+  useEffect(() => {
+    if (submitted) router.push('/photography/thank-you')
+  }, [submitted, router])
+
   const [form, setForm] = useState({
     name: '',
     email: '',
